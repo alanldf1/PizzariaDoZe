@@ -27,10 +27,5 @@ namespace PizzariaDoZe.Forms.Clientes
 
         }
 
-        private void btnCadastroCliente_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

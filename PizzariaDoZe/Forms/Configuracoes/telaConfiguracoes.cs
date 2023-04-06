@@ -17,6 +17,12 @@ namespace PizzariaDoZe.Forms.Configuracoes
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Vai salvar a linguagem escolhida no comboBox e o se o checkBox estiver selecionado ele reinicia o app e altera a linguagem
+        /// </summary>
+        /// <param name="sender">Botão clicado</param>
+        /// <param name="e"></param>
         private void ButtonSalvarLinguagem_Click(object sender, EventArgs e)
         {
             //abre o arquivo local como leitura/escrita e salva as alterações em ProjetoPastelariaDoZe_2023.dll.config
@@ -34,6 +40,11 @@ namespace PizzariaDoZe.Forms.Configuracoes
             }
         }
 
+        /// <summary>
+        /// Ao carregar a tela ele deixa a linguagem atual selecionada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void telaConfiguracoes_Load(object sender, EventArgs e)
         {
             String? selectedLanguage = (ConfigurationManager.AppSettings.Get("mainLanguage") is not null) ? ConfigurationManager.AppSettings.Get("mainLanguage") : "";

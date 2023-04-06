@@ -72,7 +72,7 @@ namespace PizzariaDoZe.Forms.Clientes
         }
 
         /// <summary>
-        /// 
+        /// Botão fecha o formulario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
