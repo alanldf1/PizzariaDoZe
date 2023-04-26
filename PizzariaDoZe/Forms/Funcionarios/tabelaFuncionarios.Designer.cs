@@ -30,7 +30,7 @@
         {
             labelPesquisa = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
+            textBoxPesquisa = new TextBox();
             btnEditar = new Button();
             theadId = new Label();
             theadNome = new Label();
@@ -60,14 +60,14 @@
             label1.Size = new Size(0, 15);
             label1.TabIndex = 13;
             // 
-            // textBox1
+            // textBoxPesquisa
             // 
-            textBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(40, 62);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(366, 31);
-            textBox1.TabIndex = 12;
+            textBoxPesquisa.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPesquisa.Location = new Point(40, 62);
+            textBoxPesquisa.Margin = new Padding(3, 2, 3, 2);
+            textBoxPesquisa.Name = "textBoxPesquisa";
+            textBoxPesquisa.Size = new Size(366, 31);
+            textBoxPesquisa.TabIndex = 0;
             // 
             // btnEditar
             // 
@@ -81,7 +81,8 @@
             btnEditar.Margin = new Padding(5, 1, 5, 1);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(113, 28);
-            btnEditar.TabIndex = 6;
+            btnEditar.TabIndex = 1;
+            btnEditar.TabStop = false;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
             // 
@@ -219,7 +220,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(labelPesquisa);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxPesquisa);
             Controls.Add(tableLayoutPanel1);
             Name = "tabelaFuncionarios";
             Text = "Tabela funcionarios";
@@ -233,7 +234,7 @@
 
         private Label labelPesquisa;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox textBoxPesquisa;
         private Button btnEditar;
         private Label theadId;
         private Label theadNome;

@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace PizzariaDoZe.Forms.Clientes
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class tabelaClientes : Form
     {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public tabelaClientes()
         {
             InitializeComponent();
@@ -25,10 +27,9 @@ namespace PizzariaDoZe.Forms.Clientes
             //this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
 
-        }
+            Funcoes.EventoFocoCampos(this);
+            this.ActiveControl = textBoxPesquisa;
 
-        private void btnCadastroCliente_Click(object sender, EventArgs e)
-        {
 
         }
 

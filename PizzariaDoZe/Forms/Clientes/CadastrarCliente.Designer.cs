@@ -66,7 +66,7 @@
             textBoxName.Margin = new Padding(3, 2, 3, 2);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(255, 28);
-            textBoxName.TabIndex = 1;
+            textBoxName.TabIndex = 0;
             // 
             // textBoxEmail
             // 
@@ -76,7 +76,7 @@
             textBoxEmail.Margin = new Padding(3, 2, 3, 2);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(474, 28);
-            textBoxEmail.TabIndex = 3;
+            textBoxEmail.TabIndex = 2;
             // 
             // labelEmail
             // 
@@ -96,7 +96,7 @@
             textBoxPhone.Margin = new Padding(3, 2, 3, 2);
             textBoxPhone.Name = "textBoxPhone";
             textBoxPhone.Size = new Size(338, 28);
-            textBoxPhone.TabIndex = 5;
+            textBoxPhone.TabIndex = 3;
             // 
             // labelPhone
             // 
@@ -116,7 +116,7 @@
             textBoxCpf.Margin = new Padding(3, 2, 3, 2);
             textBoxCpf.Name = "textBoxCpf";
             textBoxCpf.Size = new Size(276, 28);
-            textBoxCpf.TabIndex = 7;
+            textBoxCpf.TabIndex = 1;
             // 
             // labelCpf
             // 
@@ -137,7 +137,7 @@
             btnRegister.Margin = new Padding(3, 2, 3, 2);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(194, 42);
-            btnRegister.TabIndex = 8;
+            btnRegister.TabIndex = 9;
             btnRegister.Text = "Cadastrar";
             btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
@@ -150,7 +150,7 @@
             btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(194, 42);
-            btnCancel.TabIndex = 9;
+            btnCancel.TabIndex = 8;
             btnCancel.Text = "Cancelar";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
@@ -163,7 +163,7 @@
             textBoxCep.Margin = new Padding(3, 2, 3, 2);
             textBoxCep.Name = "textBoxCep";
             textBoxCep.Size = new Size(282, 28);
-            textBoxCep.TabIndex = 11;
+            textBoxCep.TabIndex = 4;
             // 
             // labelCep
             // 
@@ -183,7 +183,7 @@
             textBoxEndereco.Margin = new Padding(3, 2, 3, 2);
             textBoxEndereco.Name = "textBoxEndereco";
             textBoxEndereco.Size = new Size(610, 28);
-            textBoxEndereco.TabIndex = 13;
+            textBoxEndereco.TabIndex = 5;
             // 
             // labelEndereco
             // 
@@ -203,7 +203,8 @@
             textBoxComplemento.Margin = new Padding(3, 2, 3, 2);
             textBoxComplemento.Name = "textBoxComplemento";
             textBoxComplemento.Size = new Size(282, 28);
-            textBoxComplemento.TabIndex = 15;
+            textBoxComplemento.TabIndex = 7;
+            textBoxComplemento.TextChanged += textBoxComplemento_TextChanged;
             // 
             // labelComplemento
             // 
@@ -223,7 +224,7 @@
             textBoxNumero.Margin = new Padding(3, 2, 3, 2);
             textBoxNumero.Name = "textBoxNumero";
             textBoxNumero.Size = new Size(282, 28);
-            textBoxNumero.TabIndex = 17;
+            textBoxNumero.TabIndex = 6;
             // 
             // labelNumber
             // 
@@ -263,6 +264,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "CadastrarCliente";
             Text = "Cadastrar cliente";
+            Load += CadastrarCliente_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -277,6 +279,7 @@
         private Label labelPhone;
         private TextBox textBoxCpf;
         private Label labelCpf;
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public Button btnRegister;
         private Button btnCancel;
         private TextBox textBoxCep;

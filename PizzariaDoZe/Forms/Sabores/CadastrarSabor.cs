@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace PizzariaDoZe.Forms.Sabores
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class CadastrarSabor : Form
     {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public CadastrarSabor()
         {
             InitializeComponent();
@@ -25,6 +27,9 @@ namespace PizzariaDoZe.Forms.Sabores
             //this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
 
+            Funcoes.EventoFocoCampos(this);
+
+            this.ActiveControl = textBoxName;
         }
 
     }

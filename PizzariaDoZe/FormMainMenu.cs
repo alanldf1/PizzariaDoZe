@@ -5,8 +5,12 @@ using System.Windows.Forms;
 
 namespace PizzariaDoZe
 {
+    #pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class FormMainMenu : Form
     {
+        /// <summary>
+        /// Inicia o formulario
+        /// </summary>
         public FormMainMenu()
         {
             InitializeComponent();
@@ -22,6 +26,9 @@ namespace PizzariaDoZe
         }
 
         private Button? currentButton;
+        /// <summary>
+        /// Vai salvar o formulário ativo, ao abrir outro formulario ele ira salvar em cima
+        /// </summary>
         public Form? activeForm;
 
         /// <summary>

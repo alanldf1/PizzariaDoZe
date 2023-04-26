@@ -85,7 +85,7 @@
             textBoxLogradouro.Margin = new Padding(3, 2, 3, 2);
             textBoxLogradouro.Name = "textBoxLogradouro";
             textBoxLogradouro.Size = new Size(201, 28);
-            textBoxLogradouro.TabIndex = 100;
+            textBoxLogradouro.TabIndex = 21;
             // 
             // labelLogradouro
             // 
@@ -105,7 +105,7 @@
             textBoxBairro.Margin = new Padding(3, 2, 3, 2);
             textBoxBairro.Name = "textBoxBairro";
             textBoxBairro.Size = new Size(339, 28);
-            textBoxBairro.TabIndex = 98;
+            textBoxBairro.TabIndex = 20;
             // 
             // labelBairro
             // 
@@ -125,7 +125,7 @@
             textBoxCidade.Margin = new Padding(3, 2, 3, 2);
             textBoxCidade.Name = "textBoxCidade";
             textBoxCidade.Size = new Size(352, 28);
-            textBoxCidade.TabIndex = 96;
+            textBoxCidade.TabIndex = 19;
             // 
             // labelCidade
             // 
@@ -145,7 +145,7 @@
             textBoxUf.Margin = new Padding(3, 2, 3, 2);
             textBoxUf.Name = "textBoxUf";
             textBoxUf.Size = new Size(115, 28);
-            textBoxUf.TabIndex = 94;
+            textBoxUf.TabIndex = 18;
             // 
             // labelUf
             // 
@@ -166,7 +166,7 @@
             textBoxSenha.Margin = new Padding(3, 2, 3, 2);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.Size = new Size(400, 28);
-            textBoxSenha.TabIndex = 92;
+            textBoxSenha.TabIndex = 9;
             // 
             // labelSenha
             // 
@@ -187,7 +187,7 @@
             textBoxObservation.Multiline = true;
             textBoxObservation.Name = "textBoxObservation";
             textBoxObservation.Size = new Size(241, 90);
-            textBoxObservation.TabIndex = 90;
+            textBoxObservation.TabIndex = 15;
             // 
             // labelObservation
             // 
@@ -206,8 +206,7 @@
             radioButtonCartaNao.Location = new Point(85, 12);
             radioButtonCartaNao.Name = "radioButtonCartaNao";
             radioButtonCartaNao.Size = new Size(58, 29);
-            radioButtonCartaNao.TabIndex = 88;
-            radioButtonCartaNao.TabStop = true;
+            radioButtonCartaNao.TabIndex = 12;
             radioButtonCartaNao.Text = "Não";
             radioButtonCartaNao.UseVisualStyleBackColor = true;
             // 
@@ -228,8 +227,7 @@
             radioButtonCartaSim.Location = new Point(12, 12);
             radioButtonCartaSim.Name = "radioButtonCartaSim";
             radioButtonCartaSim.Size = new Size(55, 29);
-            radioButtonCartaSim.TabIndex = 86;
-            radioButtonCartaSim.TabStop = true;
+            radioButtonCartaSim.TabIndex = 11;
             radioButtonCartaSim.Text = "Sim";
             radioButtonCartaSim.UseVisualStyleBackColor = true;
             radioButtonCartaSim.CheckedChanged += radioButtonCartaSim_CheckedChanged;
@@ -243,8 +241,7 @@
             radioButtonEntregador.Margin = new Padding(0);
             radioButtonEntregador.Name = "radioButtonEntregador";
             radioButtonEntregador.Size = new Size(93, 26);
-            radioButtonEntregador.TabIndex = 85;
-            radioButtonEntregador.TabStop = true;
+            radioButtonEntregador.TabIndex = 8;
             radioButtonEntregador.Text = "Entregador";
             radioButtonEntregador.UseVisualStyleBackColor = true;
             // 
@@ -257,8 +254,7 @@
             radioButtonAtendente.Margin = new Padding(0);
             radioButtonAtendente.Name = "radioButtonAtendente";
             radioButtonAtendente.Size = new Size(89, 26);
-            radioButtonAtendente.TabIndex = 84;
-            radioButtonAtendente.TabStop = true;
+            radioButtonAtendente.TabIndex = 7;
             radioButtonAtendente.Text = "Atendente";
             radioButtonAtendente.UseVisualStyleBackColor = true;
             // 
@@ -281,8 +277,7 @@
             radioButtonAdmin.Margin = new Padding(0);
             radioButtonAdmin.Name = "radioButtonAdmin";
             radioButtonAdmin.Size = new Size(112, 26);
-            radioButtonAdmin.TabIndex = 82;
-            radioButtonAdmin.TabStop = true;
+            radioButtonAdmin.TabIndex = 6;
             radioButtonAdmin.Text = "Administrador";
             radioButtonAdmin.UseVisualStyleBackColor = true;
             // 
@@ -294,7 +289,7 @@
             textBoxMatrícula.Margin = new Padding(3, 2, 3, 2);
             textBoxMatrícula.Name = "textBoxMatrícula";
             textBoxMatrícula.Size = new Size(300, 28);
-            textBoxMatrícula.TabIndex = 81;
+            textBoxMatrícula.TabIndex = 2;
             // 
             // labelMatricula
             // 
@@ -314,7 +309,7 @@
             textBoxValidadeCarta.Margin = new Padding(3, 2, 3, 2);
             textBoxValidadeCarta.Name = "textBoxValidadeCarta";
             textBoxValidadeCarta.Size = new Size(197, 28);
-            textBoxValidadeCarta.TabIndex = 79;
+            textBoxValidadeCarta.TabIndex = 14;
             // 
             // labelValidadeCarta
             // 
@@ -334,7 +329,7 @@
             textBoxNumero.Margin = new Padding(3, 2, 3, 2);
             textBoxNumero.Name = "textBoxNumero";
             textBoxNumero.Size = new Size(137, 28);
-            textBoxNumero.TabIndex = 77;
+            textBoxNumero.TabIndex = 22;
             // 
             // labelNumber
             // 
@@ -354,7 +349,7 @@
             textBoxComplemento.Margin = new Padding(3, 2, 3, 2);
             textBoxComplemento.Name = "textBoxComplemento";
             textBoxComplemento.Size = new Size(323, 28);
-            textBoxComplemento.TabIndex = 75;
+            textBoxComplemento.TabIndex = 23;
             // 
             // labelComplemento
             // 
@@ -374,7 +369,7 @@
             textBoxPais.Margin = new Padding(3, 2, 3, 2);
             textBoxPais.Name = "textBoxPais";
             textBoxPais.Size = new Size(195, 28);
-            textBoxPais.TabIndex = 73;
+            textBoxPais.TabIndex = 17;
             // 
             // labelPais
             // 
@@ -394,7 +389,7 @@
             textBoxCep.Margin = new Padding(3, 2, 3, 2);
             textBoxCep.Name = "textBoxCep";
             textBoxCep.Size = new Size(282, 28);
-            textBoxCep.TabIndex = 71;
+            textBoxCep.TabIndex = 16;
             // 
             // labelCep
             // 
@@ -414,7 +409,7 @@
             btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(194, 42);
-            btnCancel.TabIndex = 69;
+            btnCancel.TabIndex = 25;
             btnCancel.Text = "Cancelar";
             btnCancel.UseVisualStyleBackColor = false;
             // 
@@ -427,7 +422,7 @@
             btnRegister.Margin = new Padding(3, 2, 3, 2);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(194, 42);
-            btnRegister.TabIndex = 68;
+            btnRegister.TabIndex = 24;
             btnRegister.Text = "Cadastrar";
             btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
@@ -440,7 +435,7 @@
             textBoxCpf.Margin = new Padding(3, 2, 3, 2);
             textBoxCpf.Name = "textBoxCpf";
             textBoxCpf.Size = new Size(302, 28);
-            textBoxCpf.TabIndex = 67;
+            textBoxCpf.TabIndex = 1;
             // 
             // labelCpf
             // 
@@ -460,7 +455,7 @@
             textBoxPhone.Margin = new Padding(3, 2, 3, 2);
             textBoxPhone.Name = "textBoxPhone";
             textBoxPhone.Size = new Size(314, 28);
-            textBoxPhone.TabIndex = 65;
+            textBoxPhone.TabIndex = 4;
             // 
             // labelPhone
             // 
@@ -480,7 +475,7 @@
             textBoxEmail.Margin = new Padding(3, 2, 3, 2);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(676, 28);
-            textBoxEmail.TabIndex = 63;
+            textBoxEmail.TabIndex = 3;
             // 
             // labelEmail
             // 
@@ -500,7 +495,7 @@
             textBoxName.Margin = new Padding(3, 2, 3, 2);
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(596, 28);
-            textBoxName.TabIndex = 61;
+            textBoxName.TabIndex = 0;
             // 
             // labelName
             // 
@@ -524,7 +519,7 @@
             groupBoxFuncao.Name = "groupBoxFuncao";
             groupBoxFuncao.Padding = new Padding(0);
             groupBoxFuncao.Size = new Size(345, 49);
-            groupBoxFuncao.TabIndex = 101;
+            groupBoxFuncao.TabIndex = 5;
             groupBoxFuncao.TabStop = false;
             groupBoxFuncao.UseCompatibleTextRendering = true;
             // 
@@ -535,7 +530,7 @@
             groupBoxCarta.Location = new Point(40, 462);
             groupBoxCarta.Name = "groupBoxCarta";
             groupBoxCarta.Size = new Size(158, 44);
-            groupBoxCarta.TabIndex = 102;
+            groupBoxCarta.TabIndex = 10;
             groupBoxCarta.TabStop = false;
             // 
             // panelCarta
@@ -548,7 +543,7 @@
             panelCarta.Location = new Point(270, 434);
             panelCarta.Name = "panelCarta";
             panelCarta.Size = new Size(537, 148);
-            panelCarta.TabIndex = 103;
+            panelCarta.TabIndex = 13;
             panelCarta.Visible = false;
             // 
             // CadastrarFuncionario
@@ -638,6 +633,7 @@
         private TextBox textBoxCep;
         private Label labelCep;
         private Button btnCancel;
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public Button btnRegister;
         private TextBox textBoxCpf;
         private Label labelCpf;
