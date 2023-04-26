@@ -38,7 +38,7 @@
             button2 = new Button();
             labelPesquisa = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
+            textBoxPesquisa = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,8 +59,7 @@
             tableLayoutPanel1.Controls.Add(theadNome, 1, 0);
             tableLayoutPanel1.Controls.Add(theadId, 0, 0);
             tableLayoutPanel1.Controls.Add(button2, 5, 1);
-            tableLayoutPanel1.Location = new Point(54, 169);
-            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Location = new Point(47, 127);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 10;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
@@ -73,7 +72,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.Size = new Size(823, 415);
+            tableLayoutPanel1.Size = new Size(720, 311);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // label6
@@ -83,10 +82,10 @@
             label6.Dock = DockStyle.Fill;
             label6.FlatStyle = FlatStyle.Flat;
             label6.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(682, 1);
+            label6.Location = new Point(596, 1);
             label6.Margin = new Padding(0);
             label6.Name = "label6";
-            label6.Size = new Size(140, 40);
+            label6.Size = new Size(123, 30);
             label6.TabIndex = 5;
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -98,10 +97,10 @@
             theadEmail.FlatStyle = FlatStyle.Flat;
             theadEmail.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             theadEmail.ForeColor = SystemColors.Control;
-            theadEmail.Location = new Point(546, 1);
+            theadEmail.Location = new Point(477, 1);
             theadEmail.Margin = new Padding(0);
             theadEmail.Name = "theadEmail";
-            theadEmail.Size = new Size(135, 40);
+            theadEmail.Size = new Size(118, 30);
             theadEmail.TabIndex = 4;
             theadEmail.Text = "Email";
             theadEmail.TextAlign = ContentAlignment.MiddleCenter;
@@ -114,10 +113,10 @@
             theadCpf.FlatStyle = FlatStyle.Flat;
             theadCpf.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             theadCpf.ForeColor = SystemColors.Control;
-            theadCpf.Location = new Point(410, 1);
+            theadCpf.Location = new Point(358, 1);
             theadCpf.Margin = new Padding(0);
             theadCpf.Name = "theadCpf";
-            theadCpf.Size = new Size(135, 40);
+            theadCpf.Size = new Size(118, 30);
             theadCpf.TabIndex = 3;
             theadCpf.Text = "Cpf";
             theadCpf.TextAlign = ContentAlignment.MiddleCenter;
@@ -130,10 +129,10 @@
             theadTelefone.FlatStyle = FlatStyle.Flat;
             theadTelefone.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             theadTelefone.ForeColor = SystemColors.Control;
-            theadTelefone.Location = new Point(274, 1);
+            theadTelefone.Location = new Point(239, 1);
             theadTelefone.Margin = new Padding(0);
             theadTelefone.Name = "theadTelefone";
-            theadTelefone.Size = new Size(135, 40);
+            theadTelefone.Size = new Size(118, 30);
             theadTelefone.TabIndex = 2;
             theadTelefone.Text = "Telefone";
             theadTelefone.TextAlign = ContentAlignment.MiddleCenter;
@@ -146,10 +145,10 @@
             theadNome.FlatStyle = FlatStyle.Flat;
             theadNome.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             theadNome.ForeColor = SystemColors.Control;
-            theadNome.Location = new Point(138, 1);
+            theadNome.Location = new Point(120, 1);
             theadNome.Margin = new Padding(0);
             theadNome.Name = "theadNome";
-            theadNome.Size = new Size(135, 40);
+            theadNome.Size = new Size(118, 30);
             theadNome.TabIndex = 1;
             theadNome.Text = "Nome";
             theadNome.TextAlign = ContentAlignment.MiddleCenter;
@@ -165,7 +164,7 @@
             theadId.Location = new Point(1, 1);
             theadId.Margin = new Padding(0);
             theadId.Name = "theadId";
-            theadId.Size = new Size(136, 40);
+            theadId.Size = new Size(118, 30);
             theadId.TabIndex = 0;
             theadId.Text = "Id";
             theadId.TextAlign = ContentAlignment.MiddleCenter;
@@ -178,11 +177,12 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(688, 43);
-            button2.Margin = new Padding(6, 1, 6, 1);
+            button2.Location = new Point(601, 33);
+            button2.Margin = new Padding(5, 1, 5, 1);
             button2.Name = "button2";
-            button2.Size = new Size(128, 38);
-            button2.TabIndex = 6;
+            button2.Size = new Size(113, 28);
+            button2.TabIndex = 2;
+            button2.TabStop = false;
             button2.Text = "Editar";
             button2.UseVisualStyleBackColor = false;
             // 
@@ -190,38 +190,38 @@
             // 
             labelPesquisa.AutoSize = true;
             labelPesquisa.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPesquisa.Location = new Point(40, 34);
+            labelPesquisa.Location = new Point(35, 26);
             labelPesquisa.Name = "labelPesquisa";
-            labelPesquisa.Size = new Size(112, 34);
+            labelPesquisa.Size = new Size(89, 26);
             labelPesquisa.TabIndex = 18;
             labelPesquisa.Text = "Pesquisar:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(47, 36);
+            label1.Location = new Point(41, 27);
             label1.Name = "label1";
-            label1.Size = new Size(0, 20);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 17;
             // 
-            // textBox1
+            // textBoxPesquisa
             // 
-            textBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(46, 78);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(418, 37);
-            textBox1.TabIndex = 16;
+            textBoxPesquisa.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPesquisa.Location = new Point(40, 58);
+            textBoxPesquisa.Margin = new Padding(3, 2, 3, 2);
+            textBoxPesquisa.Name = "textBoxPesquisa";
+            textBoxPesquisa.Size = new Size(366, 31);
+            textBoxPesquisa.TabIndex = 1;
             // 
             // tabelaClientes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(labelPesquisa);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxPesquisa);
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "tabelaClientes";
             Text = "Tabela de Clientes";
             tableLayoutPanel1.ResumeLayout(false);
@@ -241,6 +241,6 @@
         private Button button2;
         private Label labelPesquisa;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox textBoxPesquisa;
     }
 }

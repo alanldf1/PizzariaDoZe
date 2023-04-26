@@ -11,11 +11,18 @@ using System.Windows.Forms;
 
 namespace PizzariaDoZe.Forms.Configuracoes
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
+
     public partial class telaConfiguracoes : Form
     {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public telaConfiguracoes()
         {
             InitializeComponent();
+
+            Funcoes.EventoFocoCampos(this);
+            this.ActiveControl = comboBoxLanguage;
+
         }
 
         /// <summary>

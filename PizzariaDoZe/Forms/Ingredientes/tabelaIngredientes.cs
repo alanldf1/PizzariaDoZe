@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace PizzariaDoZe.Forms.Ingredientes
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class tabelaIngredientes : Form
     {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public tabelaIngredientes()
         {
             InitializeComponent();
@@ -24,6 +26,10 @@ namespace PizzariaDoZe.Forms.Ingredientes
             //ajuste manual de campos ou mensagens para o usuário que não puderam ser automatizadas acima
             //this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+
+            Funcoes.EventoFocoCampos(this);
+
+            this.ActiveControl = textBoxPesquisa;
 
         }
 

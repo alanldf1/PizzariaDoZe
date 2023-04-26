@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace PizzariaDoZe.Forms.Funcionarios
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class CadastrarFuncionario : Form
     {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public CadastrarFuncionario()
         {
             InitializeComponent();
@@ -25,12 +27,16 @@ namespace PizzariaDoZe.Forms.Funcionarios
             //ajuste manual de campos ou mensagens para o usuário que não puderam ser automatizadas acima
             //this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+
+            Funcoes.EventoFocoCampos(this);
+
+            this.ActiveControl = textBoxName;
+
         }
 
         private void radioButtonCartaSim_CheckedChanged(object sender, EventArgs e)
         {
-            String? txt;
-            txt = groupBoxCarta.Controls.OfType<RadioButton>().SingleOrDefault(RadioButton => RadioButton.Checked).Text;
+            String? txt = groupBoxCarta.Controls.OfType<RadioButton>().SingleOrDefault(RadioButton => RadioButton.Checked)!.Text;
 
             if (txt == "Sim")
             {
@@ -63,7 +69,7 @@ namespace PizzariaDoZe.Forms.Funcionarios
             String cpf = this.textBoxCpf.Text.Trim();
             String email = this.textBoxEmail.Text.Trim();
             String phone = this.textBoxPhone.Text.Trim();
-            String? funcao = groupBoxFuncao.Controls.OfType<RadioButton>().SingleOrDefault(RadioButton => RadioButton.Checked).Text;
+            String? funcao = groupBoxFuncao.Controls.OfType<RadioButton>().SingleOrDefault(RadioButton => RadioButton.Checked)!.Text;
 
 
 
@@ -89,25 +95,25 @@ namespace PizzariaDoZe.Forms.Funcionarios
                 return false;
             }
 
-            if (funcao == "Entregador")
-            {
-                Boolean checkBool = true;
-                String carta = groupBoxCarta.Controls.OfType<RadioButton>().SingleOrDefault(RadioButton => RadioButton.Checked).Text;
-                String validadeCarta = this.textBoxValidadeCarta.Text.Trim();
-                String observacao = this.textBoxObservation.Text.Trim();
+            //if (funcao == "Entregador")
+            //{
+            //    Boolean checkBool = true;
+            //    String carta = groupBoxCarta.Controls.OfType<RadioButton>().SingleOrDefault(RadioButton => RadioButton.Checked).Text;
+            //    String validadeCarta = this.textBoxValidadeCarta.Text.Trim();
+            //    String observacao = this.textBoxObservation.Text.Trim();
 
-                if (carta == "")
-                {
-                    MessageBox.Show("Selecione se o funcionário possui carteira de motorista");
-                    checkBool = false;
-                }
+            //    if (carta == "")
+            //    {
+            //        MessageBox.Show("Selecione se o funcionário possui carteira de motorista");
+            //        checkBool = false;
+            //    }
 
-                if (validadeCarta == "")
-                {
-                    MessageBox.Show("Selecione se o funcionário possui carteira de motorista");
-                    checkBool = false;
-                }
-            }
+            //    if (validadeCarta == "")
+            //    {
+            //        MessageBox.Show("Selecione se o funcionário possui carteira de motorista");
+            //        checkBool = false;
+            //    }
+            //}
 
             return true;
         }

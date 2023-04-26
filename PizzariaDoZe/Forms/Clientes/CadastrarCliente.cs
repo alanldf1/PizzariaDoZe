@@ -7,23 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PizzariaDoZe.Forms.Clientes
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class CadastrarCliente : Form
     {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public CadastrarCliente()
         {
             InitializeComponent();
 
-            #region idioma/região interface - satellite assembly
-            // com base no idioma/região escolhido pelo usuário,
-            // ajusta as propriedades dos componentes da tela com base no conteúdo do arquivo resources
-            Funcoes.AjustaResourcesControl(this);
-
-            //ajuste manual de campos ou mensagens para o usuário que não puderam ser automatizadas acima
-            //this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
-            #endregion
+            Funcoes.EventoFocoCampos(this);
+            this.ActiveControl = textBoxName;
         }
 
         /// <summary>
@@ -79,6 +76,17 @@ namespace PizzariaDoZe.Forms.Clientes
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBoxComplemento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CadastrarCliente_Load(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

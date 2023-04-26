@@ -30,7 +30,7 @@
         {
             labelPesquisa = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
+            textBoxPesquisa = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             label6 = new Label();
             theadTipo = new Label();
@@ -46,27 +46,28 @@
             // 
             labelPesquisa.AutoSize = true;
             labelPesquisa.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPesquisa.Location = new Point(24, 28);
+            labelPesquisa.Location = new Point(21, 21);
             labelPesquisa.Name = "labelPesquisa";
-            labelPesquisa.Size = new Size(112, 34);
+            labelPesquisa.Size = new Size(89, 26);
             labelPesquisa.TabIndex = 19;
             labelPesquisa.Text = "Pesquisar:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 30);
+            label1.Location = new Point(27, 22);
             label1.Name = "label1";
-            label1.Size = new Size(0, 20);
+            label1.Size = new Size(0, 15);
             label1.TabIndex = 18;
             // 
-            // textBox1
+            // textBoxPesquisa
             // 
-            textBox1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(30, 72);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(418, 37);
-            textBox1.TabIndex = 17;
+            textBoxPesquisa.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPesquisa.Location = new Point(26, 54);
+            textBoxPesquisa.Margin = new Padding(3, 2, 3, 2);
+            textBoxPesquisa.Name = "textBoxPesquisa";
+            textBoxPesquisa.Size = new Size(366, 31);
+            textBoxPesquisa.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -85,8 +86,7 @@
             tableLayoutPanel1.Controls.Add(theadCod, 1, 0);
             tableLayoutPanel1.Controls.Add(theadId, 0, 0);
             tableLayoutPanel1.Controls.Add(btnEditar, 5, 1);
-            tableLayoutPanel1.Location = new Point(30, 141);
-            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Location = new Point(26, 106);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 10;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
@@ -99,7 +99,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.Size = new Size(823, 415);
+            tableLayoutPanel1.Size = new Size(720, 311);
             tableLayoutPanel1.TabIndex = 16;
             // 
             // label6
@@ -109,10 +109,10 @@
             label6.Dock = DockStyle.Fill;
             label6.FlatStyle = FlatStyle.Flat;
             label6.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(682, 1);
+            label6.Location = new Point(596, 1);
             label6.Margin = new Padding(0);
             label6.Name = "label6";
-            label6.Size = new Size(140, 40);
+            label6.Size = new Size(123, 30);
             label6.TabIndex = 5;
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -124,10 +124,10 @@
             theadTipo.FlatStyle = FlatStyle.Flat;
             theadTipo.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             theadTipo.ForeColor = SystemColors.Control;
-            theadTipo.Location = new Point(546, 1);
+            theadTipo.Location = new Point(477, 1);
             theadTipo.Margin = new Padding(0);
             theadTipo.Name = "theadTipo";
-            theadTipo.Size = new Size(135, 40);
+            theadTipo.Size = new Size(118, 30);
             theadTipo.TabIndex = 4;
             theadTipo.Text = "Tipo";
             theadTipo.TextAlign = ContentAlignment.MiddleCenter;
@@ -140,10 +140,10 @@
             theadCategoria.FlatStyle = FlatStyle.Flat;
             theadCategoria.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             theadCategoria.ForeColor = SystemColors.Control;
-            theadCategoria.Location = new Point(410, 1);
+            theadCategoria.Location = new Point(358, 1);
             theadCategoria.Margin = new Padding(0);
             theadCategoria.Name = "theadCategoria";
-            theadCategoria.Size = new Size(135, 40);
+            theadCategoria.Size = new Size(118, 30);
             theadCategoria.TabIndex = 3;
             theadCategoria.Text = "Categoria";
             theadCategoria.TextAlign = ContentAlignment.MiddleCenter;
@@ -156,10 +156,10 @@
             theadNome.FlatStyle = FlatStyle.Flat;
             theadNome.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             theadNome.ForeColor = SystemColors.Control;
-            theadNome.Location = new Point(274, 1);
+            theadNome.Location = new Point(239, 1);
             theadNome.Margin = new Padding(0);
             theadNome.Name = "theadNome";
-            theadNome.Size = new Size(135, 40);
+            theadNome.Size = new Size(118, 30);
             theadNome.TabIndex = 2;
             theadNome.Text = "Nome";
             theadNome.TextAlign = ContentAlignment.MiddleCenter;
@@ -172,10 +172,10 @@
             theadCod.FlatStyle = FlatStyle.Flat;
             theadCod.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             theadCod.ForeColor = SystemColors.Control;
-            theadCod.Location = new Point(138, 1);
+            theadCod.Location = new Point(120, 1);
             theadCod.Margin = new Padding(0);
             theadCod.Name = "theadCod";
-            theadCod.Size = new Size(135, 40);
+            theadCod.Size = new Size(118, 30);
             theadCod.TabIndex = 1;
             theadCod.Text = "Código";
             theadCod.TextAlign = ContentAlignment.MiddleCenter;
@@ -191,7 +191,7 @@
             theadId.Location = new Point(1, 1);
             theadId.Margin = new Padding(0);
             theadId.Name = "theadId";
-            theadId.Size = new Size(136, 40);
+            theadId.Size = new Size(118, 30);
             theadId.TabIndex = 0;
             theadId.Text = "Id";
             theadId.TextAlign = ContentAlignment.MiddleCenter;
@@ -204,24 +204,26 @@
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnEditar.ForeColor = SystemColors.Control;
-            btnEditar.Location = new Point(688, 43);
-            btnEditar.Margin = new Padding(6, 1, 6, 1);
+            btnEditar.Location = new Point(601, 33);
+            btnEditar.Margin = new Padding(5, 1, 5, 1);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(128, 38);
-            btnEditar.TabIndex = 6;
+            btnEditar.Size = new Size(113, 28);
+            btnEditar.TabIndex = 1;
+            btnEditar.TabStop = false;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
             // 
             // tabelaSabores
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(896, 600);
+            ClientSize = new Size(784, 450);
             Controls.Add(labelPesquisa);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxPesquisa);
             Controls.Add(tableLayoutPanel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "tabelaSabores";
             Text = "tabelaSabores";
             tableLayoutPanel1.ResumeLayout(false);
@@ -234,7 +236,7 @@
 
         private Label labelPesquisa;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox textBoxPesquisa;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label6;
         private Label theadTipo;
