@@ -36,7 +36,7 @@ namespace PizzariaDoZe.Forms.Clientes
             userControlRegister.btnCancel.Click += btnCancel_Click;
         }
 
-        public Form Parent { get; set; }
+        //public Form Parent { get; set; }
 
         /// <summary>
         /// Faz a verificação e envia os dados do formulario
