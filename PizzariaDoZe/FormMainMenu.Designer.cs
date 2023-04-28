@@ -1,5 +1,8 @@
 ﻿namespace PizzariaDoZe
 {
+    /// <summary>
+    /// Sistema principal
+    /// </summary>
     partial class FormMainMenu
     {
         /// <summary>
@@ -287,6 +290,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormMainMenu";
             Text = "Pizzaria do Zé";
+            FormClosing += FormMainMenu_FormClosing;
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             panelLogo.PerformLayout();

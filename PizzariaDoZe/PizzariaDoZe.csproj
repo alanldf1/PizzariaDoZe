@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <None Remove="Forms\Sabores\1p5oqtys.y5z~" />
+    <None Remove="UserControlRegister.Designer.cs~RF4287085.TMP" />
   </ItemGroup>
 
   <ItemGroup>

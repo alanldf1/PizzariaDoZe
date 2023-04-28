@@ -23,6 +23,7 @@ namespace PizzariaDoZe.Forms.Configuracoes
             Funcoes.EventoFocoCampos(this);
             this.ActiveControl = comboBoxLanguage;
 
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
         }
 
         /// <summary>

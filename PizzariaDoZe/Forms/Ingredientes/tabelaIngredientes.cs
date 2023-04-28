@@ -31,6 +31,9 @@ namespace PizzariaDoZe.Forms.Ingredientes
 
             this.ActiveControl = textBoxPesquisa;
 
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
+
         }
 
         private void tabelaIngredientes_Load(object sender, EventArgs e)

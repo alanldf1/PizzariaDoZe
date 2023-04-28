@@ -32,6 +32,8 @@ namespace PizzariaDoZe.Forms.Funcionarios
 
             this.ActiveControl = textBoxName;
 
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
         }
 
         private void radioButtonCartaSim_CheckedChanged(object sender, EventArgs e)

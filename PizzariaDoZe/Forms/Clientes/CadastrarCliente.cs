@@ -7,21 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PizzariaDoZe.Forms.Clientes
 {
 #pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class CadastrarCliente : Form
     {
+        public Button? currentButton;
+
+        public Form currentForm;
 #pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
-        public CadastrarCliente()
+        public CadastrarCliente(Button lastButton, Form lastForm)
         {
             InitializeComponent();
 
             Funcoes.EventoFocoCampos(this);
             this.ActiveControl = textBoxName;
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
+            currentButton = lastButton;
+            currentForm = lastForm;
+            //UserControlRegister register = new();
+            //register.Dock = DockStyle.Bottom;
+            //Controls.Add(register);
+
+            userControlRegister.btnRegister.Click += btnRegister_Click;
+            userControlRegister.btnCancel.Click += btnCancel_Click;
         }
+
+        public Form Parent { get; set; }
 
         /// <summary>
         /// Faz a verificação e envia os dados do formulario
@@ -75,7 +90,9 @@ namespace PizzariaDoZe.Forms.Clientes
         /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            //MessageBox.Show(currentButton.Text);
+                
+            //Close();
         }
 
         private void textBoxComplemento_TextChanged(object sender, EventArgs e)
@@ -85,8 +102,20 @@ namespace PizzariaDoZe.Forms.Clientes
 
         private void CadastrarCliente_Load(object sender, EventArgs e)
         {
-            
 
+
+        }
+
+        private void userControlRegister1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CadastrarCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+
+            //lastForm.OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, buttonText);
         }
     }
 }

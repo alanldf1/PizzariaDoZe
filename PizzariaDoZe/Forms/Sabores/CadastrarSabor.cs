@@ -30,6 +30,8 @@ namespace PizzariaDoZe.Forms.Sabores
             Funcoes.EventoFocoCampos(this);
 
             this.ActiveControl = textBoxName;
+
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
         }
 
     }

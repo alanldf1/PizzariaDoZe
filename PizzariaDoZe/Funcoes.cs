@@ -101,5 +101,42 @@ namespace PizzariaDoZe
                 }
             }
         }
+
+        public static Button? lastButton = null;
+
+        /// <summary>
+        /// Tratar eventos de teclado, no caso tecla ENTER funcionando com TAB e tecla ESC para fechar
+        /// </summary>
+        /// <remarks>KeyPreview do formulário para true.</remarks>
+        /// <param name="sender">Objeto que gerou o evento</param>
+        /// <param name="e">Evento que foi capturado</param>
+        /// <example>No construtor do formulário:
+        /// this.KeyDown += new System.Windows.Forms.KeyEventHandler(ClassFuncoes.FormEventoKeyDown);
+        ///</example>
+        public static void FormEventoKeyDown(object sender, KeyEventArgs e)
+        {
+            //obtém o form onde o componente gerou o evento
+            Control x = (Control)sender;
+            Form form = x.FindForm();
+            //verifica se foi pressionado ENTER
+            if (e.KeyCode == Keys.Enter)
+            {
+                //Obtém ou define um valor que indica se o evento de chave deve ser passado para o controle subjacente.
+                //true caso o evento chave não deva ser enviado ao controle; caso contrário, false
+                //com isso evitamos o som de erro toda vez que pressionamos enter em algum campo
+                e.SuppressKeyPress = true;
+                //SendKeys.Send("{TAB}");
+                form.SelectNextControl(form.ActiveControl, !e.Shift, true, true, true);
+            }
+            //verifica se foi pressionado ESC
+            else if (e.KeyCode == Keys.Escape)
+            {
+                System.Windows.Forms.Application.Exit();
+
+                //form.Close();
+
+            }
+        }
+
     }
 }

@@ -30,6 +30,9 @@ namespace PizzariaDoZe.Forms.Clientes
             Funcoes.EventoFocoCampos(this);
             this.ActiveControl = textBoxPesquisa;
 
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
+
 
         }
 

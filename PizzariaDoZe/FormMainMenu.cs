@@ -1,11 +1,13 @@
 using PizzariaDoZe.Properties;
 using System.Drawing.Imaging;
+using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PizzariaDoZe
 {
-    #pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class FormMainMenu : Form
     {
         /// <summary>
@@ -23,9 +25,12 @@ namespace PizzariaDoZe
             //ajuste manual de campos ou mensagens para o usuário que não puderam ser automatizadas acima
             //this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
         }
 
-        private Button? currentButton;
+
+
+        public Button? currentButton;
         /// <summary>
         /// Vai salvar o formulário ativo, ao abrir outro formulario ele ira salvar em cima
         /// </summary>
@@ -40,10 +45,12 @@ namespace PizzariaDoZe
         {
             if (btnSender != null)
             {
+
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton(imageName);
                     currentButton = (Button)btnSender;
+                    Funcoes.lastButton = (Button)btnSender;
                     currentButton.BackColor = Color.Gainsboro;
                     currentButton.ForeColor = Color.FromArgb(76, 10, 1);
                     string path = Directory.GetCurrentDirectory() + "\\..\\..\\..\\Resources\\" + imageName + "-red.png";
@@ -89,6 +96,7 @@ namespace PizzariaDoZe
             if (thisButton.Name != "btnHome")
             {
                 activeForm = childForm;
+                //childForm.Parent(this);
                 childForm.TopLevel = false;
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Fill;
@@ -114,6 +122,7 @@ namespace PizzariaDoZe
             }
             if (thisButton.Name != "btnInvisible")
             {
+                MessageBox.Show(imageName);
                 ActivateButton(btnSender, imageName);
                 lblTitle.Text = thisButton.Text;
             }
@@ -135,7 +144,9 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, "clientes");
+            String buttonText = (sender as Button).Text.ToLower().Trim();
+            OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, buttonText);
+
         }
 
         /// <summary>
@@ -145,7 +156,8 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Funcionarios.tabelaFuncionarios(), sender, "funcionarios");
+            String buttonText = (sender as Button).Text.ToLower().Trim();
+            OpenChildForm(new Forms.Funcionarios.tabelaFuncionarios(), sender, buttonText);
         }
 
         /// <summary>
@@ -155,7 +167,8 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnSabores_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Sabores.tabelaSabores(), sender, "sabores");
+            String buttonText = (sender as Button).Text.ToLower().Trim();
+            OpenChildForm(new Forms.Sabores.tabelaSabores(), sender, buttonText);
 
         }
 
@@ -166,7 +179,8 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnIngredientes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Ingredientes.tabelaIngredientes(), sender, "ingredientes");
+            String buttonText = (sender as Button).Text.ToLower().Trim();
+            OpenChildForm(new Forms.Ingredientes.tabelaIngredientes(), sender, buttonText);
 
         }
 
@@ -177,7 +191,8 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnConfiguracoes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Configuracoes.telaConfiguracoes(), sender, "configuracoes");
+            String buttonText = (sender as Button).Text.ToLower().Trim();
+            OpenChildForm(new Forms.Configuracoes.telaConfiguracoes(), sender, buttonText);
         }
 
         /// <summary>
@@ -188,27 +203,39 @@ namespace PizzariaDoZe
         private void btnInvisible_Click(object sender, EventArgs e)
         {
             Button? butt = (Button)sender;
-            if ((String?)butt.Tag == "Clientes")
+            String buttonTag = (String?)butt.Tag;
+            String buttonTagLower = buttonTag.ToLower();
+            if (buttonTag == "Clientes")
             {
-                this.btnInvisible.Visible = false;
-                OpenChildForm(new Forms.Clientes.CadastrarCliente(), sender, "clientes");
+                this.btnInvisible.Visible = false;                
+                OpenChildForm(new Forms.Clientes.CadastrarCliente(butt, this), sender, buttonTagLower);
             }
-            else if ((String?)butt.Tag == "Funcionarios")
+            else if (buttonTag == "Funcionarios")
             {
                 this.btnInvisible.Visible = false;
-                OpenChildForm(new Forms.Funcionarios.CadastrarFuncionario(), sender, "funcionarios");
+                OpenChildForm(new Forms.Funcionarios.CadastrarFuncionario(), sender, buttonTagLower);
             }
-            else if ((String?)butt.Tag == "Sabores")
+            else if (buttonTag == "Sabores")
             {
                 this.btnInvisible.Visible = false;
-                OpenChildForm(new Forms.Sabores.CadastrarSabor(), sender, "sabores");
+                OpenChildForm(new Forms.Sabores.CadastrarSabor(), sender, buttonTagLower);
             }
-            else if ((String?)butt.Tag == "Ingredientes")
+            else if (buttonTag == "Ingredientes")
             {
                 this.btnInvisible.Visible = false;
-                OpenChildForm(new Forms.Ingredientes.CadastrarIngrediente(), sender, "ingredientes");
+                OpenChildForm(new Forms.Ingredientes.CadastrarIngrediente(), sender, buttonTagLower);
             }
         }
 
+        private void FormMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Display a MsgBox asking the user to save changes or abort.
+            if (MessageBox.Show("Deseja mesmo fechar o programa?", "Pizzaria do zé",
+               MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
+
 }

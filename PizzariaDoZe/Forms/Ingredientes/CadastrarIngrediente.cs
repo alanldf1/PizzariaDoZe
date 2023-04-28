@@ -31,6 +31,7 @@ namespace PizzariaDoZe.Forms.Ingredientes
 
             this.ActiveControl = textBoxName;
 
+            this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
         }
     }
 }
