@@ -22,6 +22,15 @@ namespace PizzariaDoZe
             }
         }
 
+        public static void AjustaResourcesItem(ContextMenuStrip cmt)
+        {
+            ComponentResourceManager resources = new(typeof(Properties.Resources));
+            foreach (ToolStripItem c in cmt.Items)
+            {
+                resources.ApplyResources(c, c.Name);
+            }
+        }
+
         /// <summary>
         /// Altera a cor do BackGroud quando o campo ganha o foco
         /// </summary>

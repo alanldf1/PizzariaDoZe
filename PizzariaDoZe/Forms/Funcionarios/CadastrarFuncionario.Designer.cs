@@ -49,7 +49,6 @@
             radioButtonAdmin = new RadioButton();
             textBoxMatrícula = new TextBox();
             labelMatricula = new Label();
-            textBoxValidadeCarta = new TextBox();
             labelValidadeCarta = new Label();
             textBoxNumero = new TextBox();
             labelNumber = new Label();
@@ -57,11 +56,8 @@
             labelComplemento = new Label();
             textBoxPais = new TextBox();
             labelPais = new Label();
-            textBoxCep = new TextBox();
             labelCep = new Label();
-            textBoxCpf = new TextBox();
             labelCpf = new Label();
-            textBoxPhone = new TextBox();
             labelPhone = new Label();
             textBoxEmail = new TextBox();
             labelEmail = new Label();
@@ -70,7 +66,11 @@
             groupBoxFuncao = new GroupBox();
             groupBoxCarta = new GroupBox();
             panelCarta = new Panel();
+            maskedTextBoxValidadeCarta = new MaskedTextBox();
             userControlRegister = new UserControlRegister();
+            maskedTextBoxCpf = new MaskedTextBox();
+            maskedTextBoxPhone = new MaskedTextBox();
+            maskedTextBoxCep = new MaskedTextBox();
             groupBoxFuncao.SuspendLayout();
             groupBoxCarta.SuspendLayout();
             panelCarta.SuspendLayout();
@@ -161,7 +161,7 @@
             // 
             textBoxSenha.BorderStyle = BorderStyle.FixedSingle;
             textBoxSenha.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSenha.Location = new Point(52, 364);
+            textBoxSenha.Location = new Point(46, 365);
             textBoxSenha.Margin = new Padding(3, 2, 3, 2);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.Size = new Size(400, 28);
@@ -171,7 +171,7 @@
             // 
             labelSenha.AutoSize = true;
             labelSenha.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSenha.Location = new Point(46, 338);
+            labelSenha.Location = new Point(40, 338);
             labelSenha.Name = "labelSenha";
             labelSenha.Size = new Size(66, 25);
             labelSenha.TabIndex = 91;
@@ -300,16 +300,6 @@
             labelMatricula.TabIndex = 80;
             labelMatricula.Text = "Matrícula*:";
             // 
-            // textBoxValidadeCarta
-            // 
-            textBoxValidadeCarta.BorderStyle = BorderStyle.FixedSingle;
-            textBoxValidadeCarta.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxValidadeCarta.Location = new Point(25, 42);
-            textBoxValidadeCarta.Margin = new Padding(3, 2, 3, 2);
-            textBoxValidadeCarta.Name = "textBoxValidadeCarta";
-            textBoxValidadeCarta.Size = new Size(197, 28);
-            textBoxValidadeCarta.TabIndex = 14;
-            // 
             // labelValidadeCarta
             // 
             labelValidadeCarta.AutoSize = true;
@@ -380,16 +370,6 @@
             labelPais.TabIndex = 72;
             labelPais.Text = "País*:";
             // 
-            // textBoxCep
-            // 
-            textBoxCep.BorderStyle = BorderStyle.FixedSingle;
-            textBoxCep.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCep.Location = new Point(46, 605);
-            textBoxCep.Margin = new Padding(3, 2, 3, 2);
-            textBoxCep.Name = "textBoxCep";
-            textBoxCep.Size = new Size(282, 28);
-            textBoxCep.TabIndex = 16;
-            // 
             // labelCep
             // 
             labelCep.AutoSize = true;
@@ -400,16 +380,6 @@
             labelCep.TabIndex = 70;
             labelCep.Text = "CEP*:";
             // 
-            // textBoxCpf
-            // 
-            textBoxCpf.BorderStyle = BorderStyle.FixedSingle;
-            textBoxCpf.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCpf.Location = new Point(46, 138);
-            textBoxCpf.Margin = new Padding(3, 2, 3, 2);
-            textBoxCpf.Name = "textBoxCpf";
-            textBoxCpf.Size = new Size(302, 28);
-            textBoxCpf.TabIndex = 1;
-            // 
             // labelCpf
             // 
             labelCpf.AutoSize = true;
@@ -419,16 +389,6 @@
             labelCpf.Size = new Size(48, 25);
             labelCpf.TabIndex = 66;
             labelCpf.Text = "CPF*:";
-            // 
-            // textBoxPhone
-            // 
-            textBoxPhone.BorderStyle = BorderStyle.FixedSingle;
-            textBoxPhone.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPhone.Location = new Point(46, 284);
-            textBoxPhone.Margin = new Padding(3, 2, 3, 2);
-            textBoxPhone.Name = "textBoxPhone";
-            textBoxPhone.Size = new Size(314, 28);
-            textBoxPhone.TabIndex = 4;
             // 
             // labelPhone
             // 
@@ -509,15 +469,24 @@
             // panelCarta
             // 
             panelCarta.Anchor = AnchorStyles.Right;
+            panelCarta.Controls.Add(maskedTextBoxValidadeCarta);
             panelCarta.Controls.Add(labelObservation);
             panelCarta.Controls.Add(labelValidadeCarta);
-            panelCarta.Controls.Add(textBoxValidadeCarta);
             panelCarta.Controls.Add(textBoxObservation);
             panelCarta.Location = new Point(270, 434);
             panelCarta.Name = "panelCarta";
             panelCarta.Size = new Size(537, 148);
             panelCarta.TabIndex = 13;
             panelCarta.Visible = false;
+            // 
+            // maskedTextBoxValidadeCarta
+            // 
+            maskedTextBoxValidadeCarta.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            maskedTextBoxValidadeCarta.Location = new Point(19, 44);
+            maskedTextBoxValidadeCarta.Mask = "00/00/0000";
+            maskedTextBoxValidadeCarta.Name = "maskedTextBoxValidadeCarta";
+            maskedTextBoxValidadeCarta.Size = new Size(155, 28);
+            maskedTextBoxValidadeCarta.TabIndex = 90;
             // 
             // userControlRegister
             // 
@@ -527,12 +496,43 @@
             userControlRegister.Size = new Size(526, 88);
             userControlRegister.TabIndex = 100;
             // 
+            // maskedTextBoxCpf
+            // 
+            maskedTextBoxCpf.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            maskedTextBoxCpf.Location = new Point(46, 143);
+            maskedTextBoxCpf.Mask = "000.000.000-00";
+            maskedTextBoxCpf.Name = "maskedTextBoxCpf";
+            maskedTextBoxCpf.Size = new Size(314, 28);
+            maskedTextBoxCpf.TabIndex = 101;
+            // 
+            // maskedTextBoxPhone
+            // 
+            maskedTextBoxPhone.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            maskedTextBoxPhone.Location = new Point(46, 288);
+            maskedTextBoxPhone.Mask = "(00) 90000-0000";
+            maskedTextBoxPhone.Name = "maskedTextBoxPhone";
+            maskedTextBoxPhone.Size = new Size(314, 28);
+            maskedTextBoxPhone.TabIndex = 102;
+            // 
+            // maskedTextBoxCep
+            // 
+            maskedTextBoxCep.AllowDrop = true;
+            maskedTextBoxCep.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            maskedTextBoxCep.Location = new Point(46, 607);
+            maskedTextBoxCep.Mask = "00000-000";
+            maskedTextBoxCep.Name = "maskedTextBoxCep";
+            maskedTextBoxCep.Size = new Size(255, 28);
+            maskedTextBoxCep.TabIndex = 103;
+            // 
             // CadastrarFuncionario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(800, 937);
+            Controls.Add(maskedTextBoxCep);
+            Controls.Add(maskedTextBoxPhone);
+            Controls.Add(maskedTextBoxCpf);
             Controls.Add(userControlRegister);
             Controls.Add(panelCarta);
             Controls.Add(groupBoxCarta);
@@ -557,11 +557,8 @@
             Controls.Add(labelComplemento);
             Controls.Add(textBoxPais);
             Controls.Add(labelPais);
-            Controls.Add(textBoxCep);
             Controls.Add(labelCep);
-            Controls.Add(textBoxCpf);
             Controls.Add(labelCpf);
-            Controls.Add(textBoxPhone);
             Controls.Add(labelPhone);
             Controls.Add(textBoxEmail);
             Controls.Add(labelEmail);
@@ -604,7 +601,6 @@
         private RadioButton radioButtonAdmin;
         private TextBox textBoxMatrícula;
         private Label labelMatricula;
-        private TextBox textBoxValidadeCarta;
         private Label labelValidadeCarta;
         private TextBox textBoxNumero;
         private Label labelNumber;
@@ -612,11 +608,8 @@
         private Label labelComplemento;
         private TextBox textBoxPais;
         private Label labelPais;
-        private TextBox textBoxCep;
         private Label labelCep;
-        private TextBox textBoxCpf;
         private Label labelCpf;
-        private TextBox textBoxPhone;
         private Label labelPhone;
         private TextBox textBoxEmail;
         private Label labelEmail;
@@ -626,5 +619,9 @@
         private GroupBox groupBoxCarta;
         private Panel panelCarta;
         private UserControlRegister userControlRegister;
+        private MaskedTextBox maskedTextBoxCpf;
+        private MaskedTextBox maskedTextBoxPhone;
+        private MaskedTextBox maskedTextBoxCep;
+        private MaskedTextBox maskedTextBoxValidadeCarta;
     }
 }

@@ -123,6 +123,9 @@
   <data name="btnClientes.Text" xml:space="preserve">
     <value>   Customers</value>
   </data>
+  <data name="btnConfiguracoes.Text" xml:space="preserve">
+    <value>   Settings</value>
+  </data>
   <data name="btnEditar.Text" xml:space="preserve">
     <value>To edit</value>
   </data>
@@ -278,6 +281,24 @@
   </data>
   <data name="theadTipo.Text" xml:space="preserve">
     <value>Type</value>
+  </data>
+  <data name="toolStripMenuItemClientes.Text" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="toolStripMenuItemConfig.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="toolStripMenuItemFuncionarios.Text" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="toolStripMenuItemHome.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="toolStripMenuItemIngredientes.Text" xml:space="preserve">
+    <value>Ingredients</value>
+  </data>
+  <data name="toolStripMenuItemSabores.Text" xml:space="preserve">
+    <value>Flavors</value>
   </data>
   <data name="windowMessage" xml:space="preserve">
     <value>Do you really want to close the program?</value>

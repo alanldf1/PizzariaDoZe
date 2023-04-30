@@ -54,7 +54,7 @@ namespace PizzariaDoZe.Forms.Funcionarios
             else
             {
                 this.panelCarta.Visible = false;
-                this.textBoxValidadeCarta.Text = "";
+                this.maskedTextBoxValidadeCarta.Text = "";
                 this.textBoxObservation.Text = "";
 
             }
@@ -84,9 +84,9 @@ namespace PizzariaDoZe.Forms.Funcionarios
         {
             //Nome, cpf, matricula, email, telefone, funcao -> se for entregador = carteira de motorista, validade e observação, cep, pais, cidade, uf, logradouro, numero, complemento
             String name = this.textBoxName.Text.Trim();
-            String cpf = this.textBoxCpf.Text.Trim();
+            String cpf = this.maskedTextBoxCpf.Text.Trim();
             String email = this.textBoxEmail.Text.Trim();
-            String phone = this.textBoxPhone.Text.Trim();
+            String phone = this.maskedTextBoxPhone.Text.Trim();
             String? funcao = groupBoxFuncao.Controls.OfType<RadioButton>().SingleOrDefault(RadioButton => RadioButton.Checked)!.Text;
 
 
@@ -145,5 +145,6 @@ namespace PizzariaDoZe.Forms.Funcionarios
             }
 
         }
+
     }
 }

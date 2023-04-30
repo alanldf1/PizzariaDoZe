@@ -31,6 +31,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainMenu));
             panelMenu = new Panel();
             btnConfiguracoes = new Button();
             btnIngredientes = new Button();
@@ -45,9 +47,23 @@
             btnInvisible = new Button();
             lblTitle = new Label();
             panelDesktopPane = new Panel();
+            contextMenuStripMain = new ContextMenuStrip(components);
+            toolStripMenuItemHome = new ToolStripMenuItem();
+            toolStripMenuItemClientes = new ToolStripMenuItem();
+            toolStripMenuItemFuncionarios = new ToolStripMenuItem();
+            toolStripMenuItemSabores = new ToolStripMenuItem();
+            toolStripMenuItemIngredientes = new ToolStripMenuItem();
+            toolStripMenuItemConfig = new ToolStripMenuItem();
+            notifyIconSystemTray = new NotifyIcon(components);
+            contextMenuStripSystemTray = new ContextMenuStrip(components);
+            toolStripMenuItemOpen = new ToolStripMenuItem();
+            toolStripMenuItemFinish = new ToolStripMenuItem();
+            toolStripMenuItemAbout = new ToolStripMenuItem();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             panel2.SuspendLayout();
+            contextMenuStripMain.SuspendLayout();
+            contextMenuStripSystemTray.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenu
@@ -268,23 +284,116 @@
             panelDesktopPane.Size = new Size(828, 444);
             panelDesktopPane.TabIndex = 2;
             // 
+            // contextMenuStripMain
+            // 
+            contextMenuStripMain.Items.AddRange(new ToolStripItem[] { toolStripMenuItemHome, toolStripMenuItemClientes, toolStripMenuItemFuncionarios, toolStripMenuItemSabores, toolStripMenuItemIngredientes, toolStripMenuItemConfig });
+            contextMenuStripMain.Name = "contextMenuStripMain";
+            contextMenuStripMain.Size = new Size(224, 136);
+            contextMenuStripMain.Text = "Menu";
+            // 
+            // toolStripMenuItemHome
+            // 
+            toolStripMenuItemHome.Name = "toolStripMenuItemHome";
+            toolStripMenuItemHome.ShortcutKeys = Keys.Control | Keys.Shift | Keys.H;
+            toolStripMenuItemHome.Size = new Size(223, 22);
+            toolStripMenuItemHome.Tag = "Home";
+            toolStripMenuItemHome.Text = "Home";
+            // 
+            // toolStripMenuItemClientes
+            // 
+            toolStripMenuItemClientes.Name = "toolStripMenuItemClientes";
+            toolStripMenuItemClientes.ShortcutKeys = Keys.Control | Keys.Shift | Keys.C;
+            toolStripMenuItemClientes.Size = new Size(223, 22);
+            toolStripMenuItemClientes.Tag = "Clientes";
+            toolStripMenuItemClientes.Text = "Clientes";
+            // 
+            // toolStripMenuItemFuncionarios
+            // 
+            toolStripMenuItemFuncionarios.Name = "toolStripMenuItemFuncionarios";
+            toolStripMenuItemFuncionarios.ShortcutKeys = Keys.Control | Keys.Shift | Keys.F;
+            toolStripMenuItemFuncionarios.Size = new Size(223, 22);
+            toolStripMenuItemFuncionarios.Tag = "Funcionarios";
+            toolStripMenuItemFuncionarios.Text = "Funcionários";
+            // 
+            // toolStripMenuItemSabores
+            // 
+            toolStripMenuItemSabores.Name = "toolStripMenuItemSabores";
+            toolStripMenuItemSabores.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
+            toolStripMenuItemSabores.Size = new Size(223, 22);
+            toolStripMenuItemSabores.Tag = "Sabores";
+            toolStripMenuItemSabores.Text = "Sabores";
+            // 
+            // toolStripMenuItemIngredientes
+            // 
+            toolStripMenuItemIngredientes.Name = "toolStripMenuItemIngredientes";
+            toolStripMenuItemIngredientes.ShortcutKeys = Keys.Control | Keys.Shift | Keys.I;
+            toolStripMenuItemIngredientes.Size = new Size(223, 22);
+            toolStripMenuItemIngredientes.Tag = "Ingredientes";
+            toolStripMenuItemIngredientes.Text = "Ingredientes";
+            // 
+            // toolStripMenuItemConfig
+            // 
+            toolStripMenuItemConfig.Name = "toolStripMenuItemConfig";
+            toolStripMenuItemConfig.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
+            toolStripMenuItemConfig.Size = new Size(223, 22);
+            toolStripMenuItemConfig.Tag = "Configuracoes";
+            toolStripMenuItemConfig.Text = "Configurações";
+            // 
+            // notifyIconSystemTray
+            // 
+            notifyIconSystemTray.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIconSystemTray.BalloonTipText = "A aplicação está em execução em segundo plano";
+            notifyIconSystemTray.BalloonTipTitle = "Pizzaria do zé";
+            notifyIconSystemTray.ContextMenuStrip = contextMenuStripSystemTray;
+            notifyIconSystemTray.Icon = (Icon)resources.GetObject("notifyIconSystemTray.Icon");
+            notifyIconSystemTray.Text = "Pizzaria do Zé";
+            notifyIconSystemTray.MouseDoubleClick += NotifyIconSystemTray_MouseDoubleClick;
+            // 
+            // contextMenuStripSystemTray
+            // 
+            contextMenuStripSystemTray.Items.AddRange(new ToolStripItem[] { toolStripMenuItemOpen, toolStripMenuItemFinish, toolStripMenuItemAbout });
+            contextMenuStripSystemTray.Name = "contextMenuStripSystemTray";
+            contextMenuStripSystemTray.Size = new Size(118, 70);
+            // 
+            // toolStripMenuItemOpen
+            // 
+            toolStripMenuItemOpen.Name = "toolStripMenuItemOpen";
+            toolStripMenuItemOpen.Size = new Size(117, 22);
+            toolStripMenuItemOpen.Text = "Abrir";
+            // 
+            // toolStripMenuItemFinish
+            // 
+            toolStripMenuItemFinish.Name = "toolStripMenuItemFinish";
+            toolStripMenuItemFinish.Size = new Size(117, 22);
+            toolStripMenuItemFinish.Text = "Encerrar";
+            // 
+            // toolStripMenuItemAbout
+            // 
+            toolStripMenuItemAbout.Name = "toolStripMenuItemAbout";
+            toolStripMenuItemAbout.Size = new Size(117, 22);
+            toolStripMenuItemAbout.Text = "Sobre";
+            // 
             // FormMainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
             ClientSize = new Size(1047, 518);
+            ContextMenuStrip = contextMenuStripMain;
             Controls.Add(panelDesktopPane);
             Controls.Add(panel2);
             Controls.Add(panelMenu);
             Name = "FormMainMenu";
             Text = "Pizzaria do Zé";
             FormClosing += FormMainMenu_FormClosing;
+            Resize += FormMainMenu_Resize;
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             panelLogo.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            contextMenuStripMain.ResumeLayout(false);
+            contextMenuStripSystemTray.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -304,5 +413,17 @@
         private Button btnInvisible;
         private Button btnConfiguracoes;
         public Button btnHome;
+        private ContextMenuStrip contextMenuStripMain;
+        private ToolStripMenuItem toolStripMenuItemHome;
+        private ToolStripMenuItem toolStripMenuItemClientes;
+        private ToolStripMenuItem toolStripMenuItemFuncionarios;
+        private ToolStripMenuItem toolStripMenuItemSabores;
+        private ToolStripMenuItem toolStripMenuItemIngredientes;
+        private ToolStripMenuItem toolStripMenuItemConfig;
+        private NotifyIcon notifyIconSystemTray;
+        private ContextMenuStrip contextMenuStripSystemTray;
+        private ToolStripMenuItem toolStripMenuItemOpen;
+        private ToolStripMenuItem toolStripMenuItemFinish;
+        private ToolStripMenuItem toolStripMenuItemAbout;
     }
 }

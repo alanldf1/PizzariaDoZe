@@ -17,7 +17,7 @@ namespace PizzariaDoZe.Forms.Clientes
     {
         private FormMainMenu _mainForm;
 
-        #pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public CadastrarCliente(FormMainMenu mainForm)
         {
             InitializeComponent();
@@ -78,7 +78,7 @@ namespace PizzariaDoZe.Forms.Clientes
         {
             String name = this.textBoxName.Text.Trim();
             String endereco = this.textBoxEndereco.Text.Trim();
-            String phone = this.textBoxPhone.Text.Trim();
+            String phone = this.maskedTextBoxPhone.Text.Trim();
 
             if (name == "")
             {

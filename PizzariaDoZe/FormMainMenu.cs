@@ -27,26 +27,73 @@ namespace PizzariaDoZe
             // com base no idioma/região escolhido pelo usuário,
             // ajusta as propriedades dos componentes da tela com base no conteúdo do arquivo resources
             Funcoes.AjustaResourcesControl(this);
+            Funcoes.AjustaResourcesItem(contextMenuStripMain);
 
             //ajuste manual de campos ou mensagens para o usuário que não puderam ser automatizadas acima
             //this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
             #endregion
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
+            //Menus
+            toolStripMenuItemHome.Click += new EventHandler(btnHome_Click!);
+            toolStripMenuItemClientes.Click += new EventHandler(btnClientes_Click!);
+            toolStripMenuItemFuncionarios.Click += new EventHandler(btnFuncionarios_Click!);
+            toolStripMenuItemIngredientes.Click += new EventHandler(btnIngredientes_Click!);
+            toolStripMenuItemSabores.Click += new EventHandler(btnSabores_Click!);
+            toolStripMenuItemConfig.Click += new EventHandler(btnConfiguracoes_Click!);
+
+            //System Tray
+            toolStripMenuItemOpen.Click += new EventHandler(openForm!);
+            toolStripMenuItemFinish.Click += new EventHandler(closeForm!);
+            toolStripMenuItemAbout.Click += new EventHandler(openForm!);
         }
-
-
-        public String selectedLanguage = (ConfigurationManager.AppSettings.Get("mainLanguage") is not null) ? ConfigurationManager.AppSettings.Get("mainLanguage") : "";
+        /// <summary>
+        /// Guarda o botão clicado por último
+        /// </summary>
         public Button? currentButton;
         /// <summary>
         /// Vai salvar o formulário ativo, ao abrir outro formulario ele ira salvar em cima
         /// </summary>
         public Form? activeForm;
 
+        private void FormMainMenu_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                notifyIconSystemTray.Visible = true;
+                notifyIconSystemTray.ShowBalloonTip(1000);
+            }
+            else if (FormWindowState.Normal == this.WindowState)
+            {
+                notifyIconSystemTray.Visible = false;
+            }
+        }
+
+        private void openForm(object sender, EventArgs e)
+        {
+            this.Show();
+            //this.Activate();
+        }
+        private void closeForm(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void NotifyIconSystemTray_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+            notifyIconSystemTray.Visible = true;
+        }
+
+
         /// <summary>
         /// Ativa o botão conforme o formulário que foi aberto
         /// </summary>
         /// <param name="btnSender">Puxa o botão que foi clicado</param>
         /// <param name="imageName">Nome do icone que vai substuir a icone branca</param>
+        /// 
         private void ActivateButton(object btnSender, string imageName)
         {
             if (btnSender != null)
@@ -142,7 +189,14 @@ namespace PizzariaDoZe
         /// <param name="e">Não sei</param>
         private void btnHome_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, "home");
+            if (sender is ToolStripMenuItem item)
+            {
+                btnHome.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, "home");
+            }
         }
 
         /// <summary>
@@ -152,7 +206,14 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, "clientes");
+            if (sender is ToolStripMenuItem item)
+            {
+                btnClientes.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, "clientes");
+            }
 
         }
 
@@ -163,7 +224,14 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Funcionarios.tabelaFuncionarios(), sender, "funcionarios");
+            if (sender is ToolStripMenuItem item)
+            {
+                btnFuncionarios.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Funcionarios.tabelaFuncionarios(), sender, "funcionarios");
+            }
         }
 
         /// <summary>
@@ -173,7 +241,14 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnSabores_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Sabores.tabelaSabores(), sender, "sabores");
+            if (sender is ToolStripMenuItem item)
+            {
+                btnSabores.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Sabores.tabelaSabores(), sender, "sabores");
+            }
 
         }
 
@@ -184,7 +259,14 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnIngredientes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Ingredientes.tabelaIngredientes(), sender, "ingredientes");
+            if (sender is ToolStripMenuItem item)
+            {
+                btnIngredientes.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Ingredientes.tabelaIngredientes(), sender, "ingredientes");
+            }
 
         }
 
@@ -195,8 +277,14 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnConfiguracoes_Click(object sender, EventArgs e)
         {
-
-            OpenChildForm(new Forms.Configuracoes.telaConfiguracoes(), sender, "configuracoes");
+            if (sender is ToolStripMenuItem item)
+            {
+                btnConfiguracoes.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Configuracoes.telaConfiguracoes(), sender, "configuracoes");
+            }
         }
 
         /// <summary>
@@ -236,7 +324,7 @@ namespace PizzariaDoZe
             // Display a MsgBox asking the user to save changes or abort.
             //DialogResult resultado = 
             //if (MessageBox.Show(Resources.windowMessage, "Pizzaria do zé",MessageBoxButtons.YesNo) == DialogResult.No)
-            if(MessageBox.Show(Resources.windowMessage, "Pizzaria do zé", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBox.Show(Resources.windowMessage, "Pizzaria do zé", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 e.Cancel = true;
             }
