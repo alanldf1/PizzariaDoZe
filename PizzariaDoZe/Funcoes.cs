@@ -131,10 +131,7 @@ namespace PizzariaDoZe
             //verifica se foi pressionado ESC
             else if (e.KeyCode == Keys.Escape)
             {
-                System.Windows.Forms.Application.Exit();
-
-                //form.Close();
-
+                form.Close();
             }
         }
 

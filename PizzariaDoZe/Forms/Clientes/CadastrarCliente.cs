@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzariaDoZe.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,29 +15,31 @@ namespace PizzariaDoZe.Forms.Clientes
 #pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class CadastrarCliente : Form
     {
-        public Button? currentButton;
+        private FormMainMenu _mainForm;
 
-        public Form currentForm;
-#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
-        public CadastrarCliente(Button lastButton, Form lastForm)
+        #pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
+        public CadastrarCliente(FormMainMenu mainForm)
         {
             InitializeComponent();
+
+            #region idioma/região interface - satellite assembly
+            // com base no idioma/região escolhido pelo usuário,
+            // ajusta as propriedades dos componentes da tela com base no conteúdo do arquivo resources
+            Funcoes.AjustaResourcesControl(this);
+
+            //ajuste manual de campos ou mensagens para o usuário que não puderam ser automatizadas acima
+            //this.Text = Properties.Resources.ResourceManager.GetString("txtTituloPrincipal");
+            #endregion
+
+            _mainForm = mainForm;
 
             Funcoes.EventoFocoCampos(this);
             this.ActiveControl = textBoxName;
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
 
-            currentButton = lastButton;
-            currentForm = lastForm;
-            //UserControlRegister register = new();
-            //register.Dock = DockStyle.Bottom;
-            //Controls.Add(register);
-
             userControlRegister.btnRegister.Click += btnRegister_Click;
             userControlRegister.btnCancel.Click += btnCancel_Click;
         }
-
-        //public Form Parent { get; set; }
 
         /// <summary>
         /// Faz a verificação e envia os dados do formulario
@@ -49,10 +52,23 @@ namespace PizzariaDoZe.Forms.Clientes
             if (check)
             {
                 Close();
-                //FormMainMenu fm = new FormMainMenu();
-                //fm.returnTheForm("Home");
             }
         }
+
+        /// <summary>
+        /// Botão fecha o formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(currentButton.Text);
+            //_mainForm.activeForm = null;
+            //Close();
+            _mainForm.btnHome.PerformClick();
+
+        }
+
 
         /// <summary>
         /// Verifica todos os campos obrigatórios do formulário
@@ -83,39 +99,15 @@ namespace PizzariaDoZe.Forms.Clientes
             return true;
         }
 
-        /// <summary>
-        /// Botão fecha o formulario
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show(currentButton.Text);
-                
-            //Close();
-        }
-
-        private void textBoxComplemento_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CadastrarCliente_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void userControlRegister1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void CadastrarCliente_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-
-            //lastForm.OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, buttonText);
+            // Display a MsgBox asking the user to save changes or abort.
+            if (MessageBox.Show(Resources.pageMessage, "Pizzaria do zé", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCancel = new Button();
-            btnRegister = new Button();
             textBoxCpf = new TextBox();
             labelCod = new Label();
             textBoxName = new TextBox();
@@ -43,35 +41,11 @@
             radioButtonDoce = new RadioButton();
             radioButtonSalgado = new RadioButton();
             labelIngredient = new Label();
+            userControlRegister = new UserControlRegister();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBoxCategoria.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
-            // 
-            // btnCancel
-            // 
-            btnCancel.BackColor = Color.Silver;
-            btnCancel.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.Location = new Point(98, 562);
-            btnCancel.Margin = new Padding(3, 2, 3, 2);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(194, 42);
-            btnCancel.TabIndex = 7;
-            btnCancel.Text = "Cancelar";
-            btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnRegister
-            // 
-            btnRegister.BackColor = Color.FromArgb(0, 192, 0);
-            btnRegister.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnRegister.ForeColor = SystemColors.Control;
-            btnRegister.Location = new Point(495, 562);
-            btnRegister.Margin = new Padding(3, 2, 3, 2);
-            btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(194, 42);
-            btnRegister.TabIndex = 8;
-            btnRegister.Text = "Cadastrar";
-            btnRegister.UseVisualStyleBackColor = false;
             // 
             // textBoxCpf
             // 
@@ -226,26 +200,35 @@
             labelIngredient.TabIndex = 40;
             labelIngredient.Text = "Ingrediente:";
             // 
+            // userControlRegister
+            // 
+            userControlRegister.Location = new Point(137, 562);
+            userControlRegister.Margin = new Padding(3, 2, 3, 2);
+            userControlRegister.Name = "userControlRegister";
+            userControlRegister.Size = new Size(533, 99);
+            userControlRegister.TabIndex = 41;
+            // 
             // CadastrarSabor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(857, 633);
+            ClientSize = new Size(857, 705);
+            Controls.Add(userControlRegister);
             Controls.Add(labelIngredient);
             Controls.Add(groupBox1);
             Controls.Add(groupBoxCategoria);
             Controls.Add(checkedListBoxIngredient);
             Controls.Add(pictureBox1);
-            Controls.Add(btnCancel);
-            Controls.Add(btnRegister);
             Controls.Add(textBoxCpf);
             Controls.Add(labelCod);
             Controls.Add(textBoxName);
             Controls.Add(labelName);
+            KeyPreview = true;
             Margin = new Padding(3, 2, 3, 2);
             Name = "CadastrarSabor";
             Text = "CadastrarSabor";
+            FormClosing += CadastrarSabor_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBoxCategoria.ResumeLayout(false);
             groupBoxCategoria.PerformLayout();
@@ -256,11 +239,6 @@
         }
 
         #endregion
-
-        private Button btnCancel;
-
-#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
-        public Button btnRegister;
         private TextBox textBoxCpf;
         private Label labelCod;
         private TextBox textBoxName;
@@ -274,5 +252,6 @@
         private RadioButton radioButtonDoce;
         private RadioButton radioButtonSalgado;
         private Label labelIngredient;
+        private UserControlRegister userControlRegister;
     }
 }

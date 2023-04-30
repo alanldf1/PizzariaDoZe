@@ -169,7 +169,6 @@
             textBoxComplemento.Name = "textBoxComplemento";
             textBoxComplemento.Size = new Size(322, 33);
             textBoxComplemento.TabIndex = 7;
-            textBoxComplemento.TextChanged += textBoxComplemento_TextChanged;
             // 
             // labelComplemento
             // 
@@ -206,7 +205,6 @@
             userControlRegister.Name = "userControlRegister";
             userControlRegister.Size = new Size(616, 145);
             userControlRegister.TabIndex = 17;
-            userControlRegister.Load += userControlRegister1_Load;
             // 
             // CadastrarCliente
             // 
@@ -236,7 +234,6 @@
             Name = "CadastrarCliente";
             Text = "Cadastrar cliente";
             FormClosing += CadastrarCliente_FormClosing;
-            Load += CadastrarCliente_Load;
             ResumeLayout(false);
             PerformLayout();
         }

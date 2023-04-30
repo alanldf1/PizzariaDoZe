@@ -33,8 +33,7 @@
             labelCod = new Label();
             textBoxName = new TextBox();
             labelName = new Label();
-            btnCancel = new Button();
-            btnRegister = new Button();
+            userControlRegister = new UserControlRegister();
             SuspendLayout();
             // 
             // textBoxEmail
@@ -77,44 +76,28 @@
             labelName.TabIndex = 22;
             labelName.Text = "Nome:";
             // 
-            // btnCancel
+            // userControlRegister
             // 
-            btnCancel.BackColor = Color.Silver;
-            btnCancel.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.Location = new Point(37, 278);
-            btnCancel.Margin = new Padding(3, 10, 3, 10);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(194, 42);
-            btnCancel.TabIndex = 2;
-            btnCancel.Text = "Cancelar";
-            btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnRegister
-            // 
-            btnRegister.BackColor = Color.FromArgb(0, 192, 0);
-            btnRegister.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnRegister.ForeColor = SystemColors.Control;
-            btnRegister.Location = new Point(386, 278);
-            btnRegister.Margin = new Padding(3, 10, 3, 10);
-            btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(194, 42);
-            btnRegister.TabIndex = 3;
-            btnRegister.Text = "Cadastrar";
-            btnRegister.UseVisualStyleBackColor = false;
+            userControlRegister.Location = new Point(68, 227);
+            userControlRegister.Margin = new Padding(3, 2, 3, 2);
+            userControlRegister.Name = "userControlRegister";
+            userControlRegister.Size = new Size(533, 113);
+            userControlRegister.TabIndex = 25;
             // 
             // CadastrarIngrediente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(691, 351);
-            Controls.Add(btnCancel);
-            Controls.Add(btnRegister);
+            Controls.Add(userControlRegister);
             Controls.Add(textBoxEmail);
             Controls.Add(labelCod);
             Controls.Add(textBoxName);
             Controls.Add(labelName);
+            KeyPreview = true;
             Name = "CadastrarIngrediente";
             Text = "Cadastro de Ingrediente";
+            FormClosing += CadastrarIngrediente_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,8 +108,6 @@
         private Label labelCod;
         private TextBox textBoxName;
         private Label labelName;
-        private Button btnCancel;
-#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
-        public Button btnRegister;
+        private UserControlRegister userControlRegister;
     }
 }

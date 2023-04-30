@@ -161,6 +161,33 @@ namespace PizzariaDoZe.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Não.
+        /// </summary>
+        internal static string MessageBoxNo {
+            get {
+                return ResourceManager.GetString("MessageBoxNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sim.
+        /// </summary>
+        internal static string MessageBoxYes {
+            get {
+                return ResourceManager.GetString("MessageBoxYes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Deseja mesmo fechar a página?.
+        /// </summary>
+        internal static string pageMessage {
+            get {
+                return ResourceManager.GetString("pageMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap sabores {
@@ -177,6 +204,15 @@ namespace PizzariaDoZe.Properties {
             get {
                 object obj = ResourceManager.GetObject("sabores-red", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Deseja mesmo fechar o programa?.
+        /// </summary>
+        internal static string windowMessage {
+            get {
+                return ResourceManager.GetString("windowMessage", resourceCulture);
             }
         }
     }

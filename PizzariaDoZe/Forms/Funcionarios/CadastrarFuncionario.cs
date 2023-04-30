@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzariaDoZe.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +15,15 @@ namespace PizzariaDoZe.Forms.Funcionarios
 #pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public partial class CadastrarFuncionario : Form
     {
+        private FormMainMenu _mainForm;
+
 #pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
-        public CadastrarFuncionario()
+        public CadastrarFuncionario(FormMainMenu mainForm)
         {
             InitializeComponent();
+
+            _mainForm = mainForm;
+
 
             #region idioma/região interface - satellite assembly
             // com base no idioma/região escolhido pelo usuário,
@@ -31,9 +37,10 @@ namespace PizzariaDoZe.Forms.Funcionarios
             Funcoes.EventoFocoCampos(this);
 
             this.ActiveControl = textBoxName;
-
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
 
+            userControlRegister.btnRegister.Click += btnRegister_Click;
+            userControlRegister.btnCancel.Click += btnCancel_Click;
         }
 
         private void radioButtonCartaSim_CheckedChanged(object sender, EventArgs e)
@@ -62,6 +69,15 @@ namespace PizzariaDoZe.Forms.Funcionarios
                 //FormMainMenu fm = new FormMainMenu();
                 //fm.returnTheForm("Home");
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(currentButton.Text);
+            //_mainForm.activeForm = null;
+            //Close();
+            _mainForm.btnHome.PerformClick();
+
         }
 
         private bool checkCamps()
@@ -118,6 +134,16 @@ namespace PizzariaDoZe.Forms.Funcionarios
             //}
 
             return true;
+        }
+
+        private void CadastrarFuncionario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Display a MsgBox asking the user to save changes or abort.
+            if (MessageBox.Show(Resources.pageMessage, "Pizzaria do zé", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+
         }
     }
 }

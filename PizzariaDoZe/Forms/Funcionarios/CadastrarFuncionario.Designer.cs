@@ -59,8 +59,6 @@
             labelPais = new Label();
             textBoxCep = new TextBox();
             labelCep = new Label();
-            btnCancel = new Button();
-            btnRegister = new Button();
             textBoxCpf = new TextBox();
             labelCpf = new Label();
             textBoxPhone = new TextBox();
@@ -72,6 +70,7 @@
             groupBoxFuncao = new GroupBox();
             groupBoxCarta = new GroupBox();
             panelCarta = new Panel();
+            userControlRegister = new UserControlRegister();
             groupBoxFuncao.SuspendLayout();
             groupBoxCarta.SuspendLayout();
             panelCarta.SuspendLayout();
@@ -401,32 +400,6 @@
             labelCep.TabIndex = 70;
             labelCep.Text = "CEP*:";
             // 
-            // btnCancel
-            // 
-            btnCancel.BackColor = Color.Silver;
-            btnCancel.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.Location = new Point(400, 845);
-            btnCancel.Margin = new Padding(3, 2, 3, 2);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(194, 42);
-            btnCancel.TabIndex = 25;
-            btnCancel.Text = "Cancelar";
-            btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnRegister
-            // 
-            btnRegister.BackColor = Color.FromArgb(0, 192, 0);
-            btnRegister.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnRegister.ForeColor = SystemColors.Control;
-            btnRegister.Location = new Point(176, 845);
-            btnRegister.Margin = new Padding(3, 2, 3, 2);
-            btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(194, 42);
-            btnRegister.TabIndex = 24;
-            btnRegister.Text = "Cadastrar";
-            btnRegister.UseVisualStyleBackColor = false;
-            btnRegister.Click += btnRegister_Click;
-            // 
             // textBoxCpf
             // 
             textBoxCpf.BorderStyle = BorderStyle.FixedSingle;
@@ -546,12 +519,21 @@
             panelCarta.TabIndex = 13;
             panelCarta.Visible = false;
             // 
+            // userControlRegister
+            // 
+            userControlRegister.Location = new Point(125, 825);
+            userControlRegister.Margin = new Padding(3, 2, 3, 2);
+            userControlRegister.Name = "userControlRegister";
+            userControlRegister.Size = new Size(526, 88);
+            userControlRegister.TabIndex = 100;
+            // 
             // CadastrarFuncionario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(800, 937);
+            Controls.Add(userControlRegister);
             Controls.Add(panelCarta);
             Controls.Add(groupBoxCarta);
             Controls.Add(groupBoxFuncao);
@@ -577,8 +559,6 @@
             Controls.Add(labelPais);
             Controls.Add(textBoxCep);
             Controls.Add(labelCep);
-            Controls.Add(btnCancel);
-            Controls.Add(btnRegister);
             Controls.Add(textBoxCpf);
             Controls.Add(labelCpf);
             Controls.Add(textBoxPhone);
@@ -587,8 +567,10 @@
             Controls.Add(labelEmail);
             Controls.Add(textBoxName);
             Controls.Add(labelName);
+            KeyPreview = true;
             Name = "CadastrarFuncionario";
             Text = "Cadastrar Funcionario";
+            FormClosing += CadastrarFuncionario_FormClosing;
             groupBoxFuncao.ResumeLayout(false);
             groupBoxFuncao.PerformLayout();
             groupBoxCarta.ResumeLayout(false);
@@ -632,9 +614,6 @@
         private Label labelPais;
         private TextBox textBoxCep;
         private Label labelCep;
-        private Button btnCancel;
-#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
-        public Button btnRegister;
         private TextBox textBoxCpf;
         private Label labelCpf;
         private TextBox textBoxPhone;
@@ -646,5 +625,6 @@
         private GroupBox groupBoxFuncao;
         private GroupBox groupBoxCarta;
         private Panel panelCarta;
+        private UserControlRegister userControlRegister;
     }
 }

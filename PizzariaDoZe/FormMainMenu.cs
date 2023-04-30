@@ -3,6 +3,10 @@ using System.Drawing.Imaging;
 using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
+using PizzariaDoZe.Forms.Clientes;
+using System.Text.RegularExpressions;
+using System.Text;
+using System.Configuration;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PizzariaDoZe
@@ -13,6 +17,8 @@ namespace PizzariaDoZe
         /// <summary>
         /// Inicia o formulario
         /// </summary>
+        /// 
+
         public FormMainMenu()
         {
             InitializeComponent();
@@ -29,7 +35,7 @@ namespace PizzariaDoZe
         }
 
 
-
+        public String selectedLanguage = (ConfigurationManager.AppSettings.Get("mainLanguage") is not null) ? ConfigurationManager.AppSettings.Get("mainLanguage") : "";
         public Button? currentButton;
         /// <summary>
         /// Vai salvar o formulário ativo, ao abrir outro formulario ele ira salvar em cima
@@ -115,6 +121,9 @@ namespace PizzariaDoZe
                 }
                 childForm.BringToFront();
                 childForm.Show();
+
+
+
             }
             else
             {
@@ -122,7 +131,6 @@ namespace PizzariaDoZe
             }
             if (thisButton.Name != "btnInvisible")
             {
-                MessageBox.Show(imageName);
                 ActivateButton(btnSender, imageName);
                 lblTitle.Text = thisButton.Text;
             }
@@ -144,8 +152,7 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            String buttonText = (sender as Button).Text.ToLower().Trim();
-            OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, buttonText);
+            OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, "clientes");
 
         }
 
@@ -156,8 +163,7 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
-            String buttonText = (sender as Button).Text.ToLower().Trim();
-            OpenChildForm(new Forms.Funcionarios.tabelaFuncionarios(), sender, buttonText);
+            OpenChildForm(new Forms.Funcionarios.tabelaFuncionarios(), sender, "funcionarios");
         }
 
         /// <summary>
@@ -167,8 +173,7 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnSabores_Click(object sender, EventArgs e)
         {
-            String buttonText = (sender as Button).Text.ToLower().Trim();
-            OpenChildForm(new Forms.Sabores.tabelaSabores(), sender, buttonText);
+            OpenChildForm(new Forms.Sabores.tabelaSabores(), sender, "sabores");
 
         }
 
@@ -179,8 +184,7 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnIngredientes_Click(object sender, EventArgs e)
         {
-            String buttonText = (sender as Button).Text.ToLower().Trim();
-            OpenChildForm(new Forms.Ingredientes.tabelaIngredientes(), sender, buttonText);
+            OpenChildForm(new Forms.Ingredientes.tabelaIngredientes(), sender, "ingredientes");
 
         }
 
@@ -191,8 +195,8 @@ namespace PizzariaDoZe
         /// <param name="e"></param>
         private void btnConfiguracoes_Click(object sender, EventArgs e)
         {
-            String buttonText = (sender as Button).Text.ToLower().Trim();
-            OpenChildForm(new Forms.Configuracoes.telaConfiguracoes(), sender, buttonText);
+
+            OpenChildForm(new Forms.Configuracoes.telaConfiguracoes(), sender, "configuracoes");
         }
 
         /// <summary>
@@ -207,31 +211,32 @@ namespace PizzariaDoZe
             String buttonTagLower = buttonTag.ToLower();
             if (buttonTag == "Clientes")
             {
-                this.btnInvisible.Visible = false;                
-                OpenChildForm(new Forms.Clientes.CadastrarCliente(butt, this), sender, buttonTagLower);
+                this.btnInvisible.Visible = false;
+                OpenChildForm(new Forms.Clientes.CadastrarCliente(this), sender, buttonTagLower);
             }
             else if (buttonTag == "Funcionarios")
             {
                 this.btnInvisible.Visible = false;
-                OpenChildForm(new Forms.Funcionarios.CadastrarFuncionario(), sender, buttonTagLower);
+                OpenChildForm(new Forms.Funcionarios.CadastrarFuncionario(this), sender, buttonTagLower);
             }
             else if (buttonTag == "Sabores")
             {
                 this.btnInvisible.Visible = false;
-                OpenChildForm(new Forms.Sabores.CadastrarSabor(), sender, buttonTagLower);
+                OpenChildForm(new Forms.Sabores.CadastrarSabor(this), sender, buttonTagLower);
             }
             else if (buttonTag == "Ingredientes")
             {
                 this.btnInvisible.Visible = false;
-                OpenChildForm(new Forms.Ingredientes.CadastrarIngrediente(), sender, buttonTagLower);
+                OpenChildForm(new Forms.Ingredientes.CadastrarIngrediente(this), sender, buttonTagLower);
             }
         }
 
         private void FormMainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Display a MsgBox asking the user to save changes or abort.
-            if (MessageBox.Show("Deseja mesmo fechar o programa?", "Pizzaria do zé",
-               MessageBoxButtons.YesNo) == DialogResult.No)
+            //DialogResult resultado = 
+            //if (MessageBox.Show(Resources.windowMessage, "Pizzaria do zé",MessageBoxButtons.YesNo) == DialogResult.No)
+            if(MessageBox.Show(Resources.windowMessage, "Pizzaria do zé", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 e.Cancel = true;
             }

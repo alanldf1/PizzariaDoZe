@@ -210,6 +210,15 @@
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Bienvenido a casa</value>
   </data>
+  <data name="MessageBoxNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="MessageBoxYes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="pageMessage" xml:space="preserve">
+    <value>¿Realmente quieres cerrar la página?</value>
+  </data>
   <data name="radioButtonAdmin.Text" xml:space="preserve">
     <value>Administrador</value>
   </data>
@@ -266,5 +275,8 @@
   </data>
   <data name="theadTipo.Text" xml:space="preserve">
     <value>Tipo</value>
+  </data>
+  <data name="windowMessage" xml:space="preserve">
+    <value>¿Realmente desea cerrar el programa?</value>
   </data>
 </root>
