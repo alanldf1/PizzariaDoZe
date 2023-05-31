@@ -7,6 +7,8 @@ using PizzariaDoZe.Forms.Clientes;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Configuration;
+using System.Data.Common;
+using PizzariaDoZe.Forms.Configuracoes;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PizzariaDoZe
@@ -328,6 +330,31 @@ namespace PizzariaDoZe
             {
                 e.Cancel = true;
             }
+        }
+
+        public static void ValidaConexaoDB(Button thisButton )
+        {
+            DbProviderFactory factory;
+            try
+            {
+                factory = DbProviderFactories.GetFactory(ConfigurationManager.ConnectionStrings["BD"].ProviderName);
+                using var conexao = factory.CreateConnection();
+                conexao!.ConnectionString = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
+                using var comando = factory.CreateCommand();
+                comando!.Connection = conexao;
+                conexao.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                thisButton.PerformClick();
+            }
+        }
+
+        private void FormMainMenu_Load(object sender, EventArgs e)
+        {
+            Button thisButton = this.btnConfiguracoes;
+            ValidaConexaoDB(thisButton);
         }
     }
 

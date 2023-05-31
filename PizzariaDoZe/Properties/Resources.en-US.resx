@@ -282,11 +282,17 @@
   <data name="theadTipo.Text" xml:space="preserve">
     <value>Type</value>
   </data>
+  <data name="toolStripMenuItemAbout.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="toolStripMenuItemClientes.Text" xml:space="preserve">
     <value>Customers</value>
   </data>
   <data name="toolStripMenuItemConfig.Text" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="toolStripMenuItemFinish.Text" xml:space="preserve">
+    <value>Finish</value>
   </data>
   <data name="toolStripMenuItemFuncionarios.Text" xml:space="preserve">
     <value>Employees</value>
@@ -296,6 +302,9 @@
   </data>
   <data name="toolStripMenuItemIngredientes.Text" xml:space="preserve">
     <value>Ingredients</value>
+  </data>
+  <data name="toolStripMenuItemOpen.Text" xml:space="preserve">
+    <value>Open</value>
   </data>
   <data name="toolStripMenuItemSabores.Text" xml:space="preserve">
     <value>Flavors</value>

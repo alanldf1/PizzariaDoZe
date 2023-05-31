@@ -74,5 +74,10 @@ namespace PizzariaDoZe.Forms.Sabores
             }
 
         }
+
+        private void CadastrarSabor_Load(object sender, EventArgs e)
+        {
+            textBoxName.Focus();
+        }
     }
 }

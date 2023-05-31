@@ -109,5 +109,10 @@ namespace PizzariaDoZe.Forms.Clientes
                 e.Cancel = true;
             }
         }
+
+        private void CadastrarCliente_Load(object sender, EventArgs e)
+        {
+            textBoxName.Focus();
+        }
     }
 }

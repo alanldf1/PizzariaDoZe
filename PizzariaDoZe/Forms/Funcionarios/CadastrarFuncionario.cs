@@ -146,5 +146,9 @@ namespace PizzariaDoZe.Forms.Funcionarios
 
         }
 
+        private void CadastrarFuncionario_Load(object sender, EventArgs e)
+        {
+            textBoxName.Focus();
+        }
     }
 }
