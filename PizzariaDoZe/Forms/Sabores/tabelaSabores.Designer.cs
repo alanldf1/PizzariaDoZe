@@ -31,15 +31,8 @@
             labelPesquisa = new Label();
             label1 = new Label();
             textBoxPesquisa = new TextBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            label6 = new Label();
-            theadTipo = new Label();
-            theadCategoria = new Label();
-            theadNome = new Label();
-            theadCod = new Label();
-            theadId = new Label();
-            btnEditar = new Button();
-            tableLayoutPanel1.SuspendLayout();
+            dataGridViewSabores = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewSabores).BeginInit();
             SuspendLayout();
             // 
             // labelPesquisa
@@ -69,149 +62,15 @@
             textBoxPesquisa.Size = new Size(366, 31);
             textBoxPesquisa.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // dataGridViewSabores
             // 
-            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            tableLayoutPanel1.ColumnCount = 6;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666718F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.Controls.Add(label6, 5, 0);
-            tableLayoutPanel1.Controls.Add(theadTipo, 4, 0);
-            tableLayoutPanel1.Controls.Add(theadCategoria, 3, 0);
-            tableLayoutPanel1.Controls.Add(theadNome, 2, 0);
-            tableLayoutPanel1.Controls.Add(theadCod, 1, 0);
-            tableLayoutPanel1.Controls.Add(theadId, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnEditar, 5, 1);
-            tableLayoutPanel1.Location = new Point(26, 106);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 10;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.Size = new Size(720, 311);
-            tableLayoutPanel1.TabIndex = 16;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(77, 10, 1);
-            label6.Dock = DockStyle.Fill;
-            label6.FlatStyle = FlatStyle.Flat;
-            label6.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(596, 1);
-            label6.Margin = new Padding(0);
-            label6.Name = "label6";
-            label6.Size = new Size(123, 30);
-            label6.TabIndex = 5;
-            label6.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // theadTipo
-            // 
-            theadTipo.AutoSize = true;
-            theadTipo.BackColor = Color.FromArgb(77, 10, 1);
-            theadTipo.Dock = DockStyle.Fill;
-            theadTipo.FlatStyle = FlatStyle.Flat;
-            theadTipo.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            theadTipo.ForeColor = SystemColors.Control;
-            theadTipo.Location = new Point(477, 1);
-            theadTipo.Margin = new Padding(0);
-            theadTipo.Name = "theadTipo";
-            theadTipo.Size = new Size(118, 30);
-            theadTipo.TabIndex = 4;
-            theadTipo.Text = "Tipo";
-            theadTipo.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // theadCategoria
-            // 
-            theadCategoria.AutoSize = true;
-            theadCategoria.BackColor = Color.FromArgb(77, 10, 1);
-            theadCategoria.Dock = DockStyle.Fill;
-            theadCategoria.FlatStyle = FlatStyle.Flat;
-            theadCategoria.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            theadCategoria.ForeColor = SystemColors.Control;
-            theadCategoria.Location = new Point(358, 1);
-            theadCategoria.Margin = new Padding(0);
-            theadCategoria.Name = "theadCategoria";
-            theadCategoria.Size = new Size(118, 30);
-            theadCategoria.TabIndex = 3;
-            theadCategoria.Text = "Categoria";
-            theadCategoria.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // theadNome
-            // 
-            theadNome.AutoSize = true;
-            theadNome.BackColor = Color.FromArgb(77, 10, 1);
-            theadNome.Dock = DockStyle.Fill;
-            theadNome.FlatStyle = FlatStyle.Flat;
-            theadNome.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            theadNome.ForeColor = SystemColors.Control;
-            theadNome.Location = new Point(239, 1);
-            theadNome.Margin = new Padding(0);
-            theadNome.Name = "theadNome";
-            theadNome.Size = new Size(118, 30);
-            theadNome.TabIndex = 2;
-            theadNome.Text = "Nome";
-            theadNome.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // theadCod
-            // 
-            theadCod.AutoSize = true;
-            theadCod.BackColor = Color.FromArgb(77, 10, 1);
-            theadCod.Dock = DockStyle.Fill;
-            theadCod.FlatStyle = FlatStyle.Flat;
-            theadCod.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            theadCod.ForeColor = SystemColors.Control;
-            theadCod.Location = new Point(120, 1);
-            theadCod.Margin = new Padding(0);
-            theadCod.Name = "theadCod";
-            theadCod.Size = new Size(118, 30);
-            theadCod.TabIndex = 1;
-            theadCod.Text = "Código";
-            theadCod.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // theadId
-            // 
-            theadId.AutoSize = true;
-            theadId.BackColor = Color.FromArgb(77, 10, 1);
-            theadId.Dock = DockStyle.Fill;
-            theadId.FlatStyle = FlatStyle.Flat;
-            theadId.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            theadId.ForeColor = SystemColors.Control;
-            theadId.Location = new Point(1, 1);
-            theadId.Margin = new Padding(0);
-            theadId.Name = "theadId";
-            theadId.Size = new Size(118, 30);
-            theadId.TabIndex = 0;
-            theadId.Text = "Id";
-            theadId.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.FromArgb(66, 133, 244);
-            btnEditar.Dock = DockStyle.Fill;
-            btnEditar.FlatAppearance.BorderSize = 0;
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditar.ForeColor = SystemColors.Control;
-            btnEditar.Location = new Point(601, 33);
-            btnEditar.Margin = new Padding(5, 1, 5, 1);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(113, 28);
-            btnEditar.TabIndex = 1;
-            btnEditar.TabStop = false;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
+            dataGridViewSabores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewSabores.Location = new Point(27, 148);
+            dataGridViewSabores.Name = "dataGridViewSabores";
+            dataGridViewSabores.RowTemplate.Height = 25;
+            dataGridViewSabores.Size = new Size(745, 290);
+            dataGridViewSabores.TabIndex = 20;
+            dataGridViewSabores.CellFormatting += dataGridViewSabores_CellFormatting;
             // 
             // tabelaSabores
             // 
@@ -219,15 +78,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(784, 450);
+            Controls.Add(dataGridViewSabores);
             Controls.Add(labelPesquisa);
             Controls.Add(label1);
             Controls.Add(textBoxPesquisa);
-            Controls.Add(tableLayoutPanel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "tabelaSabores";
             Text = "tabelaSabores";
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
+            Load += tabelaSabores_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewSabores).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -237,13 +96,6 @@
         private Label labelPesquisa;
         private Label label1;
         private TextBox textBoxPesquisa;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Label label6;
-        private Label theadTipo;
-        private Label theadCategoria;
-        private Label theadNome;
-        private Label theadCod;
-        private Label theadId;
-        private Button btnEditar;
+        private DataGridView dataGridViewSabores;
     }
 }

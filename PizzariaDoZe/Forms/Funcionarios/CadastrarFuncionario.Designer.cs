@@ -28,13 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBoxLogradouro = new TextBox();
-            labelLogradouro = new Label();
-            textBoxBairro = new TextBox();
-            labelBairro = new Label();
-            textBoxCidade = new TextBox();
-            labelCidade = new Label();
-            textBoxUf = new TextBox();
+            textBoxEndereco = new TextBox();
+            labelEndereco = new Label();
             labelUf = new Label();
             textBoxSenha = new TextBox();
             labelSenha = new Label();
@@ -47,7 +42,7 @@
             radioButtonAtendente = new RadioButton();
             labelFuncao = new Label();
             radioButtonAdmin = new RadioButton();
-            textBoxMatrícula = new TextBox();
+            textBoxMatricula = new TextBox();
             labelMatricula = new Label();
             labelValidadeCarta = new Label();
             textBoxNumero = new TextBox();
@@ -61,94 +56,51 @@
             labelPhone = new Label();
             textBoxEmail = new TextBox();
             labelEmail = new Label();
-            textBoxName = new TextBox();
+            textBoxNome = new TextBox();
             labelName = new Label();
             groupBoxFuncao = new GroupBox();
             groupBoxCarta = new GroupBox();
             panelCarta = new Panel();
-            maskedTextBoxValidadeCarta = new MaskedTextBox();
+            dateTimePickerValidadeCarta = new DateTimePicker();
             userControlRegister = new UserControlRegister();
             maskedTextBoxCpf = new MaskedTextBox();
             maskedTextBoxPhone = new MaskedTextBox();
             maskedTextBoxCep = new MaskedTextBox();
+            labelIdEndereco = new Label();
+            textBoxUf = new TextBox();
+            textBoxIdEndereco = new TextBox();
             groupBoxFuncao.SuspendLayout();
             groupBoxCarta.SuspendLayout();
             panelCarta.SuspendLayout();
             SuspendLayout();
             // 
-            // textBoxLogradouro
+            // textBoxEndereco
             // 
-            textBoxLogradouro.BorderStyle = BorderStyle.FixedSingle;
-            textBoxLogradouro.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLogradouro.Location = new Point(53, 1016);
-            textBoxLogradouro.Name = "textBoxLogradouro";
-            textBoxLogradouro.Size = new Size(229, 33);
-            textBoxLogradouro.TabIndex = 21;
+            textBoxEndereco.BorderStyle = BorderStyle.FixedSingle;
+            textBoxEndereco.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxEndereco.Location = new Point(46, 688);
+            textBoxEndereco.Margin = new Padding(3, 2, 3, 2);
+            textBoxEndereco.Name = "textBoxEndereco";
+            textBoxEndereco.Size = new Size(708, 28);
+            textBoxEndereco.TabIndex = 19;
             // 
-            // labelLogradouro
+            // labelEndereco
             // 
-            labelLogradouro.AutoSize = true;
-            labelLogradouro.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelLogradouro.Location = new Point(46, 981);
-            labelLogradouro.Name = "labelLogradouro";
-            labelLogradouro.Size = new Size(121, 30);
-            labelLogradouro.TabIndex = 99;
-            labelLogradouro.Text = "Logradouro*:";
-            // 
-            // textBoxBairro
-            // 
-            textBoxBairro.BorderStyle = BorderStyle.FixedSingle;
-            textBoxBairro.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxBairro.Location = new Point(482, 909);
-            textBoxBairro.Name = "textBoxBairro";
-            textBoxBairro.Size = new Size(387, 33);
-            textBoxBairro.TabIndex = 20;
-            // 
-            // labelBairro
-            // 
-            labelBairro.AutoSize = true;
-            labelBairro.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelBairro.Location = new Point(475, 875);
-            labelBairro.Name = "labelBairro";
-            labelBairro.Size = new Size(73, 30);
-            labelBairro.TabIndex = 97;
-            labelBairro.Text = "Bairro*:";
-            // 
-            // textBoxCidade
-            // 
-            textBoxCidade.BorderStyle = BorderStyle.FixedSingle;
-            textBoxCidade.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCidade.Location = new Point(53, 909);
-            textBoxCidade.Name = "textBoxCidade";
-            textBoxCidade.Size = new Size(402, 33);
-            textBoxCidade.TabIndex = 19;
-            // 
-            // labelCidade
-            // 
-            labelCidade.AutoSize = true;
-            labelCidade.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCidade.Location = new Point(46, 875);
-            labelCidade.Name = "labelCidade";
-            labelCidade.Size = new Size(86, 30);
-            labelCidade.TabIndex = 95;
-            labelCidade.Text = "Cidade*:";
-            // 
-            // textBoxUf
-            // 
-            textBoxUf.BorderStyle = BorderStyle.FixedSingle;
-            textBoxUf.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxUf.Location = new Point(694, 807);
-            textBoxUf.Name = "textBoxUf";
-            textBoxUf.Size = new Size(131, 33);
-            textBoxUf.TabIndex = 18;
+            labelEndereco.AutoSize = true;
+            labelEndereco.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelEndereco.Location = new Point(40, 662);
+            labelEndereco.Name = "labelEndereco";
+            labelEndereco.Size = new Size(88, 25);
+            labelEndereco.TabIndex = 95;
+            labelEndereco.Text = "Endereco*:";
             // 
             // labelUf
             // 
             labelUf.AutoSize = true;
             labelUf.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelUf.Location = new Point(687, 772);
+            labelUf.Location = new Point(430, 755);
             labelUf.Name = "labelUf";
-            labelUf.Size = new Size(45, 30);
+            labelUf.Size = new Size(38, 25);
             labelUf.TabIndex = 93;
             labelUf.Tag = "";
             labelUf.Text = "UF*:";
@@ -157,18 +109,19 @@
             // 
             textBoxSenha.BorderStyle = BorderStyle.FixedSingle;
             textBoxSenha.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxSenha.Location = new Point(53, 487);
+            textBoxSenha.Location = new Point(46, 365);
+            textBoxSenha.Margin = new Padding(3, 2, 3, 2);
             textBoxSenha.Name = "textBoxSenha";
-            textBoxSenha.Size = new Size(457, 33);
+            textBoxSenha.Size = new Size(400, 28);
             textBoxSenha.TabIndex = 9;
             // 
             // labelSenha
             // 
             labelSenha.AutoSize = true;
             labelSenha.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSenha.Location = new Point(46, 451);
+            labelSenha.Location = new Point(40, 338);
             labelSenha.Name = "labelSenha";
-            labelSenha.Size = new Size(79, 30);
+            labelSenha.Size = new Size(66, 25);
             labelSenha.TabIndex = 91;
             labelSenha.Text = "Senha*:";
             // 
@@ -176,19 +129,20 @@
             // 
             textBoxObservation.BorderStyle = BorderStyle.FixedSingle;
             textBoxObservation.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxObservation.Location = new Point(315, 56);
+            textBoxObservation.Location = new Point(276, 42);
+            textBoxObservation.Margin = new Padding(3, 2, 3, 2);
             textBoxObservation.Multiline = true;
             textBoxObservation.Name = "textBoxObservation";
-            textBoxObservation.Size = new Size(275, 119);
+            textBoxObservation.Size = new Size(241, 90);
             textBoxObservation.TabIndex = 15;
             // 
             // labelObservation
             // 
             labelObservation.AutoSize = true;
             labelObservation.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelObservation.Location = new Point(309, 21);
+            labelObservation.Location = new Point(270, 16);
             labelObservation.Name = "labelObservation";
-            labelObservation.Size = new Size(120, 30);
+            labelObservation.Size = new Size(100, 25);
             labelObservation.TabIndex = 89;
             labelObservation.Text = "Observação:";
             // 
@@ -196,10 +150,9 @@
             // 
             radioButtonCartaNao.AutoSize = true;
             radioButtonCartaNao.Font = new Font("Poppins", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonCartaNao.Location = new Point(97, 16);
-            radioButtonCartaNao.Margin = new Padding(3, 4, 3, 4);
+            radioButtonCartaNao.Location = new Point(85, 12);
             radioButtonCartaNao.Name = "radioButtonCartaNao";
-            radioButtonCartaNao.Size = new Size(68, 34);
+            radioButtonCartaNao.Size = new Size(58, 29);
             radioButtonCartaNao.TabIndex = 12;
             radioButtonCartaNao.Text = "Não";
             radioButtonCartaNao.UseVisualStyleBackColor = true;
@@ -208,9 +161,9 @@
             // 
             labelCarta.AutoSize = true;
             labelCarta.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCarta.Location = new Point(46, 579);
+            labelCarta.Location = new Point(40, 434);
             labelCarta.Name = "labelCarta";
-            labelCarta.Size = new Size(196, 30);
+            labelCarta.Size = new Size(161, 25);
             labelCarta.TabIndex = 87;
             labelCarta.Text = "Carteira de Motorista:";
             // 
@@ -218,10 +171,9 @@
             // 
             radioButtonCartaSim.AutoSize = true;
             radioButtonCartaSim.Font = new Font("Poppins", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonCartaSim.Location = new Point(14, 16);
-            radioButtonCartaSim.Margin = new Padding(3, 4, 3, 4);
+            radioButtonCartaSim.Location = new Point(12, 12);
             radioButtonCartaSim.Name = "radioButtonCartaSim";
-            radioButtonCartaSim.Size = new Size(66, 34);
+            radioButtonCartaSim.Size = new Size(55, 29);
             radioButtonCartaSim.TabIndex = 11;
             radioButtonCartaSim.Text = "Sim";
             radioButtonCartaSim.UseVisualStyleBackColor = true;
@@ -232,10 +184,10 @@
             radioButtonEntregador.Anchor = AnchorStyles.None;
             radioButtonEntregador.AutoSize = true;
             radioButtonEntregador.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonEntregador.Location = new Point(273, 21);
+            radioButtonEntregador.Location = new Point(239, 16);
             radioButtonEntregador.Margin = new Padding(0);
             radioButtonEntregador.Name = "radioButtonEntregador";
-            radioButtonEntregador.Size = new Size(117, 30);
+            radioButtonEntregador.Size = new Size(93, 26);
             radioButtonEntregador.TabIndex = 8;
             radioButtonEntregador.Text = "Entregador";
             radioButtonEntregador.UseVisualStyleBackColor = true;
@@ -245,10 +197,10 @@
             radioButtonAtendente.Anchor = AnchorStyles.None;
             radioButtonAtendente.AutoSize = true;
             radioButtonAtendente.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonAtendente.Location = new Point(152, 21);
+            radioButtonAtendente.Location = new Point(133, 16);
             radioButtonAtendente.Margin = new Padding(0);
             radioButtonAtendente.Name = "radioButtonAtendente";
-            radioButtonAtendente.Size = new Size(110, 30);
+            radioButtonAtendente.Size = new Size(89, 26);
             radioButtonAtendente.TabIndex = 7;
             radioButtonAtendente.Text = "Atendente";
             radioButtonAtendente.UseVisualStyleBackColor = true;
@@ -257,9 +209,9 @@
             // 
             labelFuncao.AutoSize = true;
             labelFuncao.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelFuncao.Location = new Point(457, 332);
+            labelFuncao.Location = new Point(400, 249);
             labelFuncao.Name = "labelFuncao";
-            labelFuncao.Size = new Size(88, 30);
+            labelFuncao.Size = new Size(74, 25);
             labelFuncao.TabIndex = 83;
             labelFuncao.Text = "Função*:";
             // 
@@ -268,30 +220,31 @@
             radioButtonAdmin.Anchor = AnchorStyles.None;
             radioButtonAdmin.AutoSize = true;
             radioButtonAdmin.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButtonAdmin.Location = new Point(8, 21);
+            radioButtonAdmin.Location = new Point(7, 16);
             radioButtonAdmin.Margin = new Padding(0);
             radioButtonAdmin.Name = "radioButtonAdmin";
-            radioButtonAdmin.Size = new Size(141, 30);
+            radioButtonAdmin.Size = new Size(112, 26);
             radioButtonAdmin.TabIndex = 6;
             radioButtonAdmin.Text = "Administrador";
             radioButtonAdmin.UseVisualStyleBackColor = true;
             // 
-            // textBoxMatrícula
+            // textBoxMatricula
             // 
-            textBoxMatrícula.BorderStyle = BorderStyle.FixedSingle;
-            textBoxMatrícula.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxMatrícula.Location = new Point(482, 184);
-            textBoxMatrícula.Name = "textBoxMatrícula";
-            textBoxMatrícula.Size = new Size(343, 33);
-            textBoxMatrícula.TabIndex = 2;
+            textBoxMatricula.BorderStyle = BorderStyle.FixedSingle;
+            textBoxMatricula.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxMatricula.Location = new Point(422, 138);
+            textBoxMatricula.Margin = new Padding(3, 2, 3, 2);
+            textBoxMatricula.Name = "textBoxMatricula";
+            textBoxMatricula.Size = new Size(300, 28);
+            textBoxMatricula.TabIndex = 2;
             // 
             // labelMatricula
             // 
             labelMatricula.AutoSize = true;
             labelMatricula.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMatricula.Location = new Point(475, 151);
+            labelMatricula.Location = new Point(416, 113);
             labelMatricula.Name = "labelMatricula";
-            labelMatricula.Size = new Size(103, 30);
+            labelMatricula.Size = new Size(86, 25);
             labelMatricula.TabIndex = 80;
             labelMatricula.Text = "Matrícula*:";
             // 
@@ -299,9 +252,9 @@
             // 
             labelValidadeCarta.AutoSize = true;
             labelValidadeCarta.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelValidadeCarta.Location = new Point(22, 21);
+            labelValidadeCarta.Location = new Point(16, 16);
             labelValidadeCarta.Name = "labelValidadeCarta";
-            labelValidadeCarta.Size = new Size(188, 30);
+            labelValidadeCarta.Size = new Size(155, 25);
             labelValidadeCarta.TabIndex = 78;
             labelValidadeCarta.Text = "Validade da carteira:";
             // 
@@ -309,18 +262,19 @@
             // 
             textBoxNumero.BorderStyle = BorderStyle.FixedSingle;
             textBoxNumero.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxNumero.Location = new Point(309, 1016);
+            textBoxNumero.Location = new Point(46, 859);
+            textBoxNumero.Margin = new Padding(3, 2, 3, 2);
             textBoxNumero.Name = "textBoxNumero";
-            textBoxNumero.Size = new Size(156, 33);
+            textBoxNumero.Size = new Size(299, 28);
             textBoxNumero.TabIndex = 22;
             // 
             // labelNumber
             // 
             labelNumber.AutoSize = true;
             labelNumber.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelNumber.Location = new Point(302, 981);
+            labelNumber.Location = new Point(40, 833);
             labelNumber.Name = "labelNumber";
-            labelNumber.Size = new Size(94, 30);
+            labelNumber.Size = new Size(78, 25);
             labelNumber.TabIndex = 76;
             labelNumber.Text = "Número*:";
             // 
@@ -328,18 +282,19 @@
             // 
             textBoxComplemento.BorderStyle = BorderStyle.FixedSingle;
             textBoxComplemento.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxComplemento.Location = new Point(501, 1016);
+            textBoxComplemento.Location = new Point(436, 859);
+            textBoxComplemento.Margin = new Padding(3, 2, 3, 2);
             textBoxComplemento.Name = "textBoxComplemento";
-            textBoxComplemento.Size = new Size(369, 33);
+            textBoxComplemento.Size = new Size(318, 28);
             textBoxComplemento.TabIndex = 23;
             // 
             // labelComplemento
             // 
             labelComplemento.AutoSize = true;
             labelComplemento.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelComplemento.Location = new Point(494, 981);
+            labelComplemento.Location = new Point(430, 833);
             labelComplemento.Name = "labelComplemento";
-            labelComplemento.Size = new Size(150, 30);
+            labelComplemento.Size = new Size(123, 25);
             labelComplemento.TabIndex = 74;
             labelComplemento.Text = "Complemento*:";
             // 
@@ -347,18 +302,19 @@
             // 
             textBoxPais.BorderStyle = BorderStyle.FixedSingle;
             textBoxPais.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPais.Location = new Point(426, 807);
+            textBoxPais.Location = new Point(46, 781);
+            textBoxPais.Margin = new Padding(3, 2, 3, 2);
             textBoxPais.Name = "textBoxPais";
-            textBoxPais.Size = new Size(223, 33);
+            textBoxPais.Size = new Size(299, 28);
             textBoxPais.TabIndex = 17;
             // 
             // labelPais
             // 
             labelPais.AutoSize = true;
             labelPais.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPais.Location = new Point(419, 772);
+            labelPais.Location = new Point(40, 755);
             labelPais.Name = "labelPais";
-            labelPais.Size = new Size(59, 30);
+            labelPais.Size = new Size(49, 25);
             labelPais.TabIndex = 72;
             labelPais.Text = "País*:";
             // 
@@ -366,9 +322,9 @@
             // 
             labelCep.AutoSize = true;
             labelCep.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCep.Location = new Point(46, 772);
+            labelCep.Location = new Point(40, 579);
             labelCep.Name = "labelCep";
-            labelCep.Size = new Size(57, 30);
+            labelCep.Size = new Size(48, 25);
             labelCep.TabIndex = 70;
             labelCep.Text = "CEP*:";
             // 
@@ -376,9 +332,9 @@
             // 
             labelCpf.AutoSize = true;
             labelCpf.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCpf.Location = new Point(46, 151);
+            labelCpf.Location = new Point(40, 113);
             labelCpf.Name = "labelCpf";
-            labelCpf.Size = new Size(57, 30);
+            labelCpf.Size = new Size(48, 25);
             labelCpf.TabIndex = 66;
             labelCpf.Text = "CPF*:";
             // 
@@ -386,9 +342,9 @@
             // 
             labelPhone.AutoSize = true;
             labelPhone.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPhone.Location = new Point(46, 332);
+            labelPhone.Location = new Point(40, 249);
             labelPhone.Name = "labelPhone";
-            labelPhone.Size = new Size(99, 30);
+            labelPhone.Size = new Size(83, 25);
             labelPhone.TabIndex = 64;
             labelPhone.Text = "Telefone*:";
             // 
@@ -396,37 +352,39 @@
             // 
             textBoxEmail.BorderStyle = BorderStyle.FixedSingle;
             textBoxEmail.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxEmail.Location = new Point(53, 277);
+            textBoxEmail.Location = new Point(46, 208);
+            textBoxEmail.Margin = new Padding(3, 2, 3, 2);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(772, 33);
+            textBoxEmail.Size = new Size(676, 28);
             textBoxEmail.TabIndex = 3;
             // 
             // labelEmail
             // 
             labelEmail.AutoSize = true;
             labelEmail.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelEmail.Location = new Point(46, 243);
+            labelEmail.Location = new Point(40, 182);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(71, 30);
+            labelEmail.Size = new Size(58, 25);
             labelEmail.TabIndex = 62;
             labelEmail.Text = "Email*:";
             // 
-            // textBoxName
+            // textBoxNome
             // 
-            textBoxName.BorderStyle = BorderStyle.FixedSingle;
-            textBoxName.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxName.Location = new Point(53, 100);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(681, 33);
-            textBoxName.TabIndex = 0;
+            textBoxNome.BorderStyle = BorderStyle.FixedSingle;
+            textBoxNome.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxNome.Location = new Point(46, 75);
+            textBoxNome.Margin = new Padding(3, 2, 3, 2);
+            textBoxNome.Name = "textBoxNome";
+            textBoxNome.Size = new Size(596, 28);
+            textBoxNome.TabIndex = 0;
             // 
             // labelName
             // 
             labelName.AutoSize = true;
             labelName.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelName.Location = new Point(46, 67);
+            labelName.Location = new Point(40, 50);
             labelName.Name = "labelName";
-            labelName.Size = new Size(77, 30);
+            labelName.Size = new Size(64, 25);
             labelName.TabIndex = 60;
             labelName.Text = "Nome*:";
             // 
@@ -437,11 +395,11 @@
             groupBoxFuncao.Controls.Add(radioButtonAdmin);
             groupBoxFuncao.Controls.Add(radioButtonAtendente);
             groupBoxFuncao.FlatStyle = FlatStyle.Flat;
-            groupBoxFuncao.Location = new Point(453, 365);
+            groupBoxFuncao.Location = new Point(396, 274);
             groupBoxFuncao.Margin = new Padding(0);
             groupBoxFuncao.Name = "groupBoxFuncao";
             groupBoxFuncao.Padding = new Padding(0);
-            groupBoxFuncao.Size = new Size(394, 65);
+            groupBoxFuncao.Size = new Size(345, 49);
             groupBoxFuncao.TabIndex = 5;
             groupBoxFuncao.TabStop = false;
             groupBoxFuncao.UseCompatibleTextRendering = true;
@@ -450,82 +408,112 @@
             // 
             groupBoxCarta.Controls.Add(radioButtonCartaNao);
             groupBoxCarta.Controls.Add(radioButtonCartaSim);
-            groupBoxCarta.Location = new Point(46, 616);
-            groupBoxCarta.Margin = new Padding(3, 4, 3, 4);
+            groupBoxCarta.Location = new Point(40, 462);
             groupBoxCarta.Name = "groupBoxCarta";
-            groupBoxCarta.Padding = new Padding(3, 4, 3, 4);
-            groupBoxCarta.Size = new Size(181, 59);
+            groupBoxCarta.Size = new Size(158, 44);
             groupBoxCarta.TabIndex = 10;
             groupBoxCarta.TabStop = false;
             // 
             // panelCarta
             // 
             panelCarta.Anchor = AnchorStyles.Right;
-            panelCarta.Controls.Add(maskedTextBoxValidadeCarta);
+            panelCarta.Controls.Add(dateTimePickerValidadeCarta);
             panelCarta.Controls.Add(labelObservation);
             panelCarta.Controls.Add(labelValidadeCarta);
             panelCarta.Controls.Add(textBoxObservation);
-            panelCarta.Location = new Point(309, 579);
-            panelCarta.Margin = new Padding(3, 4, 3, 4);
+            panelCarta.Location = new Point(237, 427);
             panelCarta.Name = "panelCarta";
-            panelCarta.Size = new Size(614, 197);
+            panelCarta.Size = new Size(537, 148);
             panelCarta.TabIndex = 13;
             panelCarta.Visible = false;
             // 
-            // maskedTextBoxValidadeCarta
+            // dateTimePickerValidadeCarta
             // 
-            maskedTextBoxValidadeCarta.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxValidadeCarta.Location = new Point(22, 59);
-            maskedTextBoxValidadeCarta.Margin = new Padding(3, 4, 3, 4);
-            maskedTextBoxValidadeCarta.Mask = "00/00/0000";
-            maskedTextBoxValidadeCarta.Name = "maskedTextBoxValidadeCarta";
-            maskedTextBoxValidadeCarta.Size = new Size(177, 33);
-            maskedTextBoxValidadeCarta.TabIndex = 90;
+            dateTimePickerValidadeCarta.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerValidadeCarta.Location = new Point(16, 47);
+            dateTimePickerValidadeCarta.Name = "dateTimePickerValidadeCarta";
+            dateTimePickerValidadeCarta.Size = new Size(221, 28);
+            dateTimePickerValidadeCarta.TabIndex = 106;
             // 
             // userControlRegister
             // 
-            userControlRegister.Location = new Point(143, 1100);
+            userControlRegister.Location = new Point(125, 940);
+            userControlRegister.Margin = new Padding(3, 2, 3, 2);
             userControlRegister.Name = "userControlRegister";
-            userControlRegister.Size = new Size(601, 117);
+            userControlRegister.Size = new Size(526, 88);
             userControlRegister.TabIndex = 100;
             // 
             // maskedTextBoxCpf
             // 
             maskedTextBoxCpf.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxCpf.Location = new Point(53, 191);
-            maskedTextBoxCpf.Margin = new Padding(3, 4, 3, 4);
+            maskedTextBoxCpf.Location = new Point(46, 143);
             maskedTextBoxCpf.Mask = "000.000.000-00";
             maskedTextBoxCpf.Name = "maskedTextBoxCpf";
-            maskedTextBoxCpf.Size = new Size(358, 33);
+            maskedTextBoxCpf.Size = new Size(314, 28);
             maskedTextBoxCpf.TabIndex = 101;
+            maskedTextBoxCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // maskedTextBoxPhone
             // 
+            maskedTextBoxPhone.CutCopyMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             maskedTextBoxPhone.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxPhone.Location = new Point(53, 384);
-            maskedTextBoxPhone.Margin = new Padding(3, 4, 3, 4);
+            maskedTextBoxPhone.Location = new Point(46, 288);
             maskedTextBoxPhone.Mask = "(00) 90000-0000";
             maskedTextBoxPhone.Name = "maskedTextBoxPhone";
-            maskedTextBoxPhone.Size = new Size(358, 33);
+            maskedTextBoxPhone.Size = new Size(314, 28);
             maskedTextBoxPhone.TabIndex = 102;
+            maskedTextBoxPhone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // maskedTextBoxCep
             // 
             maskedTextBoxCep.AllowDrop = true;
             maskedTextBoxCep.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxCep.Location = new Point(53, 809);
-            maskedTextBoxCep.Margin = new Padding(3, 4, 3, 4);
+            maskedTextBoxCep.Location = new Point(46, 607);
             maskedTextBoxCep.Mask = "00000-000";
             maskedTextBoxCep.Name = "maskedTextBoxCep";
-            maskedTextBoxCep.Size = new Size(291, 33);
+            maskedTextBoxCep.Size = new Size(255, 28);
             maskedTextBoxCep.TabIndex = 103;
+            maskedTextBoxCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            maskedTextBoxCep.TextChanged += maskedTextBoxCep_TextChanged;
+            // 
+            // labelIdEndereco
+            // 
+            labelIdEndereco.AutoSize = true;
+            labelIdEndereco.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelIdEndereco.Location = new Point(360, 579);
+            labelIdEndereco.Name = "labelIdEndereco";
+            labelIdEndereco.Size = new Size(35, 25);
+            labelIdEndereco.TabIndex = 104;
+            labelIdEndereco.Text = "ID*:";
+            // 
+            // textBoxUf
+            // 
+            textBoxUf.BorderStyle = BorderStyle.FixedSingle;
+            textBoxUf.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxUf.Location = new Point(436, 782);
+            textBoxUf.Margin = new Padding(3, 2, 3, 2);
+            textBoxUf.Name = "textBoxUf";
+            textBoxUf.Size = new Size(318, 28);
+            textBoxUf.TabIndex = 18;
+            // 
+            // textBoxIdEndereco
+            // 
+            textBoxIdEndereco.BorderStyle = BorderStyle.FixedSingle;
+            textBoxIdEndereco.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxIdEndereco.Location = new Point(369, 606);
+            textBoxIdEndereco.Margin = new Padding(3, 2, 3, 2);
+            textBoxIdEndereco.Name = "textBoxIdEndereco";
+            textBoxIdEndereco.Size = new Size(133, 28);
+            textBoxIdEndereco.TabIndex = 105;
             // 
             // CadastrarFuncionario
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(914, 1249);
+            ClientSize = new Size(800, 1061);
+            Controls.Add(textBoxIdEndereco);
+            Controls.Add(labelIdEndereco);
             Controls.Add(maskedTextBoxCep);
             Controls.Add(maskedTextBoxPhone);
             Controls.Add(maskedTextBoxCpf);
@@ -533,19 +521,15 @@
             Controls.Add(panelCarta);
             Controls.Add(groupBoxCarta);
             Controls.Add(groupBoxFuncao);
-            Controls.Add(textBoxLogradouro);
-            Controls.Add(labelLogradouro);
-            Controls.Add(textBoxBairro);
-            Controls.Add(labelBairro);
-            Controls.Add(textBoxCidade);
-            Controls.Add(labelCidade);
+            Controls.Add(textBoxEndereco);
+            Controls.Add(labelEndereco);
             Controls.Add(textBoxUf);
             Controls.Add(labelUf);
             Controls.Add(textBoxSenha);
             Controls.Add(labelSenha);
             Controls.Add(labelCarta);
             Controls.Add(labelFuncao);
-            Controls.Add(textBoxMatrícula);
+            Controls.Add(textBoxMatricula);
             Controls.Add(labelMatricula);
             Controls.Add(textBoxNumero);
             Controls.Add(labelNumber);
@@ -558,10 +542,9 @@
             Controls.Add(labelPhone);
             Controls.Add(textBoxEmail);
             Controls.Add(labelEmail);
-            Controls.Add(textBoxName);
+            Controls.Add(textBoxNome);
             Controls.Add(labelName);
             KeyPreview = true;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastrarFuncionario";
             Text = "Cadastrar Funcionario";
             FormClosing += CadastrarFuncionario_FormClosing;
@@ -577,14 +560,8 @@
         }
 
         #endregion
-
-        private TextBox textBoxLogradouro;
-        private Label labelLogradouro;
-        private TextBox textBoxBairro;
-        private Label labelBairro;
-        private TextBox textBoxCidade;
-        private Label labelCidade;
-        private TextBox textBoxUf;
+        private TextBox textBoxEndereco;
+        private Label labelEndereco;
         private Label labelUf;
         private TextBox textBoxSenha;
         private Label labelSenha;
@@ -597,7 +574,7 @@
         private RadioButton radioButtonAtendente;
         private Label labelFuncao;
         private RadioButton radioButtonAdmin;
-        private TextBox textBoxMatrícula;
+        private TextBox textBoxMatricula;
         private Label labelMatricula;
         private Label labelValidadeCarta;
         private TextBox textBoxNumero;
@@ -611,7 +588,7 @@
         private Label labelPhone;
         private TextBox textBoxEmail;
         private Label labelEmail;
-        private TextBox textBoxName;
+        private TextBox textBoxNome;
         private Label labelName;
         private GroupBox groupBoxFuncao;
         private GroupBox groupBoxCarta;
@@ -620,6 +597,9 @@
         private MaskedTextBox maskedTextBoxCpf;
         private MaskedTextBox maskedTextBoxPhone;
         private MaskedTextBox maskedTextBoxCep;
-        private MaskedTextBox maskedTextBoxValidadeCarta;
+        private Label labelIdEndereco;
+        private TextBox textBoxUf;
+        private TextBox textBoxIdEndereco;
+        private DateTimePicker dateTimePickerValidadeCarta;
     }
 }

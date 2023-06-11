@@ -139,7 +139,7 @@ namespace PizzariaDoZe
         /// <param name="childForm">Puxa o formulario desejado</param>
         /// <param name="btnSender">É o botão que foi clicado (para ativar e trocar o icone)</param>
         /// <param name="imageName">Nome do icone que vai ser ativado</param>
-        private void OpenChildForm(Form childForm, object btnSender, string imageName)
+        public void OpenChildForm(Form childForm, object btnSender, string imageName)
         {
             if (activeForm != null)
             {
@@ -180,7 +180,10 @@ namespace PizzariaDoZe
             }
             if (thisButton.Name != "btnInvisible")
             {
-                ActivateButton(btnSender, imageName);
+                if(thisButton.Name != "btnEnderecos")
+                {
+                    ActivateButton(btnSender, imageName);
+                }
                 lblTitle.Text = thisButton.Text;
             }
         }
@@ -197,7 +200,7 @@ namespace PizzariaDoZe
             }
             else
             {
-                OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, "home");
+                OpenChildForm(new Forms.Clientes.tabelaClientes(this), sender, "home");
             }
         }
 
@@ -214,7 +217,7 @@ namespace PizzariaDoZe
             }
             else
             {
-                OpenChildForm(new Forms.Clientes.tabelaClientes(), sender, "clientes");
+                OpenChildForm(new Forms.Clientes.tabelaClientes(this), sender, "clientes");
             }
 
         }

@@ -1,6 +1,6 @@
-﻿namespace PizzariaDoZe.Forms.Funcionarios
+﻿namespace PizzariaDoZe.Forms.Enderecos
 {
-    partial class tabelaFuncionarios
+    partial class Enderecos
     {
         /// <summary>
         /// Required designer variable.
@@ -31,60 +31,61 @@
             labelPesquisa = new Label();
             label1 = new Label();
             textBoxPesquisa = new TextBox();
-            dataGridViewFuncionarios = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewFuncionarios).BeginInit();
+            dataGridViewEnderecos = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEnderecos).BeginInit();
             SuspendLayout();
             // 
             // labelPesquisa
             // 
             labelPesquisa.AutoSize = true;
             labelPesquisa.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPesquisa.Location = new Point(35, 29);
+            labelPesquisa.Location = new Point(39, 30);
             labelPesquisa.Name = "labelPesquisa";
             labelPesquisa.Size = new Size(89, 26);
-            labelPesquisa.TabIndex = 15;
+            labelPesquisa.TabIndex = 19;
             labelPesquisa.Text = "Pesquisar:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(41, 31);
+            label1.Location = new Point(45, 32);
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
-            label1.TabIndex = 13;
+            label1.TabIndex = 18;
             // 
             // textBoxPesquisa
             // 
             textBoxPesquisa.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPesquisa.Location = new Point(40, 62);
+            textBoxPesquisa.Location = new Point(44, 63);
             textBoxPesquisa.Margin = new Padding(3, 2, 3, 2);
             textBoxPesquisa.Name = "textBoxPesquisa";
             textBoxPesquisa.Size = new Size(366, 31);
-            textBoxPesquisa.TabIndex = 0;
+            textBoxPesquisa.TabIndex = 16;
             // 
-            // dataGridViewFuncionarios
+            // dataGridViewEnderecos
             // 
-            dataGridViewFuncionarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewFuncionarios.Location = new Point(40, 140);
-            dataGridViewFuncionarios.Name = "dataGridViewFuncionarios";
-            dataGridViewFuncionarios.RowTemplate.Height = 25;
-            dataGridViewFuncionarios.Size = new Size(730, 298);
-            dataGridViewFuncionarios.TabIndex = 16;
-            dataGridViewFuncionarios.CellFormatting += dataGridViewFuncionarios_CellFormatting;
+            dataGridViewEnderecos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewEnderecos.Location = new Point(45, 179);
+            dataGridViewEnderecos.Margin = new Padding(3, 2, 3, 2);
+            dataGridViewEnderecos.Name = "dataGridViewEnderecos";
+            dataGridViewEnderecos.RowHeadersWidth = 51;
+            dataGridViewEnderecos.RowTemplate.Height = 29;
+            dataGridViewEnderecos.Size = new Size(719, 224);
+            dataGridViewEnderecos.TabIndex = 21;
             // 
-            // tabelaFuncionarios
+            // Enderecos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridViewFuncionarios);
+            Controls.Add(dataGridViewEnderecos);
             Controls.Add(labelPesquisa);
             Controls.Add(label1);
             Controls.Add(textBoxPesquisa);
-            Name = "tabelaFuncionarios";
-            Text = "Tabela funcionarios";
-            Load += tabelaFuncionarios_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewFuncionarios).EndInit();
+            Name = "Enderecos";
+            Text = "Enderecos";
+            Load += Enderecos_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEnderecos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -94,6 +95,6 @@
         private Label labelPesquisa;
         private Label label1;
         private TextBox textBoxPesquisa;
-        private DataGridView dataGridViewFuncionarios;
+        private DataGridView dataGridViewEnderecos;
     }
 }

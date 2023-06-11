@@ -28,58 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelPesquisa = new Label();
             label1 = new Label();
-            textBoxPesquisa = new TextBox();
             dataGridViewIngredientes = new DataGridView();
+            textBoxPesquisa = new TextBox();
+            labelPesquisa = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewIngredientes).BeginInit();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(-6, -28);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 15);
+            label1.TabIndex = 18;
+            // 
+            // dataGridViewIngredientes
+            // 
+            dataGridViewIngredientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewIngredientes.Location = new Point(25, 145);
+            dataGridViewIngredientes.Margin = new Padding(3, 2, 3, 2);
+            dataGridViewIngredientes.Name = "dataGridViewIngredientes";
+            dataGridViewIngredientes.RowHeadersWidth = 51;
+            dataGridViewIngredientes.RowTemplate.Height = 29;
+            dataGridViewIngredientes.Size = new Size(719, 224);
+            dataGridViewIngredientes.TabIndex = 20;
+            // 
+            // textBoxPesquisa
+            // 
+            textBoxPesquisa.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPesquisa.Location = new Point(25, 60);
+            textBoxPesquisa.Margin = new Padding(3, 2, 3, 2);
+            textBoxPesquisa.Name = "textBoxPesquisa";
+            textBoxPesquisa.Size = new Size(366, 31);
+            textBoxPesquisa.TabIndex = 0;
             // 
             // labelPesquisa
             // 
             labelPesquisa.AutoSize = true;
             labelPesquisa.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPesquisa.Location = new Point(23, 36);
+            labelPesquisa.Location = new Point(20, 27);
             labelPesquisa.Name = "labelPesquisa";
-            labelPesquisa.Size = new Size(112, 34);
+            labelPesquisa.Size = new Size(89, 26);
             labelPesquisa.TabIndex = 19;
             labelPesquisa.Text = "Pesquisar:";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(-7, -37);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 20);
-            label1.TabIndex = 18;
-            // 
-            // textBoxPesquisa
-            // 
-            textBoxPesquisa.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPesquisa.Location = new Point(29, 80);
-            textBoxPesquisa.Name = "textBoxPesquisa";
-            textBoxPesquisa.Size = new Size(418, 37);
-            textBoxPesquisa.TabIndex = 0;
-            // 
-            // dataGridViewIngredientes
-            // 
-            dataGridViewIngredientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewIngredientes.Location = new Point(29, 193);
-            dataGridViewIngredientes.Name = "dataGridViewIngredientes";
-            dataGridViewIngredientes.RowHeadersWidth = 51;
-            dataGridViewIngredientes.RowTemplate.Height = 29;
-            dataGridViewIngredientes.Size = new Size(822, 299);
-            dataGridViewIngredientes.TabIndex = 20;
-            // 
             // tabelaIngredientes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(893, 591);
+            ClientSize = new Size(781, 443);
             Controls.Add(dataGridViewIngredientes);
             Controls.Add(labelPesquisa);
             Controls.Add(label1);
             Controls.Add(textBoxPesquisa);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "tabelaIngredientes";
             Text = "tabelaIngredientes";
             Load += tabelaIngredientes_Load;
@@ -89,10 +92,9 @@
         }
 
         #endregion
-
-        private Label labelPesquisa;
         private Label label1;
-        private TextBox textBoxPesquisa;
         private DataGridView dataGridViewIngredientes;
+        private TextBox textBoxPesquisa;
+        private Label labelPesquisa;
     }
 }
