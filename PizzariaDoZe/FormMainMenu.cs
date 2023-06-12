@@ -42,6 +42,7 @@ namespace PizzariaDoZe
             toolStripMenuItemFuncionarios.Click += new EventHandler(btnFuncionarios_Click!);
             toolStripMenuItemIngredientes.Click += new EventHandler(btnIngredientes_Click!);
             toolStripMenuItemSabores.Click += new EventHandler(btnSabores_Click!);
+
             toolStripMenuItemConfig.Click += new EventHandler(btnConfiguracoes_Click!);
 
             //System Tray
@@ -180,7 +181,7 @@ namespace PizzariaDoZe
             }
             if (thisButton.Name != "btnInvisible")
             {
-                if(thisButton.Name != "btnEnderecos")
+                if (thisButton.Name != "btnEnderecos")
                 {
                     ActivateButton(btnSender, imageName);
                 }
@@ -292,6 +293,31 @@ namespace PizzariaDoZe
             }
         }
 
+        private void btnValores_Click(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem item)
+            {
+                btnValores.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Valores.tabelaValor(), sender, "valores");
+            }
+        }
+
+
+        private void buttonProdutos_Click(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem item)
+            {
+                btnValores.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Produtos.tabelaProdutos(), sender, "produtos");
+            }
+        }
+
         /// <summary>
         /// Este botão vai se adaptar ao formulário aberto, vai abrir o formulário de cadastro da página aberta
         /// </summary>
@@ -322,6 +348,16 @@ namespace PizzariaDoZe
                 this.btnInvisible.Visible = false;
                 OpenChildForm(new Forms.Ingredientes.CadastrarIngrediente(this), sender, buttonTagLower);
             }
+            else if (buttonTag == "Valores")
+            {
+                this.btnInvisible.Visible = false;
+                OpenChildForm(new Forms.Valores.CadastrarValor(this), sender, buttonTagLower);
+            }
+            else if (buttonTag == "Produtos")
+            {
+                this.btnInvisible.Visible = false;
+                OpenChildForm(new Forms.Produtos.CadastrarProdutos(this), sender, buttonTagLower);
+            }
         }
 
         private void FormMainMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -335,7 +371,7 @@ namespace PizzariaDoZe
             }
         }
 
-        public static void ValidaConexaoDB(Button thisButton )
+        public static void ValidaConexaoDB(Button thisButton)
         {
             DbProviderFactory factory;
             try
@@ -359,6 +395,7 @@ namespace PizzariaDoZe
             Button thisButton = this.btnConfiguracoes;
             ValidaConexaoDB(thisButton);
         }
+
     }
 
 }

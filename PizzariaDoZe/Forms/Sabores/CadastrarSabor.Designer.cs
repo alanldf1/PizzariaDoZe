@@ -125,7 +125,7 @@
             // 
             // userControlRegister
             // 
-            userControlRegister.Location = new Point(135, 695);
+            userControlRegister.Location = new Point(136, 740);
             userControlRegister.Margin = new Padding(3, 2, 3, 2);
             userControlRegister.Name = "userControlRegister";
             userControlRegister.Size = new Size(533, 99);
@@ -145,16 +145,16 @@
             // 
             listBoxCategoria.FormattingEnabled = true;
             listBoxCategoria.ItemHeight = 15;
-            listBoxCategoria.Location = new Point(102, 596);
+            listBoxCategoria.Location = new Point(43, 596);
             listBoxCategoria.Name = "listBoxCategoria";
-            listBoxCategoria.Size = new Size(228, 94);
+            listBoxCategoria.Size = new Size(308, 94);
             listBoxCategoria.TabIndex = 43;
             // 
             // labelCategoria
             // 
             labelCategoria.AutoSize = true;
             labelCategoria.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCategoria.Location = new Point(96, 568);
+            labelCategoria.Location = new Point(37, 568);
             labelCategoria.Name = "labelCategoria";
             labelCategoria.Size = new Size(84, 25);
             labelCategoria.TabIndex = 44;
@@ -164,7 +164,7 @@
             // 
             labelTipo.AutoSize = true;
             labelTipo.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTipo.Location = new Point(466, 568);
+            labelTipo.Location = new Point(444, 568);
             labelTipo.Name = "labelTipo";
             labelTipo.Size = new Size(44, 25);
             labelTipo.TabIndex = 46;
@@ -174,9 +174,9 @@
             // 
             listBoxTipo.FormattingEnabled = true;
             listBoxTipo.ItemHeight = 15;
-            listBoxTipo.Location = new Point(472, 596);
+            listBoxTipo.Location = new Point(450, 596);
             listBoxTipo.Name = "listBoxTipo";
-            listBoxTipo.Size = new Size(228, 94);
+            listBoxTipo.Size = new Size(331, 94);
             listBoxTipo.TabIndex = 45;
             // 
             // labelDescricao

@@ -10,15 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PizzariaDoZe.Forms.Sabores
+namespace PizzariaDoZe.Forms.Produtos
 {
-#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
-    public partial class tabelaSabores : Form
+    public partial class tabelaProdutos : Form
     {
-        private readonly SaborDAO saborDAO;
-
-#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
-        public tabelaSabores()
+        private ProdutosDAO produtosDAO;
+        public tabelaProdutos()
         {
             InitializeComponent();
 
@@ -35,49 +32,58 @@ namespace PizzariaDoZe.Forms.Sabores
             string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
             string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
             // cria a instancia da classe da model
-            saborDAO = new SaborDAO(provider, strConnection);
+            produtosDAO = new ProdutosDAO(provider, strConnection);
 
             Funcoes.EventoFocoCampos(this);
 
             this.ActiveControl = textBoxPesquisa;
 
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
+
         }
 
-        private void dataGridViewSabores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dataGridViewProdutos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.RowIndex == this.dataGridViewSabores.NewRowIndex || e.Value.ToString().Trim().Length == 0)
+            if (e.RowIndex == this.dataGridViewProdutos.NewRowIndex || e.Value.ToString().Trim().Length == 0)
             {
-                return; 
+                return;
             }
-            if (this.dataGridViewSabores.Columns[e.ColumnIndex].Name.Equals("Funcao"))
+            if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Grupo"))
             {
                 e.Value = EnumExtensions.GetDescription((EnumFuncionarioGrupo)int.Parse(e.Value.ToString()));
             }
-            else if (this.dataGridViewSabores.Columns[e.ColumnIndex].Name.Equals("Categoria"))
+            else if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Categoria"))
             {
                 e.Value = EnumExtensions.GetDescription((EnumSaborCategoria)char.Parse(e.Value.ToString()));
             }
-            else if (this.dataGridViewSabores.Columns[e.ColumnIndex].Name.Equals("Tipo"))
+            else if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Tamanho"))
+            {
+                e.Value = EnumExtensions.GetDescription((EnumValorTamanho)char.Parse(e.Value.ToString()));
+            }
+            else if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Tipo"))
             {
                 e.Value = EnumExtensions.GetDescription((EnumSaborTipo)char.Parse(e.Value.ToString()));
             }
-            else if (this.dataGridViewSabores.Columns[e.ColumnIndex].Name.Equals("CPF"))
+            else if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Tipo Produto"))
+            {
+                e.Value = EnumExtensions.GetDescription((EnumProdutoTipo)char.Parse(e.Value.ToString()));
+            }
+            else if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("CPF"))
             {
                 long value = long.Parse(e.Value.ToString().Replace(" ", ""));
                 e.Value = string.Format(@"{0:000\.000\.000\-00}", value);
             }
-            else if (this.dataGridViewSabores.Columns[e.ColumnIndex].Name.Equals("CEP"))
+            else if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("CEP"))
             {
                 long value = long.Parse(e.Value.ToString().Replace(" ", ""));
                 e.Value = string.Format(@"{0:00\.000\-000}", value);
             }
-            else if (this.dataGridViewSabores.Columns[e.ColumnIndex].Name.Equals("Telefone"))
+            else if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Telefone"))
             {
                 long value = long.Parse(e.Value.ToString().Replace(" ", ""));
                 e.Value = string.Format(@"{0:(00) 00000\-0000}", value);
             }
-            else if (this.dataGridViewSabores.Columns[e.ColumnIndex].Name.Equals("Valor"))
+            else if (this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Valor") || this.dataGridViewProdutos.Columns[e.ColumnIndex].Name.Equals("Valor Borda"))
             {
                 // formata valor numérico com duas casa decimais
                 double d = double.Parse(e.Value.ToString());
@@ -85,29 +91,29 @@ namespace PizzariaDoZe.Forms.Sabores
             }
         }
 
-        private void tabelaSabores_Load(object sender, EventArgs e)
-        {
-            AtualizarTela();
-        }
-
         private void AtualizarTela()
         {
             //Instância e Preenche o objeto com os dados da view
-            var sabor = new Sabor();
+            var produtos = new Produto();
             try
             {
                 //chama o método para buscar todos os dados da nossa camada model
-                DataTable linhas = saborDAO.Buscar(sabor);
+                DataTable linhas = produtosDAO.Buscar(produtos);
                 // seta o datasouce do dataGridView com os dados retornados
-                dataGridViewSabores.Columns.Clear();
-                dataGridViewSabores.AutoGenerateColumns = true;
-                dataGridViewSabores.DataSource = linhas;
-                dataGridViewSabores.Refresh();
+                dataGridViewProdutos.Columns.Clear();
+                dataGridViewProdutos.AutoGenerateColumns = true;
+                dataGridViewProdutos.DataSource = linhas;
+                dataGridViewProdutos.Refresh();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void tabelaProdutos_Load(object sender, EventArgs e)
+        {
+            AtualizarTela();
         }
     }
 }

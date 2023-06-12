@@ -109,7 +109,7 @@ namespace PizzariaDoZe_DAO
             conexao.Open();
             comando.CommandText = @" " +
             "SELECT s.id AS ID, s.nome AS Nome, s.descricao AS Descricao, s.foto AS Foto, s.categoria AS Categoria, s.tipo AS Tipo, " +
-            "(SELECT GROUP_CONCAT(i.descricao SEPARATOR ', ') FROM lista_ingredientes AS iss, ingredientes i WHERE iss.sabores_id = s.id AND i.id = iss.ingredientes_id ) AS Ingredientes " +
+            "(SELECT GROUP_CONCAT(i.nome SEPARATOR ', ') FROM lista_ingredientes AS iss, ingredientes i WHERE iss.sabores_id = s.id AND i.id = iss.ingredientes_id ) AS Ingredientes " +
             "FROM sabores AS s " +
             auxSqlFiltro +
             "ORDER BY s.descricao;";

@@ -210,6 +210,26 @@ namespace PizzariaDoZe.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap produtos {
+            get {
+                object obj = ResourceManager.GetObject("produtos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap produtos_red {
+            get {
+                object obj = ResourceManager.GetObject("produtos_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sabores {
             get {
                 object obj = ResourceManager.GetObject("sabores", resourceCulture);
@@ -223,6 +243,26 @@ namespace PizzariaDoZe.Properties {
         internal static System.Drawing.Bitmap sabores_red {
             get {
                 object obj = ResourceManager.GetObject("sabores-red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap valores {
+            get {
+                object obj = ResourceManager.GetObject("valores", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap valores_red {
+            get {
+                object obj = ResourceManager.GetObject("valores_red", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
