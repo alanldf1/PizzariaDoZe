@@ -1,117 +1,125 @@
-﻿using System.Data.Common;
-using System.Configuration;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
-
+using System.Data.Common;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PizzariaDoZe_DAO
 {
-    public class Pedidos
+
+    public class Pedido
     {
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
-        public decimal Valor { get; set; }
+        public byte[] Foto { get; set; }
+        public char Categoria { get; set; }
         public char Tipo { get; set; }
-        public string ML { get; set; }
+        public List<Ingrediente> SaborIngredientes { get; set; }
+        public Pedido(int id = 0, string nome = "", string descricao = ""
 
-        public Pedidos(int id = 0, string nome = "", string descricao = ""
-
-        , decimal valor = 0, char
-
-        tipo = ' ', string ml = "")
+        , byte[] foto = null, char
+        categoria = ' ', char tipo = ' ', List<Ingrediente> saborIngredientes = null)
         {
             Id = id;
             Nome = nome;
             Descricao = descricao;
-            Valor = valor;
+            Foto = foto;
+            Categoria = categoria;
             Tipo = tipo;
-            ML = ml;
+            this.SaborIngredientes = saborIngredientes;
         }
     }
-    public class PedidosDAO
+    public class PedidoDAO
     {
         private readonly DbProviderFactory factory;
         private string Provider { get; set; }
         private string StringConexao { get; set; }
-        public PedidosDAO(string provider, string stringConexao)
+        public PedidoDAO(string provider, string stringConexao)
         {
             Provider = provider;
             StringConexao = stringConexao;
             factory = DbProviderFactories.GetFactory(Provider);
         }
-        // MÉTODO INSERIR AQUI
-        public int Inserir(Funcionario funcionario)
+        // Método INSERIR aqui
+        public int Inserir(Pedido pedido)
         {
             using var conexao = factory.CreateConnection(); //Cria conexão
             conexao!.ConnectionString = StringConexao; //Atribui a string de conexão
             using var comando = factory.CreateCommand(); //Cria comando
             comando!.Connection = conexao; //Atribui conexão
                                            //Adiciona parâmetro (@campo e valor)
-            var nome = comando.CreateParameter(); nome.ParameterName = "@nome";
-            nome.Value = funcionario.Nome; comando.Parameters.Add(nome);
-            var cpf = comando.CreateParameter(); cpf.ParameterName = "@cpf";
-            cpf.Value = funcionario.Cpf; comando.Parameters.Add(cpf);
-            var matricula = comando.CreateParameter(); matricula.ParameterName = "@matricula";
-            matricula.Value = funcionario.Matricula; comando.Parameters.Add(matricula);
-            var senha = comando.CreateParameter(); senha.ParameterName = "@senha";
-            senha.Value = funcionario.Senha; comando.Parameters.Add(senha);
-            var grupo = comando.CreateParameter(); grupo.ParameterName = "@funcao";
-            grupo.Value = funcionario.Funcao; comando.Parameters.Add(grupo);
-            var motorista = comando.CreateParameter(); motorista.ParameterName = "@motorista";
-            motorista.Value = funcionario.Motorista; comando.Parameters.Add(motorista);
-            var validade_motorista = comando.CreateParameter(); validade_motorista.ParameterName = "@validade_motorista";
-            validade_motorista.Value = funcionario.Validade; comando.Parameters.Add(validade_motorista);
-            var observacao = comando.CreateParameter(); observacao.ParameterName = "@observacao";
-            observacao.Value = funcionario.Observacao; comando.Parameters.Add(observacao);
-            var telefone = comando.CreateParameter(); telefone.ParameterName = "@telefone";
-            telefone.Value = funcionario.Telefone; comando.Parameters.Add(telefone);
-            var email = comando.CreateParameter(); email.ParameterName = "@email";
-            email.Value = funcionario.Email; comando.Parameters.Add(email);
-            var numero = comando.CreateParameter(); numero.ParameterName = "@numero";
-            numero.Value = funcionario.Numero; comando.Parameters.Add(numero);
-            var complemento = comando.CreateParameter(); complemento.ParameterName = "@complemento";
-            complemento.Value = funcionario.Complemento; comando.Parameters.Add(complemento);
-            var enderecos_id = comando.CreateParameter(); enderecos_id.ParameterName = "@enderecos_id";
-            enderecos_id.Value = funcionario.EnderecoId; comando.Parameters.Add(enderecos_id);
-
+            var nome = comando.CreateParameter(); nome.ParameterName = "@nome"; nome.Value = pedido.Nome; comando.Parameters.Add(nome);
+            var descricao = comando.CreateParameter(); descricao.ParameterName = "@descricao"; descricao.Value = pedido.Descricao; comando.Parameters.Add(descricao);
+            var foto = comando.CreateParameter(); foto.ParameterName = "@foto"; foto.Value = pedido.Foto; comando.Parameters.Add(foto);
+            var categoria = comando.CreateParameter(); categoria.ParameterName = "@categoria"; categoria.Value = pedido.Categoria; comando.Parameters.Add(categoria);
+            var tipo = comando.CreateParameter(); tipo.ParameterName = "@tipo"; tipo.Value = pedido.Tipo; comando.Parameters.Add(tipo);
             conexao.Open();
-            //ajusta o comando SQL para capturar o ID gerado tanto do MySQL como do SQLServer
-            string auxSQL_ID = Provider.Contains("MySql") ? "SELECT LAST_INSERT_ID();" : "SELECT SCOPE_IDENTITY();";
-            //realiza o INSERT e retorna o ID gerado, algo que vai ser necessário na sequencia
-            comando.CommandText = @"INSERT INTO funcionarios (nome, cpf, matricula, senha, funcao, motorista, validade_motorista, observacao, telefone, email, numero, complemento, enderecos_id)
-            VALUES (@nome, @cpf, @matricula, @senha, @funcao, @motorista, @validade_motorista, @observacao, @telefone, @email, @numero, @complemento, @enderecos_id);" + auxSQL_ID;
-            //executa o comando no banco de dados e captura o ID gerado
-            var IdGerado = comando.ExecuteScalar();
-            return Convert.ToInt32(IdGerado);
+            // Inicia o controle de Transação LOCAL
+            DbTransaction transacao = conexao.BeginTransaction();
+            // Associa o command com o controle de Transação
+            comando.Transaction = transacao;
+            try
+            {
+                //ajusta o comando SQL para capturar o ID gerado tanto do MySQL como do SQLServer
+                string auxSQL_ID = Provider.Contains("MySql") ? "SELECT LAST_INSERT_ID();" : "SELECT SCOPE_IDENTITY();";
+                //realiza o INSERT e retorna o ID gerado, algo que vai ser necessário na sequencia
+                comando.CommandText = @"INSERT INTO sabores (nome, descricao, foto, categoria, tipo) VALUES (@nome, @descricao, @foto, @categoria, @tipo);" + auxSQL_ID;
+                //executa o comando no banco de dados e captura o ID gerado
+                var IdSaborGerado = comando.ExecuteScalar();
+                // realiza um loop para pegar todos os ingredientes selecionados
+                foreach (Ingrediente auxIngrediente in pedido.SaborIngredientes)
+                {
+                    // salvar os ingredientes do sabor
+                    comando.CommandText = @"INSERT INTO lista_ingredientes(sabores_id, ingredientes_id) VALUES (" + Convert.ToInt32(IdSaborGerado) + "," + auxIngrediente.Id + ")";
+                    //Executa o script na conexão e retorna o número de linhas afetadas.
+                    var linhasRecebimentoComanda = comando.ExecuteNonQuery();
+                }
+                // Como não ocorreu nenhum erro, confirma as transações através do Commit()
+                transacao.Commit();
+                return Convert.ToInt32(IdSaborGerado);
+            }
+            catch (Exception ex)
+            {
+                // Alguns dos comandos SQL acima gerou erro, dessa forma, todos os comandos serão desfeitos através do Rollback()
+                transacao.Rollback();
+                // retorna uma exceção para quem chamou a execução
+                throw new Exception(ex.Message);
+            }
         }
 
-        public DataTable Buscar(Funcionario funcionario)
+        public DataTable Buscar(Pedido pedido)
         {
             using var conexao = factory.CreateConnection(); //Cria conexão
             conexao!.ConnectionString = StringConexao; //Atribui a string de conexão
             using var comando = factory.CreateCommand(); //Cria comando
             comando!.Connection = conexao; //Atribui conexão
                                            //verifica se tem filtro e personaliza o SQL do filtro
+            string auxSqlFiltro = "";
+            if (pedido.Id > 0)
+            {
+                auxSqlFiltro = "WHERE ped.id = " + pedido.Id + " ";
+            }
             conexao.Open();
             comando.CommandText = @" " +
-            "SELECT ped.id as id, CONCAT(c.nome, \" (\", c.cpf,\")\") as cliente, " +
-            "IF(ped.entrega = 0, \"Retirada\", \"Entrega\") as tipo_entrega, " +
+            "SELECT ped.id as id, CONCAT(c.nome, '(', c.cpf, ')') as cliente, " +
+            "IF(ped.entrega = 0, 'Retirada', 'Entrega') as tipo_entrega, " +
             "(SELECT COUNT(lpiz.pizza_id) FROM lista_pizzas lpiz WHERE lpiz.pedido_id = ped.id) as pizzas, ped.observacao as observacao, " +
-            "IF(ped.borda IS NULL, \"Sem\", ped.borda) as borda, " +
-            "(SELECT COUNT(lprod.id) FROM lista_produtos lprod WHERE lprod.pedido_id = ped.id) as produtos, fun.nome as vendedor, " +
-            "ped.data as data_e_hora, IF(ped.status = 1, \"Em  rota de entrega\", " +
-            "IF(ped.status = 2, \"Entregue\", \"Em preparo\")) as status " +
+            "(SELECT COUNT(lprod.id) FROM lista_produtos lprod WHERE lprod.pedido_id = ped.id) as produtos, fun.nome as vendedor, ped.data as data_e_hora, " +
+            "IF(ped.status = 1, 'Emrota de entrega', IF(ped.status = 2, 'Entregue', 'Em preparo')) as status " +
             "FROM pedido ped " +
             "LEFT JOIN clientes c ON ped.clientes_id = c.id " +
             "LEFT JOIN funcionarios fun ON ped.funcionarios_id = fun.id " +
-            "GROUP BY ped.id" +
-            "ORDER BY p.data;";
+            "GROUP BY ped.id " +
+            auxSqlFiltro +
+            "ORDER BY ped.data;";
             //Executa o script na conexão e retorna as linhas afetadas.
             var sdr = comando.ExecuteReader();
             DataTable linhas = new();
             linhas.Load(sdr);
             return linhas;
         }
-
     }
 }

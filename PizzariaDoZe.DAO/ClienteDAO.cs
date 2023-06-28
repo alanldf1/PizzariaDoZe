@@ -84,14 +84,25 @@ namespace PizzariaDoZe_DAO
             using var comando = factory.CreateCommand(); //Cria comando
             comando!.Connection = conexao; //Atribui conexão
                                            //verifica se tem filtro e personaliza o SQL do filtro
-            string auxSqlFiltro = "";
+            string auxSqlFiltro = "WHERE 1 = 1 ";
             if (cliente.Id > 0)
             {
-                auxSqlFiltro = "WHERE cc.id = " + cliente.Id + " ";
+                auxSqlFiltro += " AND cc.id = " + cliente.Id;
             }
-            else if (cliente.Nome.Length > 0)
+
+            if (!string.IsNullOrEmpty(cliente.Nome))
             {
-                auxSqlFiltro = "WHERE cc.nome like '%" + cliente.Nome + "%' ";
+                auxSqlFiltro += " AND cc.nome = '" + cliente.Nome + "'";
+            }
+
+            if (!string.IsNullOrEmpty(cliente.Telefone))
+            {
+                auxSqlFiltro += " AND cc.telefone = '" + cliente.Telefone + "'";
+            }
+
+            if (!string.IsNullOrEmpty(cliente.Cpf))
+            {
+                auxSqlFiltro += " AND cc.cpf = '" + cliente.Cpf + "'";
             }
             conexao.Open();
             comando.CommandText = @" " +

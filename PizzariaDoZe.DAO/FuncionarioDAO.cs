@@ -123,7 +123,7 @@ namespace PizzariaDoZe_DAO
             }
             conexao.Open();
             comando.CommandText = @" " +
-            "SELECT f.id AS ID, f.nome AS Nome, f.cpf AS CPF, f.matricula AS Matrícula, f.senha AS Senha, f.funcao AS Funcao, f.motorista AS Carteira," +
+            "SELECT f.id AS ID, f.nome AS Nome, f.cpf AS CPF, f.matricula AS Matrícula, f.funcao AS Funcao, f.motorista AS Carteira," +
             "f.validade_motorista AS Validade, f.observacao AS Observação, f.telefone AS Telefone, f.email AS 'E-Mail', " +
             "e.cep AS CEP, e.logradouro AS Logradouro, e.bairro AS Bairro, " +
             "c.nome AS Cidade, " +
@@ -141,15 +141,6 @@ namespace PizzariaDoZe_DAO
             linhas.Load(sdr);
             return linhas;
         }
-        
-        //Last select
-        //SELECT ped.*, COUNT(lp.id) as pizzas, sp.id FROM pedido ped
-        //LEFT JOIN lista_pizzas lp ON lp.pedido_id = ped.id
-        //LEFT JOIN pizza p ON p.id = lp.pizza_id
-        //LEFT JOIN sabores_pizza sp ON sp.pizza_id = p.id
-        //LEFT JOIN sabores s ON s.id = sp.sabores_id
-        //GROUP BY ped.id, sp.pizza_id
-
 
     }
 }

@@ -28,60 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridViewIngredientes = new DataGridView();
+            dataGridViewPedidos = new DataGridView();
             labelPesquisa = new Label();
-            textBoxPesquisa = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewIngredientes).BeginInit();
+            textBoxPedidos = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPedidos).BeginInit();
             SuspendLayout();
             // 
-            // dataGridViewIngredientes
+            // dataGridViewPedidos
             // 
-            dataGridViewIngredientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewIngredientes.Location = new Point(37, 187);
-            dataGridViewIngredientes.Name = "dataGridViewIngredientes";
-            dataGridViewIngredientes.RowHeadersWidth = 51;
-            dataGridViewIngredientes.RowTemplate.Height = 29;
-            dataGridViewIngredientes.Size = new Size(822, 299);
-            dataGridViewIngredientes.TabIndex = 23;
+            dataGridViewPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewPedidos.Location = new Point(43, 172);
+            dataGridViewPedidos.Margin = new Padding(3, 2, 3, 2);
+            dataGridViewPedidos.Name = "dataGridViewPedidos";
+            dataGridViewPedidos.RowHeadersWidth = 51;
+            dataGridViewPedidos.RowTemplate.Height = 29;
+            dataGridViewPedidos.Size = new Size(719, 224);
+            dataGridViewPedidos.TabIndex = 23;
             // 
             // labelPesquisa
             // 
             labelPesquisa.AutoSize = true;
             labelPesquisa.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelPesquisa.Location = new Point(31, 35);
+            labelPesquisa.Location = new Point(38, 54);
             labelPesquisa.Name = "labelPesquisa";
-            labelPesquisa.Size = new Size(112, 34);
+            labelPesquisa.Size = new Size(89, 26);
             labelPesquisa.TabIndex = 22;
             labelPesquisa.Text = "Pesquisar:";
             // 
-            // textBoxPesquisa
+            // textBoxPedidos
             // 
-            textBoxPesquisa.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPesquisa.Location = new Point(37, 79);
-            textBoxPesquisa.Name = "textBoxPesquisa";
-            textBoxPesquisa.Size = new Size(418, 37);
-            textBoxPesquisa.TabIndex = 21;
+            textBoxPedidos.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBoxPedidos.Location = new Point(43, 87);
+            textBoxPedidos.Margin = new Padding(3, 2, 3, 2);
+            textBoxPedidos.Name = "textBoxPedidos";
+            textBoxPedidos.Size = new Size(366, 31);
+            textBoxPedidos.TabIndex = 21;
             // 
             // tabelaPedidos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(909, 519);
-            Controls.Add(dataGridViewIngredientes);
+            ClientSize = new Size(800, 450);
+            Controls.Add(dataGridViewPedidos);
             Controls.Add(labelPesquisa);
-            Controls.Add(textBoxPesquisa);
+            Controls.Add(textBoxPedidos);
             Name = "tabelaPedidos";
             Text = "tabelaPedidos";
             Load += tabelaPedidos_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewIngredientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPedidos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridViewIngredientes;
+        private DataGridView dataGridViewPedidos;
         private Label labelPesquisa;
-        private TextBox textBoxPesquisa;
+        private TextBox textBoxPedidos;
     }
 }

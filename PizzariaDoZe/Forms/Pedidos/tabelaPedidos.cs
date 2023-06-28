@@ -14,7 +14,8 @@ namespace PizzariaDoZe.Forms.Pedidos
 {
     public partial class tabelaPedidos : Form
     {
-        private PedidosDAO pedidosDAO;
+        private PedidoDAO pedidoDAO;
+
         public tabelaPedidos()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace PizzariaDoZe.Forms.Pedidos
 
             Funcoes.EventoFocoCampos(this);
 
-            this.ActiveControl = textBoxPesquisa;
+            this.ActiveControl = textBoxPedidos;
 
             this.KeyDown += new KeyEventHandler(Funcoes.FormEventoKeyDown!);
 
@@ -39,7 +40,7 @@ namespace PizzariaDoZe.Forms.Pedidos
             string provider = ConfigurationManager.ConnectionStrings["BD"].ProviderName;
             string strConnection = ConfigurationManager.ConnectionStrings["BD"].ConnectionString;
             // cria a instancia da classe da model
-            pedidosDAO = new PedidosDAO(provider, strConnection);
+            pedidoDAO = new PedidoDAO(provider, strConnection);
         }
 
         private void tabelaPedidos_Load(object sender, EventArgs e)
@@ -50,22 +51,21 @@ namespace PizzariaDoZe.Forms.Pedidos
         private void AtualizarTela()
         {
             //Instância e Preenche o objeto com os dados da view
-            var pedidos = new Pedidos();
+            var pedido = new Pedido();
             try
             {
                 //chama o método para buscar todos os dados da nossa camada model
-                DataTable linhas = pedidosDAO.Buscar(pedidos);
+                DataTable linhas = pedidoDAO.Buscar(pedido);
                 // seta o datasouce do dataGridView com os dados retornados
-                dataGridViewIngredientes.Columns.Clear();
-                dataGridViewIngredientes.AutoGenerateColumns = true;
-                dataGridViewIngredientes.DataSource = linhas;
-                dataGridViewIngredientes.Refresh();
+                dataGridViewPedidos.Columns.Clear();
+                dataGridViewPedidos.AutoGenerateColumns = true;
+                dataGridViewPedidos.DataSource = linhas;
+                dataGridViewPedidos.Refresh();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

@@ -84,9 +84,8 @@
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
-            panelMenu.Margin = new Padding(3, 4, 3, 4);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(251, 814);
+            panelMenu.Size = new Size(220, 802);
             panelMenu.TabIndex = 0;
             // 
             // btnConfiguracoes
@@ -98,11 +97,10 @@
             btnConfiguracoes.ForeColor = Color.Gainsboro;
             btnConfiguracoes.Image = Properties.Resources.configuracoes;
             btnConfiguracoes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnConfiguracoes.Location = new Point(0, 739);
-            btnConfiguracoes.Margin = new Padding(3, 4, 3, 4);
+            btnConfiguracoes.Location = new Point(0, 554);
             btnConfiguracoes.Name = "btnConfiguracoes";
-            btnConfiguracoes.Padding = new Padding(11, 0, 0, 0);
-            btnConfiguracoes.Size = new Size(251, 80);
+            btnConfiguracoes.Padding = new Padding(10, 0, 0, 0);
+            btnConfiguracoes.Size = new Size(220, 60);
             btnConfiguracoes.TabIndex = 18;
             btnConfiguracoes.Tag = "Configuracoes";
             btnConfiguracoes.Text = "   Configurações";
@@ -120,18 +118,17 @@
             buttonProdutos.ForeColor = Color.Gainsboro;
             buttonProdutos.Image = Properties.Resources.produtos;
             buttonProdutos.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonProdutos.Location = new Point(0, 659);
-            buttonProdutos.Margin = new Padding(3, 4, 3, 4);
+            buttonProdutos.Location = new Point(0, 494);
             buttonProdutos.Name = "buttonProdutos";
-            buttonProdutos.Padding = new Padding(11, 0, 0, 0);
-            buttonProdutos.Size = new Size(251, 80);
+            buttonProdutos.Padding = new Padding(10, 0, 0, 0);
+            buttonProdutos.Size = new Size(220, 60);
             buttonProdutos.TabIndex = 17;
             buttonProdutos.Tag = "Produtos";
             buttonProdutos.Text = "   Produtos";
             buttonProdutos.TextAlign = ContentAlignment.MiddleLeft;
             buttonProdutos.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonProdutos.UseVisualStyleBackColor = true;
-            buttonProdutos.Click += btnProdutos_Click;
+            buttonProdutos.Click += buttonProdutos_Click;
             // 
             // btnValores
             // 
@@ -142,11 +139,10 @@
             btnValores.ForeColor = Color.Gainsboro;
             btnValores.Image = Properties.Resources.valores;
             btnValores.ImageAlign = ContentAlignment.MiddleLeft;
-            btnValores.Location = new Point(0, 579);
-            btnValores.Margin = new Padding(3, 4, 3, 4);
+            btnValores.Location = new Point(0, 434);
             btnValores.Name = "btnValores";
-            btnValores.Padding = new Padding(11, 0, 0, 0);
-            btnValores.Size = new Size(251, 80);
+            btnValores.Padding = new Padding(10, 0, 0, 0);
+            btnValores.Size = new Size(220, 60);
             btnValores.TabIndex = 16;
             btnValores.Tag = "Valores";
             btnValores.Text = "   Valores";
@@ -164,11 +160,10 @@
             btnIngredientes.ForeColor = Color.Gainsboro;
             btnIngredientes.Image = Properties.Resources.ingredientes;
             btnIngredientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnIngredientes.Location = new Point(0, 499);
-            btnIngredientes.Margin = new Padding(3, 4, 3, 4);
+            btnIngredientes.Location = new Point(0, 374);
             btnIngredientes.Name = "btnIngredientes";
-            btnIngredientes.Padding = new Padding(11, 0, 0, 0);
-            btnIngredientes.Size = new Size(251, 80);
+            btnIngredientes.Padding = new Padding(10, 0, 0, 0);
+            btnIngredientes.Size = new Size(220, 60);
             btnIngredientes.TabIndex = 15;
             btnIngredientes.Tag = "Ingredientes";
             btnIngredientes.Text = "   Ingredientes";
@@ -186,11 +181,10 @@
             btnSabores.ForeColor = Color.Gainsboro;
             btnSabores.Image = Properties.Resources.sabores;
             btnSabores.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSabores.Location = new Point(0, 419);
-            btnSabores.Margin = new Padding(3, 4, 3, 4);
+            btnSabores.Location = new Point(0, 314);
             btnSabores.Name = "btnSabores";
-            btnSabores.Padding = new Padding(11, 0, 0, 0);
-            btnSabores.Size = new Size(251, 80);
+            btnSabores.Padding = new Padding(10, 0, 0, 0);
+            btnSabores.Size = new Size(220, 60);
             btnSabores.TabIndex = 14;
             btnSabores.Tag = "Sabores";
             btnSabores.Text = "   Sabores";
@@ -208,11 +202,10 @@
             btnFuncionarios.ForeColor = Color.Gainsboro;
             btnFuncionarios.Image = Properties.Resources.funcionarios;
             btnFuncionarios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFuncionarios.Location = new Point(0, 339);
-            btnFuncionarios.Margin = new Padding(3, 4, 3, 4);
+            btnFuncionarios.Location = new Point(0, 254);
             btnFuncionarios.Name = "btnFuncionarios";
-            btnFuncionarios.Padding = new Padding(11, 0, 0, 0);
-            btnFuncionarios.Size = new Size(251, 80);
+            btnFuncionarios.Padding = new Padding(10, 0, 0, 0);
+            btnFuncionarios.Size = new Size(220, 60);
             btnFuncionarios.TabIndex = 13;
             btnFuncionarios.Tag = "Funcionarios";
             btnFuncionarios.Text = "   Funcionarios";
@@ -230,11 +223,10 @@
             btnClientes.ForeColor = Color.Gainsboro;
             btnClientes.Image = Properties.Resources.clientes;
             btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClientes.Location = new Point(0, 259);
-            btnClientes.Margin = new Padding(3, 4, 3, 4);
+            btnClientes.Location = new Point(0, 194);
             btnClientes.Name = "btnClientes";
-            btnClientes.Padding = new Padding(11, 0, 0, 0);
-            btnClientes.Size = new Size(251, 80);
+            btnClientes.Padding = new Padding(10, 0, 0, 0);
+            btnClientes.Size = new Size(220, 60);
             btnClientes.TabIndex = 12;
             btnClientes.Tag = "Clientes";
             btnClientes.Text = "   Clientes";
@@ -252,11 +244,10 @@
             btnPedidos.ForeColor = Color.Gainsboro;
             btnPedidos.Image = Properties.Resources.pedidos;
             btnPedidos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPedidos.Location = new Point(0, 179);
-            btnPedidos.Margin = new Padding(3, 4, 3, 4);
+            btnPedidos.Location = new Point(0, 134);
             btnPedidos.Name = "btnPedidos";
-            btnPedidos.Padding = new Padding(11, 0, 0, 0);
-            btnPedidos.Size = new Size(251, 80);
+            btnPedidos.Padding = new Padding(10, 0, 0, 0);
+            btnPedidos.Size = new Size(220, 60);
             btnPedidos.TabIndex = 11;
             btnPedidos.Tag = "Pedidos";
             btnPedidos.Text = "   Pedidos";
@@ -275,11 +266,10 @@
             btnHome.ForeColor = Color.FromArgb(76, 10, 1);
             btnHome.Image = Properties.Resources.home_red;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHome.Location = new Point(0, 99);
-            btnHome.Margin = new Padding(3, 4, 3, 4);
+            btnHome.Location = new Point(0, 74);
             btnHome.Name = "btnHome";
-            btnHome.Padding = new Padding(11, 0, 0, 0);
-            btnHome.Size = new Size(251, 80);
+            btnHome.Padding = new Padding(10, 0, 0, 0);
+            btnHome.Size = new Size(220, 60);
             btnHome.TabIndex = 1;
             btnHome.Tag = "Home";
             btnHome.Text = "   Home";
@@ -296,27 +286,25 @@
             panelLogo.Dock = DockStyle.Top;
             panelLogo.ForeColor = Color.Gainsboro;
             panelLogo.Location = new Point(0, 0);
-            panelLogo.Margin = new Padding(3, 4, 3, 4);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(251, 99);
+            panelLogo.Size = new Size(220, 74);
             panelLogo.TabIndex = 0;
             // 
             // labelUserLogged
             // 
             labelUserLogged.AutoSize = true;
             labelUserLogged.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            labelUserLogged.Location = new Point(14, 35);
+            labelUserLogged.Location = new Point(12, 26);
             labelUserLogged.Name = "labelUserLogged";
-            labelUserLogged.Size = new Size(78, 34);
+            labelUserLogged.Size = new Size(61, 26);
             labelUserLogged.TabIndex = 2;
             labelUserLogged.Text = "Admin";
             // 
             // panel1
             // 
-            panel1.Location = new Point(249, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(218, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(947, 133);
+            panel1.Size = new Size(829, 100);
             panel1.TabIndex = 1;
             // 
             // panel2
@@ -325,10 +313,9 @@
             panel2.Controls.Add(btnInvisible);
             panel2.Controls.Add(lblTitle);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(251, 0);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(220, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(946, 99);
+            panel2.Size = new Size(1141, 74);
             panel2.TabIndex = 1;
             // 
             // btnInvisible
@@ -337,9 +324,10 @@
             btnInvisible.BackColor = Color.FromArgb(0, 192, 0);
             btnInvisible.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnInvisible.ForeColor = Color.White;
-            btnInvisible.Location = new Point(630, 15);
+            btnInvisible.Location = new Point(864, 11);
+            btnInvisible.Margin = new Padding(3, 2, 3, 2);
             btnInvisible.Name = "btnInvisible";
-            btnInvisible.Size = new Size(282, 69);
+            btnInvisible.Size = new Size(247, 52);
             btnInvisible.TabIndex = 1;
             btnInvisible.Text = "Cadastrar";
             btnInvisible.UseVisualStyleBackColor = false;
@@ -351,19 +339,18 @@
             lblTitle.Anchor = AnchorStyles.Left;
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Poppins", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitle.Location = new Point(25, 25);
+            lblTitle.Location = new Point(22, 19);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(274, 48);
+            lblTitle.Size = new Size(215, 37);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Bem vindo a home";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // panelDesktopPane
             // 
-            panelDesktopPane.Location = new Point(251, 99);
-            panelDesktopPane.Margin = new Padding(3, 4, 3, 4);
+            panelDesktopPane.Location = new Point(220, 74);
             panelDesktopPane.Name = "panelDesktopPane";
-            panelDesktopPane.Size = new Size(946, 715);
+            panelDesktopPane.Size = new Size(1141, 728);
             panelDesktopPane.TabIndex = 2;
             // 
             // contextMenuStripMain
@@ -371,14 +358,14 @@
             contextMenuStripMain.ImageScalingSize = new Size(20, 20);
             contextMenuStripMain.Items.AddRange(new ToolStripItem[] { toolStripMenuItemHome, toolStripMenuItemClientes, toolStripMenuItemFuncionarios, toolStripMenuItemSabores, toolStripMenuItemIngredientes, toolStripMenuItemConfig });
             contextMenuStripMain.Name = "contextMenuStripMain";
-            contextMenuStripMain.Size = new Size(264, 148);
+            contextMenuStripMain.Size = new Size(224, 136);
             contextMenuStripMain.Text = "Menu";
             // 
             // toolStripMenuItemHome
             // 
             toolStripMenuItemHome.Name = "toolStripMenuItemHome";
             toolStripMenuItemHome.ShortcutKeys = Keys.Control | Keys.Shift | Keys.H;
-            toolStripMenuItemHome.Size = new Size(263, 24);
+            toolStripMenuItemHome.Size = new Size(223, 22);
             toolStripMenuItemHome.Tag = "Home";
             toolStripMenuItemHome.Text = "Home";
             // 
@@ -386,7 +373,7 @@
             // 
             toolStripMenuItemClientes.Name = "toolStripMenuItemClientes";
             toolStripMenuItemClientes.ShortcutKeys = Keys.Control | Keys.Shift | Keys.C;
-            toolStripMenuItemClientes.Size = new Size(263, 24);
+            toolStripMenuItemClientes.Size = new Size(223, 22);
             toolStripMenuItemClientes.Tag = "Clientes";
             toolStripMenuItemClientes.Text = "Clientes";
             // 
@@ -394,7 +381,7 @@
             // 
             toolStripMenuItemFuncionarios.Name = "toolStripMenuItemFuncionarios";
             toolStripMenuItemFuncionarios.ShortcutKeys = Keys.Control | Keys.Shift | Keys.F;
-            toolStripMenuItemFuncionarios.Size = new Size(263, 24);
+            toolStripMenuItemFuncionarios.Size = new Size(223, 22);
             toolStripMenuItemFuncionarios.Tag = "Funcionarios";
             toolStripMenuItemFuncionarios.Text = "Funcionários";
             // 
@@ -402,7 +389,7 @@
             // 
             toolStripMenuItemSabores.Name = "toolStripMenuItemSabores";
             toolStripMenuItemSabores.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
-            toolStripMenuItemSabores.Size = new Size(263, 24);
+            toolStripMenuItemSabores.Size = new Size(223, 22);
             toolStripMenuItemSabores.Tag = "Sabores";
             toolStripMenuItemSabores.Text = "Sabores";
             // 
@@ -410,7 +397,7 @@
             // 
             toolStripMenuItemIngredientes.Name = "toolStripMenuItemIngredientes";
             toolStripMenuItemIngredientes.ShortcutKeys = Keys.Control | Keys.Shift | Keys.I;
-            toolStripMenuItemIngredientes.Size = new Size(263, 24);
+            toolStripMenuItemIngredientes.Size = new Size(223, 22);
             toolStripMenuItemIngredientes.Tag = "Ingredientes";
             toolStripMenuItemIngredientes.Text = "Ingredientes";
             // 
@@ -418,7 +405,7 @@
             // 
             toolStripMenuItemConfig.Name = "toolStripMenuItemConfig";
             toolStripMenuItemConfig.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
-            toolStripMenuItemConfig.Size = new Size(263, 24);
+            toolStripMenuItemConfig.Size = new Size(223, 22);
             toolStripMenuItemConfig.Tag = "Configuracoes";
             toolStripMenuItemConfig.Text = "Configurações";
             // 
@@ -437,37 +424,36 @@
             contextMenuStripSystemTray.ImageScalingSize = new Size(20, 20);
             contextMenuStripSystemTray.Items.AddRange(new ToolStripItem[] { toolStripMenuItemOpen, toolStripMenuItemFinish, toolStripMenuItemAbout });
             contextMenuStripSystemTray.Name = "contextMenuStripSystemTray";
-            contextMenuStripSystemTray.Size = new Size(133, 76);
+            contextMenuStripSystemTray.Size = new Size(118, 70);
             // 
             // toolStripMenuItemOpen
             // 
             toolStripMenuItemOpen.Name = "toolStripMenuItemOpen";
-            toolStripMenuItemOpen.Size = new Size(132, 24);
+            toolStripMenuItemOpen.Size = new Size(117, 22);
             toolStripMenuItemOpen.Text = "Abrir";
             // 
             // toolStripMenuItemFinish
             // 
             toolStripMenuItemFinish.Name = "toolStripMenuItemFinish";
-            toolStripMenuItemFinish.Size = new Size(132, 24);
+            toolStripMenuItemFinish.Size = new Size(117, 22);
             toolStripMenuItemFinish.Text = "Encerrar";
             // 
             // toolStripMenuItemAbout
             // 
             toolStripMenuItemAbout.Name = "toolStripMenuItemAbout";
-            toolStripMenuItemAbout.Size = new Size(132, 24);
+            toolStripMenuItemAbout.Size = new Size(117, 22);
             toolStripMenuItemAbout.Text = "Sobre";
             // 
             // FormMainMenu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
-            ClientSize = new Size(1197, 814);
+            ClientSize = new Size(1361, 802);
             ContextMenuStrip = contextMenuStripMain;
             Controls.Add(panelDesktopPane);
             Controls.Add(panel2);
             Controls.Add(panelMenu);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormMainMenu";
             Text = "Pizzaria do Zé";
             FormClosing += FormMainMenu_FormClosing;

@@ -82,7 +82,7 @@
             textBoxEndereco.Margin = new Padding(3, 2, 3, 2);
             textBoxEndereco.Name = "textBoxEndereco";
             textBoxEndereco.Size = new Size(708, 28);
-            textBoxEndereco.TabIndex = 19;
+            textBoxEndereco.TabIndex = 13;
             // 
             // labelEndereco
             // 
@@ -113,7 +113,7 @@
             textBoxSenha.Margin = new Padding(3, 2, 3, 2);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.Size = new Size(400, 28);
-            textBoxSenha.TabIndex = 9;
+            textBoxSenha.TabIndex = 6;
             // 
             // labelSenha
             // 
@@ -134,7 +134,7 @@
             textBoxObservation.Multiline = true;
             textBoxObservation.Name = "textBoxObservation";
             textBoxObservation.Size = new Size(241, 90);
-            textBoxObservation.TabIndex = 15;
+            textBoxObservation.TabIndex = 10;
             // 
             // labelObservation
             // 
@@ -153,7 +153,7 @@
             radioButtonCartaNao.Location = new Point(85, 12);
             radioButtonCartaNao.Name = "radioButtonCartaNao";
             radioButtonCartaNao.Size = new Size(58, 29);
-            radioButtonCartaNao.TabIndex = 12;
+            radioButtonCartaNao.TabIndex = 8;
             radioButtonCartaNao.Text = "Não";
             radioButtonCartaNao.UseVisualStyleBackColor = true;
             // 
@@ -174,7 +174,7 @@
             radioButtonCartaSim.Location = new Point(12, 12);
             radioButtonCartaSim.Name = "radioButtonCartaSim";
             radioButtonCartaSim.Size = new Size(55, 29);
-            radioButtonCartaSim.TabIndex = 11;
+            radioButtonCartaSim.TabIndex = 7;
             radioButtonCartaSim.Text = "Sim";
             radioButtonCartaSim.UseVisualStyleBackColor = true;
             radioButtonCartaSim.CheckedChanged += radioButtonCartaSim_CheckedChanged;
@@ -266,7 +266,7 @@
             textBoxNumero.Margin = new Padding(3, 2, 3, 2);
             textBoxNumero.Name = "textBoxNumero";
             textBoxNumero.Size = new Size(299, 28);
-            textBoxNumero.TabIndex = 22;
+            textBoxNumero.TabIndex = 16;
             // 
             // labelNumber
             // 
@@ -286,7 +286,7 @@
             textBoxComplemento.Margin = new Padding(3, 2, 3, 2);
             textBoxComplemento.Name = "textBoxComplemento";
             textBoxComplemento.Size = new Size(318, 28);
-            textBoxComplemento.TabIndex = 23;
+            textBoxComplemento.TabIndex = 17;
             // 
             // labelComplemento
             // 
@@ -306,7 +306,7 @@
             textBoxPais.Margin = new Padding(3, 2, 3, 2);
             textBoxPais.Name = "textBoxPais";
             textBoxPais.Size = new Size(299, 28);
-            textBoxPais.TabIndex = 17;
+            textBoxPais.TabIndex = 14;
             // 
             // labelPais
             // 
@@ -433,7 +433,7 @@
             dateTimePickerValidadeCarta.Location = new Point(16, 47);
             dateTimePickerValidadeCarta.Name = "dateTimePickerValidadeCarta";
             dateTimePickerValidadeCarta.Size = new Size(221, 28);
-            dateTimePickerValidadeCarta.TabIndex = 106;
+            dateTimePickerValidadeCarta.TabIndex = 9;
             // 
             // userControlRegister
             // 
@@ -450,7 +450,7 @@
             maskedTextBoxCpf.Mask = "000.000.000-00";
             maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             maskedTextBoxCpf.Size = new Size(314, 28);
-            maskedTextBoxCpf.TabIndex = 101;
+            maskedTextBoxCpf.TabIndex = 1;
             maskedTextBoxCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // maskedTextBoxPhone
@@ -461,7 +461,7 @@
             maskedTextBoxPhone.Mask = "(00) 90000-0000";
             maskedTextBoxPhone.Name = "maskedTextBoxPhone";
             maskedTextBoxPhone.Size = new Size(314, 28);
-            maskedTextBoxPhone.TabIndex = 102;
+            maskedTextBoxPhone.TabIndex = 4;
             maskedTextBoxPhone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // maskedTextBoxCep
@@ -472,7 +472,7 @@
             maskedTextBoxCep.Mask = "00000-000";
             maskedTextBoxCep.Name = "maskedTextBoxCep";
             maskedTextBoxCep.Size = new Size(255, 28);
-            maskedTextBoxCep.TabIndex = 103;
+            maskedTextBoxCep.TabIndex = 11;
             maskedTextBoxCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             maskedTextBoxCep.TextChanged += maskedTextBoxCep_TextChanged;
             // 
@@ -494,7 +494,7 @@
             textBoxUf.Margin = new Padding(3, 2, 3, 2);
             textBoxUf.Name = "textBoxUf";
             textBoxUf.Size = new Size(318, 28);
-            textBoxUf.TabIndex = 18;
+            textBoxUf.TabIndex = 15;
             // 
             // textBoxIdEndereco
             // 
@@ -504,7 +504,7 @@
             textBoxIdEndereco.Margin = new Padding(3, 2, 3, 2);
             textBoxIdEndereco.Name = "textBoxIdEndereco";
             textBoxIdEndereco.Size = new Size(133, 28);
-            textBoxIdEndereco.TabIndex = 105;
+            textBoxIdEndereco.TabIndex = 12;
             // 
             // CadastrarFuncionario
             // 

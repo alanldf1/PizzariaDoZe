@@ -216,7 +216,7 @@ namespace PizzariaDoZe.Forms.Funcionarios
                 // seta os dados na tela
                 textBoxEndereco.Text = "";
                 textBoxIdEndereco.Text = "";
-                textBoxUf.Text = "";
+                textBoxUf.Text = "";    
                 textBoxPais.Text = "";
                 //userControlEndereco.maskedTextBoxCep.Text = "";
                 string enderecoCompleto = "";
@@ -231,6 +231,7 @@ namespace PizzariaDoZe.Forms.Funcionarios
                     textBoxPais.Text = row["pais"].ToString();
                 }
                 textBoxEndereco.Text = enderecoCompleto;
+                MessageBox.Show(enderecoCompleto);
 
             }
             catch (Exception ex)

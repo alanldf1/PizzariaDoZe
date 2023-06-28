@@ -42,6 +42,7 @@ namespace PizzariaDoZe
             toolStripMenuItemFuncionarios.Click += new EventHandler(btnFuncionarios_Click!);
             toolStripMenuItemIngredientes.Click += new EventHandler(btnIngredientes_Click!);
             toolStripMenuItemSabores.Click += new EventHandler(btnSabores_Click!);
+            toolStripMenuItemSabores.Click += new EventHandler(btnSabores_Click!);
 
             toolStripMenuItemConfig.Click += new EventHandler(btnConfiguracoes_Click!);
 
@@ -205,6 +206,18 @@ namespace PizzariaDoZe
             }
         }
 
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem item)
+            {
+                btnClientes.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Pedidos.tabelaPedidos(), sender, "pedidos");
+            }
+        }
+
         /// <summary>
         /// Ao apertar o botão dos clientes vai abrir o formulário dos cliente
         /// </summary>
@@ -306,7 +319,7 @@ namespace PizzariaDoZe
         }
 
 
-        private void btnProdutos_Click(object sender, EventArgs e)
+        private void buttonProdutos_Click(object sender, EventArgs e)
         {
             if (sender is ToolStripMenuItem item)
             {
@@ -315,18 +328,6 @@ namespace PizzariaDoZe
             else
             {
                 OpenChildForm(new Forms.Produtos.tabelaProdutos(), sender, "produtos");
-            }
-        }
-
-        private void btnPedidos_Click(object sender, EventArgs e)
-        {
-            if (sender is ToolStripMenuItem item)
-            {
-                btnPedidos.PerformClick();
-            }
-            else
-            {
-                OpenChildForm(new Forms.Pedidos.tabelaPedidos(), sender, "pedidos");
             }
         }
 
@@ -340,7 +341,12 @@ namespace PizzariaDoZe
             Button? butt = (Button)sender;
             String buttonTag = (String?)butt.Tag;
             String buttonTagLower = buttonTag.ToLower();
-            if (buttonTag == "Clientes")
+            if (buttonTag == "Pedidos")
+            {
+                this.btnInvisible.Visible = false;
+                OpenChildForm(new Forms.Pedidos.CadastrarPedidos(this), sender, buttonTagLower);
+            }
+            else if (buttonTag == "Clientes")
             {
                 this.btnInvisible.Visible = false;
                 OpenChildForm(new Forms.Clientes.CadastrarCliente(this), sender, buttonTagLower);
@@ -370,6 +376,7 @@ namespace PizzariaDoZe
                 this.btnInvisible.Visible = false;
                 OpenChildForm(new Forms.Produtos.CadastrarProdutos(this), sender, buttonTagLower);
             }
+
         }
 
         private void FormMainMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -407,6 +414,8 @@ namespace PizzariaDoZe
             Button thisButton = this.btnConfiguracoes;
             ValidaConexaoDB(thisButton);
         }
+
+
     }
 
 }
