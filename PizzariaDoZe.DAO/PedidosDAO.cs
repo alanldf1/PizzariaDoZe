@@ -1,59 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Common;
+using System.Configuration;
 using System.Data;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace PizzariaDoZe_DAO
 {
-
-    public class Funcionario
+    public class Pedidos
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public string Matricula { get; set; }
-        public string Senha { get; set; }
-        public char Funcao { get; set; }
-        public string Motorista { get; set; }
-        public DateTime Validade { get; set; }
-        public string Observacao { get; set; }
-        public string Telefone { get; set; }
-        public string Email { get; set; }
-        public int EnderecoId { get; set; }
-        public string Numero { get; set; }
-        public string Complemento { get; set; }
-        public Funcionario(int id = 0, string nome = "", string cpf = "", string matricula = "", string senha = "", char funcao = default, string
-        motorista = "", DateTime validade_motorista = default, string observacao = "", string telefone = "", string email = "", int endereco_id = 0,
-        string numero = "", string complemento = "")
+        public string Descricao { get; set; }
+        public decimal Valor { get; set; }
+        public char Tipo { get; set; }
+        public string ML { get; set; }
+
+        public Pedidos(int id = 0, string nome = "", string descricao = ""
+
+        , decimal valor = 0, char
+
+        tipo = ' ', string ml = "")
         {
             Id = id;
             Nome = nome;
-            Cpf = cpf;
-            Matricula = matricula;
-            Senha = senha;
-            Funcao = funcao;
-            Motorista = motorista;
-            Validade = validade_motorista;
-            Observacao = observacao;
-            Telefone = telefone;
-            Email = email;
-            EnderecoId = endereco_id;
-            Numero = numero;
-            Complemento = complemento;
+            Descricao = descricao;
+            Valor = valor;
+            Tipo = tipo;
+            ML = ml;
         }
     }
-    public class FuncionarioDAO
+    public class PedidosDAO
     {
-        /// <summary>
-        /// Utilização de mais do que um provider com o mesmo script (MySQL, SQLServer, Firebird...)
-        /// </summary>
         private readonly DbProviderFactory factory;
         private string Provider { get; set; }
         private string StringConexao { get; set; }
-        public FuncionarioDAO(string provider, string stringConexao)
+        public PedidosDAO(string provider, string stringConexao)
         {
             Provider = provider;
             StringConexao = stringConexao;
@@ -112,44 +92,26 @@ namespace PizzariaDoZe_DAO
             using var comando = factory.CreateCommand(); //Cria comando
             comando!.Connection = conexao; //Atribui conexão
                                            //verifica se tem filtro e personaliza o SQL do filtro
-            string auxSqlFiltro = "";
-            if (funcionario.Id > 0)
-            {
-                auxSqlFiltro = "WHERE f.id = " + funcionario.Id + " ";
-            }
-            else if (funcionario.Nome.Length > 0)
-            {
-                auxSqlFiltro = "WHERE f.nome like '%" + funcionario.Nome + "%' ";
-            }
             conexao.Open();
             comando.CommandText = @" " +
-            "SELECT f.id AS ID, f.nome AS Nome, f.cpf AS CPF, f.matricula AS Matrícula, f.senha AS Senha, f.funcao AS Funcao, f.motorista AS Carteira," +
-            "f.validade_motorista AS Validade, f.observacao AS Observação, f.telefone AS Telefone, f.email AS 'E-Mail', " +
-            "e.cep AS CEP, e.logradouro AS Logradouro, e.bairro AS Bairro, " +
-            "c.nome AS Cidade, " +
-            "u.nome AS uf_nome " +
-            "FROM funcionarios AS f " +
-            "INNER JOIN enderecos AS e ON e.id = f.enderecos_id " +
-            "INNER JOIN cidades AS c ON c.id = e.cidades_id " +
-            "INNER JOIN uf AS u ON u.id = c.uf_id " +
-            "INNER JOIN pais AS p ON p.id = u.pais_id " +
-            auxSqlFiltro +
-            "ORDER BY f.nome;";
+            "SELECT ped.id as id, CONCAT(c.nome, \" (\", c.cpf,\")\") as cliente, " +
+            "IF(ped.entrega = 0, \"Retirada\", \"Entrega\") as tipo_entrega, " +
+            "(SELECT COUNT(lpiz.pizza_id) FROM lista_pizzas lpiz WHERE lpiz.pedido_id = ped.id) as pizzas, ped.observacao as observacao, " +
+            "IF(ped.borda IS NULL, \"Sem\", ped.borda) as borda, " +
+            "(SELECT COUNT(lprod.id) FROM lista_produtos lprod WHERE lprod.pedido_id = ped.id) as produtos, fun.nome as vendedor, " +
+            "ped.data as data_e_hora, IF(ped.status = 1, \"Em  rota de entrega\", " +
+            "IF(ped.status = 2, \"Entregue\", \"Em preparo\")) as status " +
+            "FROM pedido ped " +
+            "LEFT JOIN clientes c ON ped.clientes_id = c.id " +
+            "LEFT JOIN funcionarios fun ON ped.funcionarios_id = fun.id " +
+            "GROUP BY ped.id" +
+            "ORDER BY p.data;";
             //Executa o script na conexão e retorna as linhas afetadas.
             var sdr = comando.ExecuteReader();
             DataTable linhas = new();
             linhas.Load(sdr);
             return linhas;
         }
-        
-        //Last select
-        //SELECT ped.*, COUNT(lp.id) as pizzas, sp.id FROM pedido ped
-        //LEFT JOIN lista_pizzas lp ON lp.pedido_id = ped.id
-        //LEFT JOIN pizza p ON p.id = lp.pizza_id
-        //LEFT JOIN sabores_pizza sp ON sp.pizza_id = p.id
-        //LEFT JOIN sabores s ON s.id = sp.sabores_id
-        //GROUP BY ped.id, sp.pizza_id
-
 
     }
 }

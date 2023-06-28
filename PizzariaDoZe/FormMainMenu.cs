@@ -306,7 +306,7 @@ namespace PizzariaDoZe
         }
 
 
-        private void buttonProdutos_Click(object sender, EventArgs e)
+        private void btnProdutos_Click(object sender, EventArgs e)
         {
             if (sender is ToolStripMenuItem item)
             {
@@ -315,6 +315,18 @@ namespace PizzariaDoZe
             else
             {
                 OpenChildForm(new Forms.Produtos.tabelaProdutos(), sender, "produtos");
+            }
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem item)
+            {
+                btnPedidos.PerformClick();
+            }
+            else
+            {
+                OpenChildForm(new Forms.Pedidos.tabelaPedidos(), sender, "pedidos");
             }
         }
 
@@ -395,7 +407,6 @@ namespace PizzariaDoZe
             Button thisButton = this.btnConfiguracoes;
             ValidaConexaoDB(thisButton);
         }
-
     }
 
 }
