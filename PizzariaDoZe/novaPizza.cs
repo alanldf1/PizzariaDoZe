@@ -36,14 +36,47 @@ namespace PizzariaDoZe
             // cria a instancia da classe da model
             saborDAO = new SaborDAO(provider, strConnection);
             groupBoxPizza.Name = "groupBoxPizza" + key.ToString();
-            groupBoxPizza.Text = "Pizza " + (key+1).ToString();
+            groupBoxPizza.Text = "Pizza " + (key + 1).ToString();
             CheckedListBox checkedListBox = checkedListBoxSabores;
             checkedListBoxSabores.Name = checkedListBoxSabores + key.ToString();
             CarregaSaboresCheckedListBox(checkedListBox);
         }
 
-        private void radioButtonTamanhoPequeno_CheckedChanged(object sender, EventArgs e)
+
+        private void checkedListBoxSabores_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            
+
+            if (checkedListBoxSabores.GetItemChecked(e.Index))
+            {
+                // Remove temporariamente o manipulador do evento ItemCheck
+                checkedListBoxSabores.ItemCheck -= checkedListBoxSabores_ItemCheck;
+
+                // Desmarca o item
+                checkedListBoxSabores.SetItemChecked(e.Index, false);
+
+                // Adiciona o manipulador do evento ItemCheck novamente
+                checkedListBoxSabores.ItemCheck += checkedListBoxSabores_ItemCheck;
+                //e.NewValue = CheckState.Unchecked;
+            }
+            else
+            {
+                int selecionados = checkedListBoxSabores.CheckedItems.Count;
+
+                if (radioButtonTamanhoPequeno.Checked && selecionados >= 1)
+                {
+                    e.NewValue = e.CurrentValue; // Impede a seleção se já houver uma opção selecionada
+
+                }
+                else if (radioButtonTamanhoMedio.Checked && selecionados >= 2)
+                {
+                    e.NewValue = e.CurrentValue; // Impede a seleção se já houver duas opções selecionadas
+                }
+                else if ((radioButtonTamanhoGrande.Checked || radioButtonTamanhoFamilia.Checked) && selecionados >= 3)
+                {
+                    e.NewValue = e.CurrentValue; // Impede a seleção se já houver três opções selecionadas
+                }
+            }
 
         }
         private void CarregaSaboresCheckedListBox(CheckedListBox checkedListBox)

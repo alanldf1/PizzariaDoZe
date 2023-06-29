@@ -47,11 +47,9 @@
             groupBoxTamanhos.Controls.Add(radioButtonTamanhoMedio);
             groupBoxTamanhos.Controls.Add(radioButtonTamanhoPequeno);
             groupBoxTamanhos.Font = new Font("Poppins", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBoxTamanhos.Location = new Point(56, 34);
-            groupBoxTamanhos.Margin = new Padding(3, 4, 3, 4);
+            groupBoxTamanhos.Location = new Point(49, 26);
             groupBoxTamanhos.Name = "groupBoxTamanhos";
-            groupBoxTamanhos.Padding = new Padding(3, 4, 3, 4);
-            groupBoxTamanhos.Size = new Size(542, 185);
+            groupBoxTamanhos.Size = new Size(474, 81);
             groupBoxTamanhos.TabIndex = 0;
             groupBoxTamanhos.TabStop = false;
             groupBoxTamanhos.Text = "Tamanhos";
@@ -59,71 +57,63 @@
             // radioButtonTamanhoFamilia
             // 
             radioButtonTamanhoFamilia.AutoSize = true;
-            radioButtonTamanhoFamilia.Location = new Point(431, 81);
-            radioButtonTamanhoFamilia.Margin = new Padding(3, 4, 3, 4);
+            radioButtonTamanhoFamilia.Location = new Point(370, 35);
             radioButtonTamanhoFamilia.Name = "radioButtonTamanhoFamilia";
-            radioButtonTamanhoFamilia.Size = new Size(95, 34);
+            radioButtonTamanhoFamilia.Size = new Size(78, 29);
             radioButtonTamanhoFamilia.TabIndex = 1;
             radioButtonTamanhoFamilia.TabStop = true;
             radioButtonTamanhoFamilia.Text = "Família";
             radioButtonTamanhoFamilia.UseVisualStyleBackColor = true;
-            radioButtonTamanhoFamilia.CheckedChanged += radioButtonTamanhoPequeno_CheckedChanged;
             // 
             // radioButtonTamanhoGrande
             // 
             radioButtonTamanhoGrande.AutoSize = true;
-            radioButtonTamanhoGrande.Location = new Point(306, 81);
-            radioButtonTamanhoGrande.Margin = new Padding(3, 4, 3, 4);
+            radioButtonTamanhoGrande.Location = new Point(261, 35);
             radioButtonTamanhoGrande.Name = "radioButtonTamanhoGrande";
-            radioButtonTamanhoGrande.Size = new Size(97, 34);
+            radioButtonTamanhoGrande.Size = new Size(82, 29);
             radioButtonTamanhoGrande.TabIndex = 1;
             radioButtonTamanhoGrande.TabStop = true;
             radioButtonTamanhoGrande.Text = "Grande";
             radioButtonTamanhoGrande.UseVisualStyleBackColor = true;
-            radioButtonTamanhoGrande.CheckedChanged += radioButtonTamanhoPequeno_CheckedChanged;
             // 
             // radioButtonTamanhoMedio
             // 
             radioButtonTamanhoMedio.AutoSize = true;
-            radioButtonTamanhoMedio.Location = new Point(181, 81);
-            radioButtonTamanhoMedio.Margin = new Padding(3, 4, 3, 4);
+            radioButtonTamanhoMedio.Location = new Point(151, 35);
             radioButtonTamanhoMedio.Name = "radioButtonTamanhoMedio";
-            radioButtonTamanhoMedio.Size = new Size(86, 34);
+            radioButtonTamanhoMedio.Size = new Size(72, 29);
             radioButtonTamanhoMedio.TabIndex = 1;
             radioButtonTamanhoMedio.TabStop = true;
             radioButtonTamanhoMedio.Text = "Médio";
             radioButtonTamanhoMedio.UseVisualStyleBackColor = true;
-            radioButtonTamanhoMedio.CheckedChanged += radioButtonTamanhoPequeno_CheckedChanged;
             // 
             // radioButtonTamanhoPequeno
             // 
             radioButtonTamanhoPequeno.AutoSize = true;
-            radioButtonTamanhoPequeno.Location = new Point(34, 81);
-            radioButtonTamanhoPequeno.Margin = new Padding(3, 4, 3, 4);
+            radioButtonTamanhoPequeno.Location = new Point(23, 35);
             radioButtonTamanhoPequeno.Name = "radioButtonTamanhoPequeno";
-            radioButtonTamanhoPequeno.Size = new Size(110, 34);
+            radioButtonTamanhoPequeno.Size = new Size(92, 29);
             radioButtonTamanhoPequeno.TabIndex = 1;
             radioButtonTamanhoPequeno.TabStop = true;
             radioButtonTamanhoPequeno.Text = "Pequeno";
             radioButtonTamanhoPequeno.UseVisualStyleBackColor = true;
-            radioButtonTamanhoPequeno.CheckedChanged += radioButtonTamanhoPequeno_CheckedChanged;
             // 
             // checkedListBoxSabores
             // 
             checkedListBoxSabores.FormattingEnabled = true;
-            checkedListBoxSabores.Location = new Point(56, 302);
-            checkedListBoxSabores.Margin = new Padding(3, 4, 3, 4);
+            checkedListBoxSabores.Location = new Point(49, 160);
             checkedListBoxSabores.Name = "checkedListBoxSabores";
-            checkedListBoxSabores.Size = new Size(541, 158);
+            checkedListBoxSabores.Size = new Size(474, 112);
             checkedListBoxSabores.TabIndex = 1;
+            checkedListBoxSabores.ItemCheck += checkedListBoxSabores_ItemCheck;
             // 
             // labelSabores
             // 
             labelSabores.AutoSize = true;
             labelSabores.Font = new Font("Poppins", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSabores.Location = new Point(56, 255);
+            labelSabores.Location = new Point(49, 125);
             labelSabores.Name = "labelSabores";
-            labelSabores.Size = new Size(82, 30);
+            labelSabores.Size = new Size(68, 25);
             labelSabores.TabIndex = 2;
             labelSabores.Text = "Sabores";
             // 
@@ -132,21 +122,22 @@
             groupBoxPizza.Controls.Add(labelSabores);
             groupBoxPizza.Controls.Add(groupBoxTamanhos);
             groupBoxPizza.Controls.Add(checkedListBoxSabores);
-            groupBoxPizza.Location = new Point(12, 12);
+            groupBoxPizza.Location = new Point(10, 9);
+            groupBoxPizza.Margin = new Padding(3, 2, 3, 2);
             groupBoxPizza.Name = "groupBoxPizza";
-            groupBoxPizza.Size = new Size(661, 484);
+            groupBoxPizza.Padding = new Padding(3, 2, 3, 2);
+            groupBoxPizza.Size = new Size(578, 416);
             groupBoxPizza.TabIndex = 3;
             groupBoxPizza.TabStop = false;
             groupBoxPizza.Text = "Pizza";
             // 
             // novaPizza
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(groupBoxPizza);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "novaPizza";
-            Size = new Size(694, 508);
+            Size = new Size(607, 437);
             groupBoxTamanhos.ResumeLayout(false);
             groupBoxTamanhos.PerformLayout();
             groupBoxPizza.ResumeLayout(false);
