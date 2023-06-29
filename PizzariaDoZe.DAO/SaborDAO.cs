@@ -31,6 +31,11 @@ namespace PizzariaDoZe_DAO
             Tipo = tipo;
             this.SaborIngredientes = saborIngredientes;
         }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
     public class SaborDAO
     {

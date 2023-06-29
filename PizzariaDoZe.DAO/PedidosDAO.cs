@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace PizzariaDoZe_DAO
 {
-
     public class Pedido
     {
         public int Id { get; set; }

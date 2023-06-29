@@ -39,6 +39,7 @@
             maskedTextBoxPhone = new MaskedTextBox();
             maskedTextBoxCpf = new MaskedTextBox();
             groupBoxPizzas = new GroupBox();
+            flowLayoutPanelPizzas = new FlowLayoutPanel();
             buttonCadastrarPizzas = new Button();
             labelQuantidadePizza = new Label();
             textBoxQuantidadePizzas = new TextBox();
@@ -50,19 +51,18 @@
             // 
             textBoxCliente.BorderStyle = BorderStyle.FixedSingle;
             textBoxCliente.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxCliente.Location = new Point(157, 60);
-            textBoxCliente.Margin = new Padding(3, 2, 3, 2);
+            textBoxCliente.Location = new Point(272, 84);
             textBoxCliente.Name = "textBoxCliente";
-            textBoxCliente.Size = new Size(376, 28);
+            textBoxCliente.Size = new Size(429, 33);
             textBoxCliente.TabIndex = 25;
             // 
             // labelCliente
             // 
             labelCliente.AutoSize = true;
             labelCliente.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCliente.Location = new Point(151, 35);
+            labelCliente.Location = new Point(266, 51);
             labelCliente.Name = "labelCliente";
-            labelCliente.Size = new Size(64, 25);
+            labelCliente.Size = new Size(77, 30);
             labelCliente.TabIndex = 1;
             labelCliente.Text = "Cliente:";
             // 
@@ -70,9 +70,9 @@
             // 
             labelTelefone.AutoSize = true;
             labelTelefone.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelTelefone.Location = new Point(27, 99);
+            labelTelefone.Location = new Point(124, 136);
             labelTelefone.Name = "labelTelefone";
-            labelTelefone.Size = new Size(76, 25);
+            labelTelefone.Size = new Size(91, 30);
             labelTelefone.TabIndex = 26;
             labelTelefone.Text = "Telefone:";
             // 
@@ -80,9 +80,9 @@
             // 
             labelCPF.AutoSize = true;
             labelCPF.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelCPF.Location = new Point(282, 99);
+            labelCPF.Location = new Point(415, 136);
             labelCPF.Name = "labelCPF";
-            labelCPF.Size = new Size(41, 25);
+            labelCPF.Size = new Size(49, 30);
             labelCPF.TabIndex = 28;
             labelCPF.Text = "CPF:";
             // 
@@ -90,20 +90,19 @@
             // 
             textBoxIdCliente.BorderStyle = BorderStyle.FixedSingle;
             textBoxIdCliente.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxIdCliente.Location = new Point(33, 60);
-            textBoxIdCliente.Margin = new Padding(3, 2, 3, 2);
+            textBoxIdCliente.Location = new Point(131, 84);
             textBoxIdCliente.Name = "textBoxIdCliente";
             textBoxIdCliente.ReadOnly = true;
-            textBoxIdCliente.Size = new Size(89, 28);
+            textBoxIdCliente.Size = new Size(101, 33);
             textBoxIdCliente.TabIndex = 31;
             // 
             // labelId
             // 
             labelId.AutoSize = true;
             labelId.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelId.Location = new Point(27, 35);
+            labelId.Location = new Point(124, 51);
             labelId.Name = "labelId";
-            labelId.Size = new Size(27, 25);
+            labelId.Size = new Size(32, 30);
             labelId.TabIndex = 30;
             labelId.Text = "Id:";
             // 
@@ -119,18 +118,21 @@
             groupBoxBuscaCliente.Controls.Add(labelTelefone);
             groupBoxBuscaCliente.Controls.Add(labelCPF);
             groupBoxBuscaCliente.Font = new Font("Poppins", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBoxBuscaCliente.Location = new Point(62, 25);
+            groupBoxBuscaCliente.Location = new Point(192, 37);
+            groupBoxBuscaCliente.Margin = new Padding(3, 4, 3, 4);
             groupBoxBuscaCliente.Name = "groupBoxBuscaCliente";
-            groupBoxBuscaCliente.Size = new Size(558, 240);
+            groupBoxBuscaCliente.Padding = new Padding(3, 4, 3, 4);
+            groupBoxBuscaCliente.Size = new Size(869, 320);
             groupBoxBuscaCliente.TabIndex = 45;
             groupBoxBuscaCliente.TabStop = false;
             groupBoxBuscaCliente.Text = "Buscar cliente";
             // 
             // buttonSearchClient
             // 
-            buttonSearchClient.Location = new Point(208, 180);
+            buttonSearchClient.Location = new Point(331, 244);
+            buttonSearchClient.Margin = new Padding(3, 4, 3, 4);
             buttonSearchClient.Name = "buttonSearchClient";
-            buttonSearchClient.Size = new Size(133, 31);
+            buttonSearchClient.Size = new Size(152, 41);
             buttonSearchClient.TabIndex = 48;
             buttonSearchClient.Text = "Buscar cliente";
             buttonSearchClient.UseVisualStyleBackColor = true;
@@ -139,42 +141,55 @@
             // maskedTextBoxPhone
             // 
             maskedTextBoxPhone.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxPhone.Location = new Point(33, 127);
+            maskedTextBoxPhone.Location = new Point(131, 173);
+            maskedTextBoxPhone.Margin = new Padding(3, 4, 3, 4);
             maskedTextBoxPhone.Mask = "(00) 90000-0000";
             maskedTextBoxPhone.Name = "maskedTextBoxPhone";
-            maskedTextBoxPhone.Size = new Size(230, 28);
+            maskedTextBoxPhone.Size = new Size(262, 33);
             maskedTextBoxPhone.TabIndex = 47;
             maskedTextBoxPhone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // maskedTextBoxCpf
             // 
             maskedTextBoxCpf.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxCpf.Location = new Point(282, 127);
+            maskedTextBoxCpf.Location = new Point(415, 173);
+            maskedTextBoxCpf.Margin = new Padding(3, 4, 3, 4);
             maskedTextBoxCpf.Mask = " 000.000.000-00";
             maskedTextBoxCpf.Name = "maskedTextBoxCpf";
-            maskedTextBoxCpf.Size = new Size(251, 28);
+            maskedTextBoxCpf.Size = new Size(286, 33);
             maskedTextBoxCpf.TabIndex = 46;
             maskedTextBoxCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             // 
             // groupBoxPizzas
             // 
-            groupBoxPizzas.AutoSize = true;
+            groupBoxPizzas.Controls.Add(flowLayoutPanelPizzas);
             groupBoxPizzas.Controls.Add(buttonCadastrarPizzas);
             groupBoxPizzas.Controls.Add(labelQuantidadePizza);
             groupBoxPizzas.Controls.Add(textBoxQuantidadePizzas);
             groupBoxPizzas.Font = new Font("Poppins", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBoxPizzas.Location = new Point(62, 284);
+            groupBoxPizzas.Location = new Point(192, 381);
+            groupBoxPizzas.Margin = new Padding(3, 4, 3, 4);
             groupBoxPizzas.Name = "groupBoxPizzas";
-            groupBoxPizzas.Size = new Size(558, 523);
+            groupBoxPizzas.Padding = new Padding(3, 4, 3, 4);
+            groupBoxPizzas.Size = new Size(869, 697);
             groupBoxPizzas.TabIndex = 47;
             groupBoxPizzas.TabStop = false;
             groupBoxPizzas.Text = "Pizzas";
             // 
+            // flowLayoutPanelPizzas
+            // 
+            flowLayoutPanelPizzas.AutoScroll = true;
+            flowLayoutPanelPizzas.Location = new Point(38, 146);
+            flowLayoutPanelPizzas.Name = "flowLayoutPanelPizzas";
+            flowLayoutPanelPizzas.Size = new Size(791, 486);
+            flowLayoutPanelPizzas.TabIndex = 50;
+            // 
             // buttonCadastrarPizzas
             // 
-            buttonCadastrarPizzas.Location = new Point(243, 56);
+            buttonCadastrarPizzas.Location = new Point(359, 73);
+            buttonCadastrarPizzas.Margin = new Padding(3, 4, 3, 4);
             buttonCadastrarPizzas.Name = "buttonCadastrarPizzas";
-            buttonCadastrarPizzas.Size = new Size(133, 31);
+            buttonCadastrarPizzas.Size = new Size(250, 41);
             buttonCadastrarPizzas.TabIndex = 49;
             buttonCadastrarPizzas.Text = "Cadastrar Pizzas";
             buttonCadastrarPizzas.UseVisualStyleBackColor = true;
@@ -184,9 +199,9 @@
             // 
             labelQuantidadePizza.AutoSize = true;
             labelQuantidadePizza.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelQuantidadePizza.Location = new Point(27, 32);
+            labelQuantidadePizza.Location = new Point(31, 43);
             labelQuantidadePizza.Name = "labelQuantidadePizza";
-            labelQuantidadePizza.Size = new Size(163, 25);
+            labelQuantidadePizza.Size = new Size(200, 30);
             labelQuantidadePizza.TabIndex = 26;
             labelQuantidadePizza.Text = "Quantidade de pizzas:";
             // 
@@ -194,21 +209,21 @@
             // 
             textBoxQuantidadePizzas.BorderStyle = BorderStyle.FixedSingle;
             textBoxQuantidadePizzas.Font = new Font("Poppins", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxQuantidadePizzas.Location = new Point(33, 57);
-            textBoxQuantidadePizzas.Margin = new Padding(3, 2, 3, 2);
+            textBoxQuantidadePizzas.Location = new Point(38, 76);
             textBoxQuantidadePizzas.Name = "textBoxQuantidadePizzas";
-            textBoxQuantidadePizzas.Size = new Size(157, 28);
+            textBoxQuantidadePizzas.Size = new Size(217, 33);
             textBoxQuantidadePizzas.TabIndex = 27;
             // 
             // CadastrarPedidos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(707, 845);
+            ClientSize = new Size(1281, 1127);
             Controls.Add(groupBoxPizzas);
             Controls.Add(groupBoxBuscaCliente);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastrarPedidos";
             Text = "CadastrarPedidos";
             groupBoxBuscaCliente.ResumeLayout(false);
@@ -216,7 +231,6 @@
             groupBoxPizzas.ResumeLayout(false);
             groupBoxPizzas.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -235,5 +249,6 @@
         private Button buttonCadastrarPizzas;
         private Label labelQuantidadePizza;
         private TextBox textBoxQuantidadePizzas;
+        private FlowLayoutPanel flowLayoutPanelPizzas;
     }
 }

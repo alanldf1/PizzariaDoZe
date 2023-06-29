@@ -21,10 +21,10 @@ namespace PizzariaDoZe.Forms.Pedidos
         private readonly ClienteDAO clienteDAO;
         private readonly PedidoDAO pedidoDAO;
         private readonly SaborDAO saborDAO;
-
         private FormMainMenu _mainForm;
         private Control ultimoTextBoxDigitado;
         private int quantidadeAtualPizzas = 0;
+        List<novaPizza> listaNovaPizzas = new List<novaPizza>();
         public CadastrarPedidos(FormMainMenu mainForm)
         {
             InitializeComponent();
@@ -134,41 +134,14 @@ namespace PizzariaDoZe.Forms.Pedidos
 
                 if (diferenca > 0)
                 {
-                    // Adicione painéis adicionais
                     for (int i = 0; i < diferenca; i++)
                     {
-                        // Crie um novo painel para a pizza
-                        Panel panelPizza = new Panel();
-                        panelPizza.Name = $"panelPizza{i}";
-                        panelPizza.Location = new Point(10, (quantidadeAtualPizzas + i) * 150); // Defina a posição do painel na tela
-                        panelPizza.Size = new Size(300, 140); // Defina o tamanho do painel
 
-                        Label label = new Label();
-                        label.Text = $"Pizza {quantidadeAtualPizzas + i}";
-                        // Adicione os controles desejados ao painel
-                        System.Windows.Forms.ComboBox comboBoxTamanho = new System.Windows.Forms.ComboBox();
-                        comboBoxTamanho.Name = $"comboBoxTamanho{quantidadeAtualPizzas + i}";
-                        comboBoxTamanho.Location = new Point(10, 70);
-                        comboBoxTamanho.Width = 100;
-                        comboBoxTamanho.Items.AddRange(new string[] { "Pequeno", "Médio", "Grande" });
-                        // Adicione outros controles, como ComboBoxes, Labels, etc.
-                        System.Windows.Forms.CheckedListBox checkedListBoxSabor = new CheckedListBox();
-                        checkedListBoxSabor.Name = $"checkedListBoxSabor{quantidadeAtualPizzas + i}";
-                        //checkedListBoxSabor.Location = new Point(10, 120);
-                        checkedListBoxSabor.Dock = DockStyle.Fill;
-                        checkedListBoxSabor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-                        // Defina o item pré-selecionado pelo índice
-                        comboBoxTamanho.SelectedIndex = 1; // Seleciona o item "Médio"
+                        novaPizza novaPizza = new novaPizza(quantidadeAtualPizzas + i);
+                        novaPizza.Name = "novaPizza" + (quantidadeAtualPizzas+i).ToString() ;
+                        listaNovaPizzas.Add(novaPizza);
+                        flowLayoutPanelPizzas.Controls.Add(novaPizza);
 
-                        panelPizza.Controls.Add(label);
-                        panelPizza.Controls.Add(comboBoxTamanho);
-                        panelPizza.Controls.Add(checkedListBoxSabor);
-                        CarregaSaboresCheckedListBox(checkedListBoxSabor);
-
-                        // Adicione outros controles ao painel
-
-                        // Adicione o painel ao controle pai (por exemplo, um Form ou outro painel)
-                        flowLayoutPanelPizzas.Controls.Add(panelPizza);
                     }
                 }
                 else if (diferenca < 0)
@@ -176,9 +149,15 @@ namespace PizzariaDoZe.Forms.Pedidos
                     // Remova painéis extras
                     for (int i = quantidadeAtualPizzas - 1; i >= quantidadePizzas; i--)
                     {
-                        Control control = flowLayoutPanelPizzas.Controls[$"panelPizza{i}"];
-                        flowLayoutPanelPizzas.Controls.Remove(control);
-                        control.Dispose();
+                        novaPizza controleRemover = listaNovaPizzas.FirstOrDefault(x => x.Name == "novaPizza" + i.ToString());
+
+                        if (controleRemover != null)
+                        {
+                            novaPizza pizzaRemover = listaNovaPizzas[i];
+                            flowLayoutPanelPizzas.Controls.Remove(pizzaRemover);
+                            listaNovaPizzas.Remove(pizzaRemover);
+                            pizzaRemover.Dispose();
+                        }
                     }
                 }
 
@@ -186,27 +165,5 @@ namespace PizzariaDoZe.Forms.Pedidos
                 quantidadeAtualPizzas = quantidadePizzas;
             }
         }
-
-        private void CarregaSaboresCheckedListBox(CheckedListBox checkedListBox)
-        {
-            //Instância e Preenche o objeto com os dados da view
-            var sabor = new Sabor();
-            try
-            {
-                //chama o método para buscar todos os dados da nossa camada model
-                DataTable linhas = saborDAO.Buscar(sabor);
-                // carrega os dados, como objeto, no checkedListBox
-                checkedListBox.Items.Clear();
-                foreach (DataRow row in linhas.Rows)
-                {
-                    checkedListBox.Items.Add(new Sabor(int.Parse(row["ID"].ToString()), row["Nome"].ToString()));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
     }
 }
