@@ -36,6 +36,8 @@
             checkedListBoxSabores = new CheckedListBox();
             labelSabores = new Label();
             groupBoxPizza = new GroupBox();
+            labelingredientes = new Label();
+            checkedListBoxingredientes = new CheckedListBox();
             groupBoxTamanhos.SuspendLayout();
             groupBoxPizza.SuspendLayout();
             SuspendLayout();
@@ -119,6 +121,8 @@
             // 
             // groupBoxPizza
             // 
+            groupBoxPizza.Controls.Add(labelingredientes);
+            groupBoxPizza.Controls.Add(checkedListBoxingredientes);
             groupBoxPizza.Controls.Add(labelSabores);
             groupBoxPizza.Controls.Add(groupBoxTamanhos);
             groupBoxPizza.Controls.Add(checkedListBoxSabores);
@@ -126,10 +130,28 @@
             groupBoxPizza.Margin = new Padding(3, 2, 3, 2);
             groupBoxPizza.Name = "groupBoxPizza";
             groupBoxPizza.Padding = new Padding(3, 2, 3, 2);
-            groupBoxPizza.Size = new Size(578, 416);
+            groupBoxPizza.Size = new Size(578, 497);
             groupBoxPizza.TabIndex = 3;
             groupBoxPizza.TabStop = false;
             groupBoxPizza.Text = "Pizza";
+            // 
+            // labelingredientes
+            // 
+            labelingredientes.AutoSize = true;
+            labelingredientes.Font = new Font("Poppins", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelingredientes.Location = new Point(49, 307);
+            labelingredientes.Name = "labelingredientes";
+            labelingredientes.Size = new Size(98, 25);
+            labelingredientes.TabIndex = 4;
+            labelingredientes.Text = "Ingredientes";
+            // 
+            // checkedListBoxingredientes
+            // 
+            checkedListBoxingredientes.FormattingEnabled = true;
+            checkedListBoxingredientes.Location = new Point(49, 342);
+            checkedListBoxingredientes.Name = "checkedListBoxingredientes";
+            checkedListBoxingredientes.Size = new Size(474, 112);
+            checkedListBoxingredientes.TabIndex = 3;
             // 
             // novaPizza
             // 
@@ -137,7 +159,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(groupBoxPizza);
             Name = "novaPizza";
-            Size = new Size(607, 437);
+            Size = new Size(607, 512);
             groupBoxTamanhos.ResumeLayout(false);
             groupBoxTamanhos.PerformLayout();
             groupBoxPizza.ResumeLayout(false);
@@ -155,5 +177,7 @@
         private CheckedListBox checkedListBoxSabores;
         private Label labelSabores;
         private GroupBox groupBoxPizza;
+        private Label labelingredientes;
+        private CheckedListBox checkedListBoxingredientes;
     }
 }

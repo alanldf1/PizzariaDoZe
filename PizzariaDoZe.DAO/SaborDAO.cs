@@ -124,5 +124,27 @@ namespace PizzariaDoZe_DAO
             linhas.Load(sdr);
             return linhas;
         }
+
+        public DataTable BuscarIngredienteSabor(Sabor sabor)
+        {
+            using var conexao = factory.CreateConnection(); //Cria conexão
+            conexao!.ConnectionString = StringConexao; //Atribui a string de conexão
+            using var comando = factory.CreateCommand(); //Cria comando
+            comando!.Connection = conexao; //Atribui conexão
+                                           //verifica se tem filtro e personaliza o SQL do filtro
+            string auxSqlFiltro = "";
+
+            conexao.Open();
+            comando.CommandText = @" " +
+            "SELECT i.id as ID, i.nome as Nome FROM sabores s " +
+            "LEFT JOIN lista_ingredientes li ON li.sabores_id = s.id " +
+            "LEFT JOIN ingredientes i ON i.id = li.ingredientes_id " +
+            "WHERE s.id = " + sabor.Id + ";"  ;
+            //Executa o script na conexão e retorna as linhas afetadas.
+            var sdr = comando.ExecuteReader();
+            DataTable linhas = new();
+            linhas.Load(sdr);
+            return linhas;
+        }
     }
 }

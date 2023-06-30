@@ -138,7 +138,7 @@ namespace PizzariaDoZe.Forms.Pedidos
                     {
 
                         novaPizza novaPizza = new novaPizza(quantidadeAtualPizzas + i);
-                        novaPizza.Name = "novaPizza" + (quantidadeAtualPizzas+i).ToString() ;
+                        novaPizza.Name = "novaPizza" + (quantidadeAtualPizzas + i).ToString();
                         listaNovaPizzas.Add(novaPizza);
                         flowLayoutPanelPizzas.Controls.Add(novaPizza);
 
